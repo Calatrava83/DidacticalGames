@@ -24,7 +24,7 @@
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <style>
             .borderA{
-                /*border:1px double black;*/
+                border:1px double black;
                 text-align: center;
             }
         </style>
@@ -48,7 +48,7 @@
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MENU ===== ===== -->
             <article class="row">
-                <nav class="nav navbar">menu</nav>
+                <nav id="menu" class="nav navbar">menu</nav>
             </article>
             <!-- ===== ===== MENU ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -60,11 +60,17 @@
                     <header class="row">
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== USUARIO ===== ===== -->
-                        <section class="col-3 mr-auto borderA"><span class="glyphicons glyphicons-user"></span>usuario</section>
+                        <!--<section class="col-1 borderA"></section>-->
+                        <section class="glyphicon-user ml-3 borderA"><span></span></section>
+                        <section id="user" class="col-2 pt-2 mr-auto text-left borderA"><span>usuario</span></section>
                         <!-- ===== ===== USUARIO ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                        <!-- ===== ===== NIVEL ===== ===== -->
+                        <section id="nivel" class="col-auto text-center font-weight-bold">Nivel</section>
+                        <!-- ===== ===== NIVEL ===== ===== -->
+                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== JUEGO ===== ===== -->
-                        <section class="col-3 ml-auto borderA">ahorcado</section>
+                        <section id="nombre-juego" class="col-3 ml-auto pt-2 pr-5 text-right borderA">ahorcado</section>
                         <!-- ===== ===== JUEGO ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                     </header>
@@ -73,24 +79,37 @@
                     <!-- ===== ===== ===== ===== ===== ===== ===== -->
                     <!-- ===== ===== BODY ===== ===== -->
                     <article class="row">
-                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                        <!-- ===== ===== NIVEL ===== ===== -->
-                        <section id="nivel" class="col-12 text-center font-weight-bold">Nivel</section>
-                        <!-- ===== ===== NIVEL ===== ===== -->
-                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                        <section class="col-12 borderA altura-min"></section>
                     </article>
                     <article class="row">
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== REGLAS ===== ===== -->
                         <section class="col-3 borderA">
-                            <span>reglas de juego</span>
+                            <span id="nombre-regla">reglas de juego</span>
                             <article id="reglas" class="row">
-                                <section class="reglas col-10 mx-auto borderA">
-
+                                <section class="reglas col-10 mx-auto pt-3 pr-3 pl-3 text-justify borderA">
+                                    <ol class="pl-2">
+                                        <li>Se determina una palabra que se va a adivinar como meta del juego.</li>
+                                        <li>El jugador va nombramdo posibles letras que puedan conformar la palabra.</li>
+                                        <li>El jugador tambien podra intentar adivinar la palabra con un unico intento.</li>
+                                        <li>Si el jugador acierta una letra, &eacute;sta se dibuja sobre su espacio correspondiente.</li>
+                                        <li>Si la letra aparece m&aacute;s de una vez se escribe tantas veces como aparezca.</li>
+                                    </ol>
+                                </section>
+                            </article>
+                            <span id="puntos">puntos</span>
+                            <article id="regla-puntos" class="row">
+                                <section class="regla-puntos col-10 mx-auto pt-3 pr-3 pl-3 text-justify borderA">
+                                    <ul class="pl-2">
+                                        <li>letra correcta &rarr; +50p</li>
+                                        <li>letra incorrecta &rarr; -25p</li>
+                                        <li>palabra correcta &rarr; +125p</li>
+                                        <li>palabra incorrecta &rarr; -75p</li>
+                                    </ul>
                                 </section>
                             </article>
                             <article class="row">
-                                <button id="start" class="col-10 mx-auto start" name="start">Start</button>
+                                <button id="start" class="col-10 mx-auto start btn btn-success" name="start">Start</button>
                             </article>
                         </section>
                         <!-- ===== ===== REGLAS ===== ===== -->
@@ -109,11 +128,25 @@
                                 <section class="col-4 borderA green"></section>
                                 <section class="col-4 borderA green"></section>
                             </article>
+                            <article class="row">
+                                <section id="pista" class="col-11 mx-auto text-left"><span>pista: <span class="descripcion">"descripci&oacute;n"palabra mas larga 23 letras</span></span></section>
+                                <section class="col-8 mx-auto text-center borderA">
+                                    <article id="palabra" class="row">
+                                        <span class="col-1 ml-auto">¿</span>
+                                        <section class="col-auto borderA">a</section>
+                                        <section class="col-auto borderA">y</section>
+                                        <section class="col-auto borderA">u</section>
+                                        <section class="col-auto borderA">d</section>
+                                        <section class="col-auto borderA">a</section>
+                                        <span class="col-1 mr-auto">?</span>
+                                    </article>
+                                </section>
+                            </article>
                         </section>
                         <!-- ===== ===== TABLERO ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== TIEMPO ===== ===== -->
-                        <section class="col-3 borderA">
+                        <section id="tiempo" class="col-3 borderA">
                             <article class="row">
                                 <section class="col-12 altura-min"></section>
                                 <section class="col-6 mx-auto borderA">tiempo</section>
@@ -149,7 +182,7 @@
                         <section class="col-6 borderA">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== COMPROBAR LETRA ===== ===== -->
-                            <article class="row">
+                            <article id="letra" class="row">
                                 <label class="col-7 mx-auto text-center borderA">Introduce la letra a comprobar</label>
                                 <section class="col-12"></section>
                                 <label class="col-auto ml-auto text-right">¿</label>
@@ -162,7 +195,7 @@
                         <section class="col-6 borderA">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== COMPROBAR PALABRA ===== ===== -->
-                            <article class="row">
+                            <article id="nombre-palabra" class="row">
                                 <label class="col-7 mx-auto text-center borderA">Introduce la palabra para comprobarla</label>
                                 <section class="col-12"></section>
                                 <label class="col-auto ml-auto text-right">¿</label>
@@ -179,7 +212,7 @@
             </article>
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== BOTONES ===== ===== -->
-            <article class="row pt-3">
+            <article class="row">
                 <button id="comprobar-palabra" class="col-2 text-center mx-auto">Comprobar palabra</button>
                 <section class="col-12"></section>
                 <a id="estadistica" href="#" class="col-2 text-center mx-auto">estadistica</a>
@@ -187,13 +220,13 @@
             <!-- ===== ===== BOTONES ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <footer class="row">
-            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-            <!-- ===== ===== COPYGATE ===== ===== -->
-                <section class="col-6 mx-auto text-center borderA">
+                <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                <!-- ===== ===== COPYGATE ===== ===== -->
+                <section class="col-6 pt-2 mx-auto text-center small borderA">
                     <span>Copygate &Psi; 2018 www.didactical-games.com</span>
                 </section>
-            <!-- ===== ===== COPYGATE ===== ===== -->
-            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                <!-- ===== ===== COPYGATE ===== ===== -->
+                <!-- ===== ===== ===== ===== ===== ===== ===== -->
             </footer>
         </section>        
     </body>

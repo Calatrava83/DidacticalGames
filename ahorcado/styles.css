@@ -1,34 +1,63 @@
-
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS TAG ===== =====*/ 
 footer{
     position: relative;
-    bottom: -35px;
+    bottom: -30px;
     font-size: 12px;
 }
 /*===== ===== CSS TAG ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS ID ===== =====*/ 
+#menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,
+#letra,#nombre-palabra,#comprobar-palabra,#estadistica,#puntos{
+    font-variant: all-petite-caps;
+}
 #altura{
     height: 125px;
 }
 #tablero{
-    height: 600px;
+    height: 500px;
+}
+#user,#nombre-juego{
+}
+#nivel,#start{
+    font-size: 35px;
+}
+#tablero section{
+    height: auto;
+}
+#pista{
+    font-size: 20px;
+}
+#nombre-regla,#tiempo,#user,#nombre-juego{
+    font-size: 30px;
+}
+#palabra{
+    font-size: 25px;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 5px 0px 0px 0px;
 }
 #tablero-ahorcado{
     height: 200px;
 }
+#tablero-ahorcado section{
+    height: auto;
+}
+#letra label,#nombre-palabra label{
+    font-size: 20px;
+}
 #reglas{
-    height: 400px;
+}
+#puntos{
+    font-size: 30px;
+}
+#regla-puntos{
     margin-bottom: 50px;
 }
 #footer{
     /*height: 95px;*/
-}
-#footer span{
-    position: relative;
-    bottom: -10px;
 }
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -46,6 +75,32 @@ footer{
 }
 .altura-min{
     height: 25px;
+}
+.glyphicon-user{
+    height: 60px;
+    width: 60px;
+}
+.descripcion{
+    font-style: oblique;
+    font-size: 18px;
+}
+.reglas{
+    text-align: justify;
+    font-variant: normal !important;
+    font-style: oblique !important;
+    font-size: 13px;
+    background-color: rgba(0,0,0,0.2);
+}
+.regla-puntos{
+    list-style: square!important;
+    text-align: justify;
+    font-variant: small-caps !important;
+    font-style: oblique !important;
+    font-size: 13px;
+    background-color: rgba(0,0,0,0.2);
+}
+.regla-puntos ul{
+    list-style: square!important;
 }
 /*===== ===== CSS CLASS ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
