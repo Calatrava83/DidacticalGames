@@ -1,14 +1,48 @@
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS TAG ===== =====*/ 
-footer{
-    position: relative;
-    bottom: -30px;
-    font-size: 12px;
-}
 /*===== ===== CSS TAG ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS ID ===== =====*/ 
+#menu {
+    width: 200px;
+    z-index: 10000;
+    padding: 0px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+#boton{
+}
+.menu{
+    z-index: 10006;
+    width: 115px;
+    height:45px;
+    font-size: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 96, 161, 1);
+    color: rgba(255, 255, 255, 1) !important;
+}
+#menu #navbars{
+    width: 200px !important;
+}
+#boton:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+#boton span{
+    background-color: rgba(0, 96, 161, 1);
+}
+#boton{
+    padding: 0px 0px 0px 0px !important;
+    width: 30px;
+    height:30px;
+    font-size: 20px !important;
+    color: rgba(0, 0, 0,1) ;
+}
+#navbars{
+    background-color: rgba(0, 96, 161, 1) ;
+}
 #menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,
 #letra,#nombre-palabra,#comprobar-palabra,#estadistica,#puntos{
     font-variant: all-petite-caps;
@@ -21,8 +55,8 @@ footer{
 }
 #user,#nombre-juego{
 }
-#nivel,#start{
-    font-size: 35px;
+#nivel{
+    font-size: 45px;
 }
 #tablero section{
     height: auto;
@@ -38,12 +72,10 @@ footer{
     text-transform: uppercase;
     height: 50px;
     padding: 5px 0px 0px 0px;
+    margin: 2% 0px 2% 0px;
 }
 #tablero-ahorcado{
-    height: 200px;
-}
-#tablero-ahorcado section{
-    height: auto;
+    height: 300px !important;
 }
 #letra label,#nombre-palabra label{
     font-size: 20px;
@@ -56,13 +88,58 @@ footer{
 #regla-puntos{
     margin-bottom: 50px;
 }
-#footer{
-    /*height: 95px;*/
+#left #start{
+    margin: 40% 0 0 0;
 }
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS CLASS ===== =====*/ 
+
+.btn.start{
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 900;
+    padding: 10px;
+    /*border:15px #28a745 solid;*/
+}
+.footer{
+    margin-top: 5%;
+    font-size: 15px;
+}
+.rotacion {
+    transform: rotate(90deg);
+}
+
+.hover div {
+    width: 180px;
+}
+
+.hover a {
+    padding: 5px 0px 2.5px 15px !important;
+    text-transform: uppercase;
+}
+
+.hover {
+    width: 0px;
+    transition: width 1.5s;
+}
+
+.hover:hover {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.hover .user{
+    width: 180px;
+    border-bottom: 1px #ffffff solid;
+}
+.cerrar-sesion{
+    width: 180px;
+    border-top: 1px #ffffff solid ;
+}
+.hover .user img,.hover .user span{
+    z-index: 11000;
+}
 .green{
     text-align: center;
     background-color: green;
@@ -77,8 +154,8 @@ footer{
     height: 25px;
 }
 .glyphicon-user{
-    height: 60px;
-    width: 60px;
+    height: 25px !important;
+    width: 25px !important;
 }
 .descripcion{
     font-style: oblique;
@@ -89,7 +166,6 @@ footer{
     font-variant: normal !important;
     font-style: oblique !important;
     font-size: 13px;
-    background-color: rgba(0,0,0,0.2);
 }
 .regla-puntos{
     list-style: square!important;
@@ -97,15 +173,26 @@ footer{
     font-variant: small-caps !important;
     font-style: oblique !important;
     font-size: 13px;
-    background-color: rgba(0,0,0,0.2);
 }
 .regla-puntos ul{
     list-style: square!important;
+}
+.tablero-ahorcado{
+    height: 100px;
 }
 /*===== ===== CSS CLASS ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
 
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
