@@ -165,23 +165,28 @@
                         <section id="left" class="col-3 ">
                             <article id="start" class="row ">
                                 <button class="col-10 mx-auto btn start btn-success " name="start">Start</button>
-                                <article id="tiempo" class="row mt-5 ">
-                                    <div class="col-md-6 col-12">
+                                <article id="tiempo" class="row mt-5 ml-2">
+                                    <div class="col-md-6 col-12 text-center pr-0">
                                         <article class="row mx-auto">
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                             <!-- ===== ===== TIEMPO ===== ===== -->
-                                            <section class="col-12 mx-auto ">tiempo</section>
-                                            <section class="col-10 mx-auto ">00:00</section>
+                                            <section class="col-12 mx-auto">tiempo</section>
+                                            <section class="col-12 mx-auto">00:00</section>
                                             <!-- ===== ===== TIEMPO ===== ===== -->
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                         </article>
                                     </div>
-                                    <div class="col-md-6  col-12">
+                                    <div id="puntos" class="col-md-6  col-12 text-center pl-0">
                                         <article class="row mx-auto">
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                             <!-- ===== ===== PUNTOS ===== ===== -->
-                                            <section class="col-12 mx-auto ">puntos</section>
-                                            <section class="col-10 mx-auto ">0</section>
+                                            <section class="col-12 mx-auto">puntos</section>
+                                            <section class="col-12 mx-auto text-right">
+                                                <span><span class="puntos">0</span>p</span>
+                                            </section>
+                                            <section class="col-12 mx-auto text-right">
+                                                <span><span class="puntos-totales">0</span>pT</span>
+                                            </section>
                                             <!-- ===== ===== PUNTOS ===== ===== -->
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                         </article>
@@ -194,17 +199,7 @@
                         <section class="col-6 ">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== TABLERO ===== ===== -->
-                            <article id="tablero" class="row">
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                                <section class="col-4  green"></section>
-                            </article>
+                            <article id="tablero" class="row" style="background-image: url(../imagenes/amistad/2.jpg);"></article>
                             <!-- ===== ===== TABLERO ===== ===== -->
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <article class="row">

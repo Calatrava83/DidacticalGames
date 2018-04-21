@@ -16,15 +16,6 @@
 }
 #boton{
 }
-.menu{
-    z-index: 10006;
-    width: 115px;
-    height:45px;
-    font-size: 20px;
-    padding-right: 20px;
-    background-color: rgba(0, 96, 161, 1);
-    color: rgba(255, 255, 255, 1) !important;
-}
 #menu #navbars{
     width: 200px !important;
 }
@@ -52,7 +43,9 @@
     height: 125px;
 }
 #tablero{
-    height: 500px;
+    height: 615px;
+    background-size: cover;
+    background-position: center;
 }
 #user,#nombre-juego{
 }
@@ -95,11 +88,22 @@
 #comprobar-palabra{
     font-size: 25px;
 }
+#puntos{
+    padding-right: 45px;
+}
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS CLASS ===== =====*/ 
-
+.menu{
+    z-index: 10006;
+    width: 115px;
+    height:45px;
+    font-size: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 96, 161, 1);
+    color: rgba(255, 255, 255, 1) !important;
+}
 .btn.start{
     text-transform: uppercase;
     font-size: 35px;
@@ -144,10 +148,23 @@
 .hover .user img,.hover .user span{
     z-index: 11000;
 }
+.transparent{
+    /*text-align: center;*/
+    background-color: transparent;
+    /*height: 200px;*/
+}
 .green{
-    text-align: center;
     background-color: green;
-    height: 200px;
+    height: 100px;
+    
+    border:1px #ffffff solid;
+}
+.tablero{
+    border:1px #ffffff solid;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    /*height: 200px;*/
 }
 .ahorcado{
     text-align: center;
