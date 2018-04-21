@@ -24,7 +24,7 @@
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <style>
             .borderA{
-                border:1px double green;
+                border:1px double black;
                 text-align: center;
             }
         </style>
@@ -163,30 +163,30 @@
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== START ===== ===== -->
                         <section id="left" class="col-3 ">
-                            <article id="start" class="row">
-                                <button class="col-10 mx-auto btn start btn-success" name="start">Start</button>
-                            </article>
-                            <article id="tiempo" class="row mt-5 ">
-                                <div class="col-md-6 col-12">
-                                    <article class="row mx-auto">
-                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                        <!-- ===== ===== TIEMPO ===== ===== -->
-                                        <section class="col-12 mx-auto ">tiempo</section>
-                                        <section class="col-10 mx-auto ">00:00</section>
-                                        <!-- ===== ===== TIEMPO ===== ===== -->
-                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                    </article>
-                                </div>
-                                <div class="col-md-6  col-12">
-                                    <article class="row mx-auto">
-                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                        <!-- ===== ===== PUNTOS ===== ===== -->
-                                        <section class="col-12 mx-auto ">puntos</section>
-                                        <section class="col-10 mx-auto ">00000</section>
-                                        <!-- ===== ===== PUNTOS ===== ===== -->
-                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                    </article>
-                                </div>
+                            <article id="start" class="row ">
+                                <button class="col-10 mx-auto btn start btn-success " name="start">Start</button>
+                                <article id="tiempo" class="row mt-5 ">
+                                    <div class="col-md-6 col-12">
+                                        <article class="row mx-auto">
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                            <!-- ===== ===== TIEMPO ===== ===== -->
+                                            <section class="col-12 mx-auto ">tiempo</section>
+                                            <section class="col-10 mx-auto ">00:00</section>
+                                            <!-- ===== ===== TIEMPO ===== ===== -->
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                        </article>
+                                    </div>
+                                    <div class="col-md-6  col-12">
+                                        <article class="row mx-auto">
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                            <!-- ===== ===== PUNTOS ===== ===== -->
+                                            <section class="col-12 mx-auto ">puntos</section>
+                                            <section class="col-10 mx-auto ">0</section>
+                                            <!-- ===== ===== PUNTOS ===== ===== -->
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                        </article>
+                                    </div>
+                                </article>
                             </article>
                         </section>
                         <!-- ===== ===== START ===== ===== -->
@@ -211,7 +211,7 @@
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== PISTA ===== ===== -->
                                 <section id="pista" class="col-md-1 col-sm-2 col-3 mr-auto p-0 text-left "><span>pista:</span></section>
-                                <section id="" class="col-md-11 col-sm-10 col-9 text-center "><span class="descripcion">"descripci&oacute;n"palabra mas larga 23 letras</span></section>
+                                <section id="" class="col-md-11 col-sm-10 col-9 text-left "><span class="descripcion">"descripci&oacute;n"palabra mas larga 23 letras</span></section>
                                 <!-- ===== ===== PISTA ===== ===== -->
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             </article>
@@ -298,14 +298,16 @@
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
         </section>
     </article>
-    <article class="row ">
-        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-        <!-- ===== ===== COPYGATE ===== ===== -->
-        <section class="footer col-6 pt-2 mx-auto text-center small ">
-            <span>Copygate &Psi; 2018 www.didactical-games.com</span>
-        </section>
-        <!-- ===== ===== COPYGATE ===== ===== -->
-        <!-- ===== ===== ===== ===== ===== ===== ===== -->
+    <article class="container-fluid">
+        <article class="row ">
+            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+            <!-- ===== ===== COPYGATE ===== ===== -->
+            <section class="footer col-6 pt-2 mx-auto text-center small ">
+                <span>Copygate &Psi; 2018 www.didactical-games.com</span>
+            </section>
+            <!-- ===== ===== COPYGATE ===== ===== -->
+            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+        </article>
     </article>
 </section>        
 </body>
