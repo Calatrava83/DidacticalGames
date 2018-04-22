@@ -171,7 +171,7 @@
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                             <!-- ===== ===== TIEMPO ===== ===== -->
                                             <section class="col-12 mx-auto">tiempo</section>
-                                            <section class="col-12 mx-auto">00:00</section>
+                                            <section class="tiempo col-12 mx-auto">000</section>
                                             <!-- ===== ===== TIEMPO ===== ===== -->
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                         </article>
@@ -199,7 +199,7 @@
                         <section class="col-6 ">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== TABLERO ===== ===== -->
-                            <article id="tablero" class="row" style="background-image: url(../imagenes/amistad/2.jpg);"></article>
+                            <article id="tablero" class="row"></article>
                             <!-- ===== ===== TABLERO ===== ===== -->
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <article class="row">
@@ -216,18 +216,18 @@
                         <section id="" class="col-3 mt-auto mb-auto">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== TABLERO AHORCADO ===== ===== -->
-                            <article id="tablero-ahorcado" class="row">
+                            <article class="row">
                                 <section class="col-10 ml-auto mr-auto mt-auto mb-auto ">
-                                    <article class="row">
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
-                                        <section class="tablero-ahorcado col-4  ahorcado"></section>
+                                    <article id="tablero-ahorcado" class="row">
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
+                                        <section class="tablero-ahorcado ahorcado col-4 "></section>
                                     </article>
                                 </section>
                             </article>
@@ -245,11 +245,6 @@
                     <!-- ===== ===== PALABRA ===== ===== -->
                     <article id="palabra" class="row ">
                         <span class="col-1 ml-auto">¿</span>
-                        <section class="col-auto "><span class="oculta">a</span></section>
-                        <section class="col-auto "><span class="oculta">y</span></section>
-                        <section class="col-auto "><span class="oculta">u</span></section>
-                        <section class="col-auto "><span class="oculta">d</span></section>
-                        <section class="col-auto "><span class="oculta">a</span></section>
                         <span class="col-1 mr-auto">?</span>
                     </article>
                     <!-- ===== ===== PALABRA ===== ===== -->
