@@ -207,6 +207,34 @@
 .regla-puntos ul{
     list-style: square!important;
 }
+.title,.tabla th{
+    text-align: justify;
+    font-variant: normal !important;
+    font-style: oblique !important;
+    font-size: 13px;
+}
+thead th{
+    width: 50px;
+    padding: 0;
+}
+.tabla td,.tabla th{
+    text-align: center;
+}
+.title{
+    font-size: 11px !important;
+}
+.scroll{
+    width: 360px;
+    height: 300px;
+    border-collapse: collapse;
+    overflow-y: scroll;
+}
+.oculta{
+    background-color: red;
+    border: 1px #fff solid;
+    color: #fff;
+    width: 50px;
+}
 /*===== ===== CSS CLASS ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -220,6 +248,9 @@
 }
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.table th, .table td {
+     padding: 0rem; 
 }
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 

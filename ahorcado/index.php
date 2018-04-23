@@ -95,6 +95,7 @@
                         <div class="modal-body">
                             <section class="reglas modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
                                 <h5 class="modal-title">Reglas:</h5>
+                                    <div class="scroll">
                                 <ol class="pl-4">
                                     <li>Se determina una palabra que se va a adivinar como meta del juego.</li>
                                     <li>El jugador va nombramdo posibles letras que puedan conformar la palabra.</li>
@@ -102,15 +103,71 @@
                                     <li>Si el jugador acierta una letra, &eacute;sta se dibuja sobre su espacio correspondiente.</li>
                                     <li>Si la letra aparece m&aacute;s de una vez se escribe tantas veces como aparezca.</li>
                                 </ol>
+                                    </div>
                             </section>
-                            <section class="regla-puntos col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
-                                <h5 class="modal-title">Puntos:</h5>
-                                <ul class="pl-4">
-                                    <li>letra correcta &rarr; +50p</li>
-                                    <li>letra incorrecta &rarr; -25p</li>
-                                    <li>palabra correcta &rarr; +125p</li>
-                                    <li>palabra incorrecta &rarr; -75p</li>
-                                </ul>
+                            <section class="regla-puntos mx-auto col-12  pt-3">
+                                <table class="table tabla">
+                                    <thead class="thead-light text-center">
+                                        <tr><th colspan="9" scope="col">Puntos</th></tr>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">N-1</th>
+                                            <th scope="col">N-2</th>
+                                            <th scope="col">N-3</th>
+                                            <th scope="col">N-4</th>
+                                            <th scope="col">N-5</th>
+                                            <th scope="col">N-6</th>
+                                            <th scope="col">N-7</th>
+                                            <th scope="col">N-8</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="title text-left">Letra correcta</th>
+                                            <td>5</td>
+                                            <td>10</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>25</td>
+                                            <td>30</td>
+                                            <td>35</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="title text-left">Palabra correcta</th>
+                                            <td>20</td>
+                                            <td>40</td>
+                                            <td>60</td>
+                                            <td>80</td>
+                                            <td>100</td>
+                                            <td>120</td>
+                                            <td>140</td>
+                                            <td>160</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="title text-left">Letra incorrecta</th>
+                                            <td>2</td>
+                                            <td>4</td>
+                                            <td>8</td>
+                                            <td>16</td>
+                                            <td>20</td>
+                                            <td>25</td>
+                                            <td>30</td>
+                                            <td>35</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="title text-left">Palabra incorrecta</th>
+                                            <td>10</td>
+                                            <td>20</td>
+                                            <td>30</td>
+                                            <td>40</td>
+                                            <td>50</td>
+                                            <td>60</td>
+                                            <td>70</td>
+                                            <td>80</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </section>
                         </div>
                         <div class="modal-footer">
