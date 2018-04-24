@@ -95,15 +95,15 @@
                         <div class="modal-body">
                             <section class="reglas modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
                                 <h5 class="modal-title">Reglas:</h5>
-                                    <div class="scroll">
-                                <ol class="pl-4">
-                                    <li>Se determina una palabra que se va a adivinar como meta del juego.</li>
-                                    <li>El jugador va nombramdo posibles letras que puedan conformar la palabra.</li>
-                                    <li>El jugador tambien podra intentar adivinar la palabra con un unico intento.</li>
-                                    <li>Si el jugador acierta una letra, &eacute;sta se dibuja sobre su espacio correspondiente.</li>
-                                    <li>Si la letra aparece m&aacute;s de una vez se escribe tantas veces como aparezca.</li>
-                                </ol>
-                                    </div>
+                                <div class="scroll">
+                                    <ol class="pl-4">
+                                        <li>Se determina una palabra que se va a adivinar como meta del juego.</li>
+                                        <li>El jugador va nombramdo posibles letras que puedan conformar la palabra.</li>
+                                        <li>El jugador tambien podra intentar adivinar la palabra con un unico intento.</li>
+                                        <li>Si el jugador acierta una letra, &eacute;sta se dibuja sobre su espacio correspondiente.</li>
+                                        <li>Si la letra aparece m&aacute;s de una vez se escribe tantas veces como aparezca.</li>
+                                    </ol>
+                                </div>
                             </section>
                             <section class="regla-puntos mx-auto col-12  pt-3">
                                 <table class="table tabla">
@@ -316,7 +316,7 @@
                         <label class="col-12 mx-auto text-center ">Introduce la letra a comprobar</label>
                         <section class="col-12"></section>
                         <label class="col-auto ml-auto text-right">¿</label>
-                        <input class="col-1 text-center" type="text" name="letra" id="letra" min="1" maxlength="1"/>
+                        <input class="col-2 text-center letra" type="text" name="letra" id="letra" min="1" maxlength="1"/>
                         <label class="col-auto mr-auto text-left">?</label>
                     </article>
                     <!-- ===== ===== COMPROBAR LETRA ===== ===== -->
@@ -345,7 +345,7 @@
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
         </section>
     </article>
-    <article class="container-fluid">
+    <footer class="container-fluid">
         <article class="row ">
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== COPYGATE ===== ===== -->
@@ -355,7 +355,7 @@
             <!-- ===== ===== COPYGATE ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
         </article>
-    </article>
+    </footer>
 </section>        
 </body>
 </html>

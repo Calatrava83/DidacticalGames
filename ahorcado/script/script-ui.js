@@ -19,26 +19,26 @@ $(document).ready(function () {
     $(botonComprobar);
     $(botonMenu);
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /*************************INICIO DEL JUEGO*********************************/
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /******************************VARIABLES***********************************/
     var arrayPalabra = ["amistad", "ayuda", "bullying", "felicidad", "ira", "pareja", "tragedia", "tristeza"];
     var PALABRA = "";
-    var preguntas={1:"1º palabra",2:"2º Palabra",3:"3º Palabra"};
+    var preguntas = {1: "1º palabra", 2: "2º Palabra", 3: "3º Palabra"};
     var arrayPALABRA = "";
     var CONSTIMAGEN = 4;
     var imagen = "";
     var nivel = 1;
     var puntos;
     var puntosTotales;
-    var puntosLetra={1 : 5,2: 10,3: 15,4: 20,5: 25,6: 30,7:35,8:40};
-    var puntosPalabra={1 : 20,2: 40,3: 60,4: 80,5: 100,6: 120,7:140,8:160};
-    var puntosLetraInc={1 : 2,2: 4,3: 8,4: 16,5: 20,6: 26,7:30,8:35};
-    var puntosPalabraInc={1 : 10,2: 20,3: 30,4: 40,5: 50,6: 60,7:70,8:80};
+    var puntosLetra = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 30, 7: 35, 8: 40};
+    var puntosPalabra = {1: 20, 2: 40, 3: 60, 4: 80, 5: 100, 6: 120, 7: 140, 8: 160};
+    var puntosLetraInc = {1: 2, 2: 4, 3: 8, 4: 16, 5: 20, 6: 26, 7: 30, 8: 35};
+    var puntosPalabraInc = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70, 8: 80};
     var celdasTablero = 36;
     var descubiertas = [];
     var longitud_3 = [[6, 3], [0, 1, 2], [4, 5, 7, 8]];
@@ -49,14 +49,14 @@ $(document).ready(function () {
     var longitud_9 = [[6], [3], [0], [1], [2], [4], [5], [7], [8]];
     var inicio = 1;
     var segundo = 1000;
-    var tiempoOcultacion = {1 : 5000,2: 5000,3: 5000,4: 3.500,5: 3.500,6: 3.500,7:2,8:2};
-    var tiempoNiveles={1 : 200,2: 190,3: 180,4: 150,5: 140,6: 130,7:100,8:75};
-    var TIEMPORESTANTE;                         
-    var tempoSTART;                             
+    var tiempoOcultacion = {1: 5000, 2: 5000, 3: 5000, 4: 3.500, 5: 3.500, 6: 3.500, 7: 2, 8: 2};
+    var tiempoNiveles = {1: 200, 2: 190, 3: 180, 4: 150, 5: 140, 6: 130, 7: 100, 8: 75};
+    var TIEMPORESTANTE;
+    var tempoSTART;
     var tempoSTOP;
     var inicioPalabra;
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /*****************************COLOCAR IMAGENES*****************************/
     function colocarImagenTablero() {
@@ -99,15 +99,24 @@ $(document).ready(function () {
         arrayPALABRA = PALABRA.split("");
         var palabra = "";
         palabra = "<span class='col-1 ml-auto'>¿</span>";
-        for (var i = 0; i < arrayPALABRA.length; i++) {
-            palabra += "<section class='col-auto oculta'><span class=''>" + arrayPALABRA[i] + "</span></section>";
+        for (var i = 0; i < PALABRA.length; i++) {
+            palabra += "<section class='col-auto oculta ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
         }
         palabra += "<span class='col-1 mr-auto'>?</span>";
         $("#palabra").html(palabra);
         $("#palabra section.oculta span").hide();
-        $("#palabra section.oculta span").eq(3).toggle("clip","options",500);
-//        $("#palabra").children("section span").eq(3).toggle("show","options",500);
-        
+    }
+
+    function destaparLetra() {
+        var letra = $(".letra").val();
+        console.log(PALABRA);
+        for (var i = 0; i < PALABRA.length; i++) {
+            if (PALABRA[i] === letra) {
+                $("#palabra section.oculta span").eq(i).toggle("clip");
+//                $("#palabra section.oculta").eq(i).toggleClass("visible", "oculta");
+            }
+        }
+        $(".letra").val("");
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -135,7 +144,7 @@ $(document).ready(function () {
     }
     /**************************************************************************/
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /****************************DESTAPAR IMAGEN AHORCADO*****************************/
     function ahorcado(longitud, posicion) {
@@ -173,7 +182,7 @@ $(document).ready(function () {
         }
     }
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /****************************CONTROL DE TIEMPO*****************************/
     function tempo() {
@@ -187,13 +196,16 @@ $(document).ready(function () {
     }
     /**************************************************************************/
     /**************************************************************************/
+    function empezar() {
+        colocarImagenTablero();
+        colocarImagenAhorcado();
+        pintarTablero();
+    }
 
 
 
+    $(".start").click(empezar);
 
-    colocarImagenTablero();
-    pintarTablero();
-    colocarImagenAhorcado();
-
+    $("#letra").keyup(destaparLetra);
 
 });

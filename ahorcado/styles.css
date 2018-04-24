@@ -36,7 +36,7 @@
     background-color: rgba(0, 96, 161, 1) ;
 }
 #menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,
-#letra,#nombre-palabra,#comprobar-palabra,#estadistica,#puntos{
+#nombre-palabra,#comprobar-palabra,#estadistica,#puntos{
     font-variant: all-petite-caps;
 }
 #altura{
@@ -63,7 +63,6 @@
 }
 #palabra{
     font-size: 25px;
-    text-transform: uppercase;
     height: 50px;
     padding: 5px 0px 0px 0px;
     margin: 2% 0px 2% 0px;
@@ -230,10 +229,18 @@ thead th{
     overflow-y: scroll;
 }
 .oculta{
-    background-color: red;
-    border: 1px #fff solid;
+    background-color: #0060a1;
+    /*border: 1px #fff solid;*/
     color: #fff;
     width: 50px;
+}
+.visible{
+    background-color: #0069d9;
+    border: 3px goldenrod solid;
+    color: #fff;
+    width: 50px;
+    color: goldenrod;
+    font-weight: 800;
 }
 /*===== ===== CSS CLASS ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
