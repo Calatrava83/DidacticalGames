@@ -221,19 +221,10 @@
                         <!-- ===== ===== START ===== ===== -->
                         <section id="left" class="col-3 ">
                             <article id="start" class="row ">
-                                <button class="col-10 mx-auto btn start btn-success " name="start">Start</button>
+                                <button class="col-10 mx-auto btn start " name="start">Start</button>
                                 <article id="tiempo" class="row mt-5 ml-2">
-                                    <div class="col-md-6 col-12 text-center pr-0">
-                                        <article class="row mx-auto">
-                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                            <!-- ===== ===== TIEMPO ===== ===== -->
-                                            <section class="col-12 mx-auto">tiempo</section>
-                                            <section class="tiempo col-12 mx-auto">000</section>
-                                            <!-- ===== ===== TIEMPO ===== ===== -->
-                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                        </article>
-                                    </div>
-                                    <div id="puntos" class="col-md-6  col-12 text-center pl-0">
+                                    
+                                    <div id="puntos" class="col-md-6 mx-auto col-12 text-center pl-0">
                                         <article class="row mx-auto">
                                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                             <!-- ===== ===== PUNTOS ===== ===== -->
@@ -334,7 +325,7 @@
                         <label class="col-12 mx-auto text-center ">Introduce la palabra para comprobarla</label>
                         <section class="col-12"></section>
                         <label class="col-auto ml-auto text-right">¿</label>
-                        <input class="col-5 text-center" type="text" name="letra" id="letra" min="1" />
+                        <input class="col-5 text-center" type="text" name="letra" id="letras-palabra" />
                         <label class="col-auto mr-auto text-left">?</label>
                     </article>
                     <!-- ===== ===== COMPROBAR PALABRA ===== ===== -->

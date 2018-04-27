@@ -1,8 +1,14 @@
 $(document).ready(function () {
     /**************************************************************************/
+    /**************************************************************************/
     /*********************COMPORTAMIENTO PARA MENU*****************************/
     function botonComprobar() {
-        $("#comprobar-palabra").button();
+        $("#comprobar-palabra").button({
+            disabled: true
+        });
+        $(".start").button({
+            disabled: false
+        });
     }
     function rotar() {
         if ($("#boton").hasClass("rotacion")) {
@@ -47,7 +53,7 @@ $(document).ready(function () {
     var longitud_7 = [[6], [3], [0], [1], [2], [4, 5], [7, 8]];
     var longitud_8 = [[6], [3], [0], [1], [2], [4], [5], [7, 8]];
     var longitud_9 = [[6], [3], [0], [1], [2], [4], [5], [7], [8]];
-    var inicio = 1;
+    var inicio = 0;
     var segundo = 1000;
     var tiempoOcultacion = {1: 5000, 2: 5000, 3: 5000, 4: 3.500, 5: 3.500, 6: 3.500, 7: 2, 8: 2};
     var tiempoNiveles = {1: 200, 2: 190, 3: 180, 4: 150, 5: 140, 6: 130, 7: 100, 8: 75};
@@ -60,8 +66,7 @@ $(document).ready(function () {
     /**************************************************************************/
     /*****************************COLOCAR IMAGENES*****************************/
     function colocarImagenTablero() {
-        TIEMPORESTANTE = tiempoNiveles[nivel];
-        TIEMPO = 0;
+        TIEMPORESTANTE = 0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
@@ -94,7 +99,15 @@ $(document).ready(function () {
     /**************************************************************************/
 
     /**************************************************************************/
-    /***************************PINTAR PALABRA********************************/
+    /**********************************PARADA**********************************/
+    function parada() {
+        clearInterval(inicioPalabra);
+        tempoSTOP = clearInterval(tempoSTART);
+    }
+    /**************************************************************************/
+
+    /**************************************************************************/
+    /****************************PINTAR PALABRA********************************/
     function pintarPalabra() {
         arrayPALABRA = PALABRA.split("");
         var palabra = "";
@@ -108,15 +121,30 @@ $(document).ready(function () {
     }
 
     function destaparLetra() {
+        var flag = false;
         var letra = $(".letra").val();
-        console.log(PALABRA);
         for (var i = 0; i < PALABRA.length; i++) {
             if (PALABRA[i] === letra) {
-                $("#palabra section.oculta span").eq(i).toggle("clip");
-//                $("#palabra section.oculta").eq(i).toggleClass("visible", "oculta");
+                $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
+                flag = true;
             }
         }
+        if ($("#palabra section.visible").length === PALABRA.length) {
+            parada();
+        }
+        if (!flag)
+            destaparAhorcado();
         $(".letra").val("");
+    }
+
+    function comprobarPalabra() {
+        if (PALABRA === $("#letras-palabra").val()) {
+            for (var i = 0; i < PALABRA.length; i++) {
+                $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
+            }
+            $("#letras-palabra").val("");
+            parada();
+        }
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -186,17 +214,18 @@ $(document).ready(function () {
     /**************************************************************************/
     /****************************CONTROL DE TIEMPO*****************************/
     function tempo() {
-        TIEMPORESTANTE--;
+        TIEMPORESTANTE++;
         $(".tiempo").html(TIEMPORESTANTE);
-        if (TIEMPORESTANTE === 0) {
-//            $("#error")[0].currentTime = 0;
-//            $("#error")[0].play();
-            tempoSTOP = clearInterval(tempoSTART);
-        }
     }
     /**************************************************************************/
     /**************************************************************************/
     function empezar() {
+        $("#comprobar-palabra").button({
+            disabled: false
+        });
+        $(".start").button({
+            disabled: true
+        });
         colocarImagenTablero();
         colocarImagenAhorcado();
         pintarTablero();
@@ -207,5 +236,5 @@ $(document).ready(function () {
     $(".start").click(empezar);
 
     $("#letra").keyup(destaparLetra);
-
+    $("#comprobar-palabra").click(comprobarPalabra);
 });
