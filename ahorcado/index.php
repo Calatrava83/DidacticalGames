@@ -124,7 +124,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" class="title text-left">Letra correcta</th>
+                                                <th scope="row" class="title-modal text-left">Letra correcta</th>
                                                 <td>5</td>
                                                 <td>10</td>
                                                 <td>15</td>
@@ -135,7 +135,7 @@
                                                 <td>40</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row" class="title text-left">Palabra correcta</th>
+                                                <th scope="row" class="title-modal text-left">Palabra correcta</th>
                                                 <td>20</td>
                                                 <td>40</td>
                                                 <td>60</td>
@@ -146,7 +146,7 @@
                                                 <td>160</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row" class="title text-left">Letra incorrecta</th>
+                                                <th scope="row" class="title-modal text-left">Letra incorrecta</th>
                                                 <td>2</td>
                                                 <td>4</td>
                                                 <td>8</td>
@@ -157,7 +157,7 @@
                                                 <td>35</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row" class="title text-left">Palabra incorrecta</th>
+                                                <th scope="row" class="title-modal text-left">Palabra incorrecta</th>
                                                 <td>10</td>
                                                 <td>20</td>
                                                 <td>30</td>
@@ -222,25 +222,30 @@
                             <!-- ===== ===== START ===== ===== -->
                             <section id="left" class="col-3 ">
                                 <article id="start" class="row ">
-                                    <button class="col-10 mx-auto btn start " name="start">Start</button>
-                                    <article id="tiempo" class="row mt-5 ml-2">
-
-                                        <div id="puntos" class="col-md-6 mx-auto col-12 text-center pl-0">
-                                            <article class="row mx-auto">
-                                                <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                                <!-- ===== ===== PUNTOS ===== ===== -->
-                                                <section class="col-12 mx-auto">puntos</section>
-                                                <section class="col-12 mx-auto text-right">
-                                                    <span><span class="puntos">0</span>p</span>
-                                                </section>
-                                                <section class="col-12 mx-auto text-right">
-                                                    <span><span class="puntos-totales">0</span>pT</span>
-                                                </section>
-                                                <!-- ===== ===== PUNTOS ===== ===== -->
-                                                <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                            </article>
-                                        </div>
-                                    </article>
+                                    <button class="col-10 mx-auto btn start" name="start">Start</button>
+                                    <section class="col-12">
+                                        <article id="tiempo" class="row mt-5 ml-2">
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                            <!-- ===== ===== PUNTOS ===== ===== -->
+                                            <table id="puntos"  class="col-12 mx-auto table">
+                                                <thead class="thead-light text-center">
+                                                    <tr><th colspan="2" scope="col">Puntuaci&oacute;n</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" class="title text-left">Puntos</th>
+                                                        <td class="puntos">0</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" class="title text-left">Puntos totales</th>
+                                                        <td class="puntos-totales">0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- ===== ===== PUNTOS ===== ===== -->
+                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                        </article>
+                                    </section>
                                 </article>
                             </section>
                             <!-- ===== ===== START ===== ===== -->
@@ -308,7 +313,7 @@
                             <label class="col-12 mx-auto text-center ">Introduce la letra a comprobar</label>
                             <section class="col-12"></section>
                             <label class="col-auto ml-auto text-right">¿</label>
-                            <input class="col-2 text-center letra" type="text" name="letra" id="letra" min="1" maxlength="1"/>
+                            <input class="col-2 text-center letra" type="text" name="letra" id="letras" min="1" maxlength="1"/>
                             <label class="col-auto mr-auto text-left">?</label>
                         </article>
                         <!-- ===== ===== COMPROBAR LETRA ===== ===== -->

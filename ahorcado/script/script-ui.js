@@ -2,11 +2,21 @@ $(document).ready(function () {
     /**************************************************************************/
     /**************************************************************************/
     /*********************COMPORTAMIENTO PARA MENU*****************************/
-    function botonComprobar() {
-        $("#comprobar-palabra").button({
+    function boton() {
+        $("#comprobar-palabra,#letras,#letras-palabra").button({
             disabled: true
         });
         $(".start").button({
+            disabled: false
+        });
+    }
+    function inputsOFF() {
+        $("#comprobar-palabra,#letras,#letras-palabra").button({
+            disabled: true
+        });
+    }
+    function inputsON() {
+        $("#comprobar-palabra,#letras,#letras-palabra").button({
             disabled: false
         });
     }
@@ -22,7 +32,7 @@ $(document).ready(function () {
             rotar();
         });
     }
-    $(botonComprobar);
+    $(boton);
     $(botonMenu);
     /**************************************************************************/
 
@@ -34,20 +44,21 @@ $(document).ready(function () {
     /******************************VARIABLES***********************************/
     var arrayPalabra = ["amistad", "ayuda", "bullying", "felicidad", "ira", "pareja", "tragedia", "tristeza"];
     var PALABRA = "";
+    var letra = "";
     var preguntas = {1: "1º palabra", 2: "2º Palabra", 3: "3º Palabra"};
     var arrayPALABRA = "";
     var CONSTIMAGEN = 4;
     var imagen = "";
     var nivel = 1;
     var puntos;
-    var puntosTotales;
+    var puntosTotales = 0;
     var puntosLetra = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 30, 7: 35, 8: 40};
     var puntosPalabra = {1: 20, 2: 40, 3: 60, 4: 80, 5: 100, 6: 120, 7: 140, 8: 160};
     var puntosLetraInc = {1: 2, 2: 4, 3: 8, 4: 16, 5: 20, 6: 26, 7: 30, 8: 35};
     var puntosPalabraInc = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70, 8: 80};
     var celdasTablero = 36;
     var descubiertas = [];
-    var COUNT;
+    var COUNT = 0;
     var ACIERTO;
     var longitud_3 = [[6, 3], [0, 1, 2], [4, 5, 7, 8]];
     var longitud_5 = [[6], [3], [0, 1, 2], [4, 5], [7, 8]];
@@ -57,12 +68,12 @@ $(document).ready(function () {
     var longitud_9 = [[6], [3], [0], [1], [2], [4], [5], [7], [8]];
     var inicio = 0;
     var segundo = 1000;
-    var tiempoOcultacion = {1: 10000, 2: 15000, 3: 20000, 4: 25000, 5: 30000, 6: 35000, 7: 40000, 8: 45000};
+    var tiempoOcultacion = {1: 1000, 2: 15000, 3: 20000, 4: 25000, 5: 30000, 6: 35000, 7: 40000, 8: 45000};
     var tiempoNiveles = {1: 200, 2: 190, 3: 180, 4: 150, 5: 140, 6: 130, 7: 100, 8: 75};
     var TIEMPORESTANTE;
     var tempoSTART;
     var tempoSTOP;
-    var inicioPalabra;
+    var destaparImagen;
     var flag;
     /**************************************************************************/
 
@@ -70,14 +81,13 @@ $(document).ready(function () {
     /*****************************COLOCAR IMAGENES*****************************/
     function colocarImagenTablero() {
         TIEMPORESTANTE = 0;
-        COUNT = 0;
-        ACIERTO = 0;
+        puntos = 0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
         tempoSTART = setInterval(tempo, segundo);
-        inicioPalabra = setInterval(ocultacion, tiempoOcultacion[nivel]);
+        destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
     }
     function colocarImagenAhorcado() {
         imagen = "url(./imagenes/ahorcado.gif)";
@@ -101,14 +111,42 @@ $(document).ready(function () {
         $("#tablero").html(tablero);
         pintarPalabra();
     }
+    function pintarAhorcado() {
+        var ahorcado = "";
+        for (var i = 0; i < 9; i++) {
+            ahorcado += '<section class="tablero-ahorcado ahorcado col-4 "></section>';
+        }
+        $("#tablero-ahorcado").html(ahorcado);
+    }
     /**************************************************************************/
 
     /**************************************************************************/
     /**********************************PARADA**********************************/
-    function parada() {
-        ACIERTO++;
-        clearInterval(inicioPalabra);
+    function pararTiempo() {
+        clearInterval(destaparImagen);
         tempoSTOP = clearInterval(tempoSTART);
+    }
+    function parada() {
+        /***********/
+        ACIERTO++;//por configurar
+        /***********/
+        puntosTotales += puntos;
+        $(".puntos-totales").html(puntosTotales);
+        COUNT++;
+        if (COUNT === 3) {
+            nivel++;
+            COUNT = 0;
+        }
+        inputsON();
+        animacion();
+    }
+    function paradaAhorcado() {
+        COUNT++;
+        pararTiempo();
+        if (COUNT === 3) {
+            COUNT = 0;
+        }
+        animacion();
     }
     /**************************************************************************/
 
@@ -128,19 +166,23 @@ $(document).ready(function () {
 
     function destaparLetra() {
         flag = false;
-        var letra = $(".letra").val();
         for (var i = 0; i < PALABRA.length; i++) {
-            if (PALABRA[i] === letra) {
+            if (PALABRA[i] === $(".letra").val()) {
+                letra += $(".letra").val();
                 $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
+                puntos += puntosLetra[nivel];
                 flag = true;
             }
         }
         if ($("#palabra section.visible").length === PALABRA.length) {
-            parada();
+            inputsOFF();
+            pararTiempo();
+            setTimeout(parada, 5000);
         }
         if (!flag)
             destaparAhorcado();
         $(".letra").val("");
+        $(".puntos").html(puntos);
     }
 
     function comprobarPalabra() {
@@ -148,9 +190,13 @@ $(document).ready(function () {
             for (var i = 0; i < PALABRA.length; i++) {
                 $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
             }
-            $("#letras-palabra").val("");
-            parada();
+            puntos += puntosPalabra[nivel];
+            inputsOFF();
+            pararTiempo();
+            setTimeout(parada, 5000);
         }
+        $("#letras-palabra").val("");
+        $(".puntos").html(puntos);
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -159,32 +205,43 @@ $(document).ready(function () {
     /**************************************************************************/
     /**************************DESTAPAR IMAGEN PISTA***************************/
     function ocultacion() {
+        destapar();
+        if (descubiertas.length > celdasTablero) {
+            pararTiempo();
+            setTimeout(parada, 5000);
+        }
+    }
+    function destapar() {
         var posicion_tablero;
         for (var i = 0; i < 1; i++) {
             posicion_tablero = Math.round((Math.random() * $("#tablero").children().length));
             if (descubiertas.length < 0) {
-                $("#tablero").children().eq(posicion_tablero).children(".green").toggle("clip", "options", 500);
-                descubiertas.push(posicion_tablero);
+                destape(posicion_tablero);
             } else if (descubiertas.includes(posicion_tablero)) {
                 i--;
             } else {
-                $("#tablero").children().eq(posicion_tablero).children(".green").toggle("clip", "options", 500);
-                descubiertas.push(posicion_tablero);
+                destape(posicion_tablero);
             }
         }
-        if (descubiertas.length > celdasTablero) {
-            clearInterval(inicioPalabra);
-        }
     }
+    function destape(posicion) {
+        $("#tablero").children().eq(posicion).children(".green").toggle("clip", "options", 500);
+        descubiertas.push(posicion);
+    }
+
     /**************************************************************************/
     /**************************************************************************/
 
     /**************************************************************************/
     /****************************DESTAPAR IMAGEN AHORCADO*****************************/
     function ahorcado(longitud, posicion) {
-        for (var i = 0; i < longitud[posicion].length; i++) {
-            $("#tablero-ahorcado").children().eq(longitud[posicion][i]).removeClass("ahorcado", 1000);
-            console.log($("#tablero-ahorcado").children());
+        if ($("#tablero-ahorcado .ahorcado").length > 0) {
+            for (var i = 0; i < longitud[posicion].length; i++) {
+                $("#tablero-ahorcado").children().eq(longitud[posicion][i]).removeClass("ahorcado", 1000);
+            }
+        }
+        if ($("#tablero-ahorcado .ahorcado").length === 0) {
+            paradaAhorcado();
         }
     }
 
@@ -226,30 +283,30 @@ $(document).ready(function () {
     }
     /**************************************************************************/
     /**************************************************************************/
-    function empezar() {
-        $("#comprobar-palabra").button({
+    function animacion() {
+        $("#comprobar-palabra,#letras,#letras-palabra").button({
             disabled: false
         });
         $(".start").button({
             disabled: true
         });
-            colocarImagenTablero();
-            colocarImagenAhorcado();
-            pintarTablero();
+        colocarImagenTablero();
+        colocarImagenAhorcado();
+        pintarTablero();
+        pintarAhorcado();
     }
 
     /**************************************************************************/
     /**************************************************************************/
     $(function () {
-        var height = "max-height:" + (screen.height - 100) + "px ; max-width:"+(screen.width)+"px ;overflow: hidden;";
-        console.log(height);
+        var height = "max-height:" + (screen.height - 100) + "px ; max-width:" + (screen.width) + "px ;overflow: hidden;";
         $("#body").attr("style", height);
     });
     /**************************************************************************/
     /**************************************************************************/
 
 
-    $(".start").click(empezar);
+    $(".start").click(animacion);
 
     $("#letra").keyup(destaparLetra);
     $("#comprobar-palabra").click(comprobarPalabra);

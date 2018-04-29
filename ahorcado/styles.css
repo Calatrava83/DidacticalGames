@@ -208,7 +208,7 @@
 .regla-puntos ul{
     list-style: square!important;
 }
-.title,.tabla th{
+.title-modal,.tabla th{
     text-align: justify;
     font-variant: normal !important;
     font-style: oblique !important;
@@ -222,6 +222,9 @@ thead th{
     text-align: center;
 }
 .title{
+    font-size: 18px !important;
+}
+.title-modal{
     font-size: 11px !important;
 }
 .scroll{
