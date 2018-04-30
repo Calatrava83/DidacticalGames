@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    
+$("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
+
+
     /**************************************************************************/
     /**************************************************************************/
     /*********************COMPORTAMIENTO PARA MENU*****************************/
@@ -60,6 +64,7 @@ $(document).ready(function () {
     var descubiertas = [];
     var COUNT = 0;
     var ACIERTO;
+    var ERROR;
     var longitud_3 = [[6, 3], [0, 1, 2], [4, 5, 7, 8]];
     var longitud_5 = [[6], [3], [0, 1, 2], [4, 5], [7, 8]];
     var longitud_6 = [[6], [3], [0], [1, 2], [4, 5], [7, 8]];
@@ -82,6 +87,7 @@ $(document).ready(function () {
     function colocarImagenTablero() {
         TIEMPORESTANTE = 0;
         puntos = 0;
+        ERROR=0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
@@ -119,7 +125,7 @@ $(document).ready(function () {
         $("#tablero-ahorcado").html(ahorcado);
     }
     /**************************************************************************/
-
+    
     /**************************************************************************/
     /**********************************PARADA**********************************/
     function pararTiempo() {
@@ -130,9 +136,11 @@ $(document).ready(function () {
         /***********/
         ACIERTO++;//por configurar
         /***********/
+        descubiertas=[];
         puntosTotales += puntos;
         $(".puntos-totales").html(puntosTotales);
         COUNT++;
+        inicio=0;
         if (COUNT === 3) {
             nivel++;
             COUNT = 0;
@@ -143,6 +151,7 @@ $(document).ready(function () {
     function paradaAhorcado() {
         COUNT++;
         pararTiempo();
+        inicio=0;
         if (COUNT === 3) {
             COUNT = 0;
         }
@@ -169,15 +178,13 @@ $(document).ready(function () {
         for (var i = 0; i < PALABRA.length; i++) {
             if (PALABRA[i] === $(".letra").val()) {
                 letra += $(".letra").val();
-                $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
+                $("#palabra section.oculta").eq(i).addClass("visible").children().show("fade");
                 puntos += puntosLetra[nivel];
                 flag = true;
             }
         }
         if ($("#palabra section.visible").length === PALABRA.length) {
-            inputsOFF();
-            pararTiempo();
-            setTimeout(parada, 5000);
+            destapando();
         }
         if (!flag)
             destaparAhorcado();
@@ -188,12 +195,10 @@ $(document).ready(function () {
     function comprobarPalabra() {
         if (PALABRA === $("#letras-palabra").val()) {
             for (var i = 0; i < PALABRA.length; i++) {
-                $("#palabra section.oculta").eq(i).addClass("visible").children().show("clip");
+                $("#palabra section.oculta").eq(i).addClass("visible").children().show("fade");
             }
             puntos += puntosPalabra[nivel];
-            inputsOFF();
-            pararTiempo();
-            setTimeout(parada, 5000);
+            destapando();
         }
         $("#letras-palabra").val("");
         $(".puntos").html(puntos);
@@ -225,51 +230,60 @@ $(document).ready(function () {
         }
     }
     function destape(posicion) {
-        $("#tablero").children().eq(posicion).children(".green").toggle("clip", "options", 500);
+        $("#tablero").children().eq(posicion).children(".green").toggle("fade", "options", 500);
         descubiertas.push(posicion);
     }
+    function destapando(){
+        inputsOFF();
+        puntos+=(celdasTablero-descubiertas.length)*10;
+        pararTiempo();
+        for (var i=0;i<$("#tablero").children().length;i++){
+            if(!descubiertas.includes(i)){
+                $("#tablero").children().eq(i).children(".green").toggle("fade", "options", 500);
+                descubiertas.push(i);
+            }
+        }
+        setTimeout(parada, 5000);
+    }
+                
 
     /**************************************************************************/
     /**************************************************************************/
 
     /**************************************************************************/
     /****************************DESTAPAR IMAGEN AHORCADO*****************************/
-    function ahorcado(longitud, posicion) {
+    function ahorcado(longitud) {
         if ($("#tablero-ahorcado .ahorcado").length > 0) {
-            for (var i = 0; i < longitud[posicion].length; i++) {
-                $("#tablero-ahorcado").children().eq(longitud[posicion][i]).removeClass("ahorcado", 1000);
+            ERROR++;
+            for (var i = 0; i < longitud[inicio].length; i++) {
+                $("#tablero-ahorcado").children().eq(longitud[inicio][i]).removeClass("ahorcado", 1000);
             }
+            inicio++;
         }
-        if ($("#tablero-ahorcado .ahorcado").length === 0) {
-            paradaAhorcado();
+        if (ERROR === PALABRA.length) {
+            setTimeout(paradaAhorcado,5000);
         }
     }
 
     function destaparAhorcado() {
         switch (arrayPALABRA.length) {
             case 3:
-                ahorcado(longitud_3, inicio);
-                inicio++;
+                ahorcado(longitud_3);
                 break;
             case 5:
-                ahorcado(longitud_5, inicio);
-                inicio++;
+                ahorcado(longitud_5);
                 break;
             case 6:
-                ahorcado(longitud_6, inicio);
-                inicio++;
+                ahorcado(longitud_6);
                 break;
             case 7:
-                ahorcado(longitud_7, inicio);
-                inicio++;
+                ahorcado(longitud_7);
                 break;
             case 8:
-                ahorcado(longitud_8, inicio);
-                inicio++;
+                ahorcado(longitud_8);
                 break;
             case 9:
-                ahorcado(longitud_9, inicio);
-                inicio++;
+                ahorcado(longitud_9);
                 break;
         }
     }
@@ -295,6 +309,13 @@ $(document).ready(function () {
         pintarTablero();
         pintarAhorcado();
     }
+    /**************************************************************************/
+    /****************************CREACION DE MODAL*****************************/
+    function modalNivel(nivel){
+        $(".estadistica").html('<a id="modalNivel" data-toggle="modal" data-target="#nivel'+(nivel-1)+'">Nivel '+(nivel-1)+'</a>');
+    }
+    /**************************************************************************/
+    /**************************************************************************/
 
     /**************************************************************************/
     /**************************************************************************/

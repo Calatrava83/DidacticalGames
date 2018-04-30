@@ -190,12 +190,13 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <section class="estadistica modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
-
+                                <section class="estadistica modal-body col-6 mx-auto pt-3 pr-3 pl-3 text-center">
+                                    <a id="modalNivel" class="" data-toggle="modal" data-target="#nivel">Nivel 1</a>
+                                    <a id="modalNivel" class="" data-toggle="modal" data-target="#nivel">Nivel 2</a>
                                 </section>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
                             </div>
                         </div>
                     </div>

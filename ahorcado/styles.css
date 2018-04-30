@@ -94,6 +94,18 @@
 #puntos{
     padding-right: 45px;
 }
+#modalNivel{
+    z-index: 100;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 1rem 1rem 1rem;
+    cursor: pointer;
+    color:rgba(239,170,6,0.65);
+}
+#modalNivel:hover{
+    font-size: 2.5rem;
+    color:rgba(239,170,6,0.9);
+}
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
