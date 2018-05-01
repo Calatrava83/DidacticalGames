@@ -37,7 +37,7 @@
     background-color: rgba(0, 96, 161, 1) ;
 }
 #menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,
-#nombre-palabra,#comprobar-palabra,#estadistica,#puntos{
+#nombre-palabra,#comprobar-palabra,#niveles,#puntos{
     font-variant: all-petite-caps;
 }
 #altura{
@@ -104,12 +104,11 @@
 }
 #Nivel{
     z-index: 0;
-    font-size: 1.8rem;
+    font-size: 5rem;
     font-weight: 700;
-    margin: 1rem 1rem 1rem 1rem;
-    color:rgba(239,170,6,1);
+    color:#b1dcff;
 }
-.modal-nivel.puntos-totales{
+.modal-nivel.puntos-totales,.modal-nivel.puntosTotales{
     z-index: 0;
     font-size: 1.8rem;
     font-weight: 700;
@@ -121,8 +120,8 @@
     color:rgba(239,170,6,0.9);
 }
 #prev img,#next img, #reload img{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
 }
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 

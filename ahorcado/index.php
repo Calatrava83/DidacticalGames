@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>-->
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -46,297 +46,6 @@
                             <section class="col-1 borderA">12</section>
                         </article>-->
             <div  id="body" class="p-0">
-                
-                <article class="nivel modal fade row" id="nivel1" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 1</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel2" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 2</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel3" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 3</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel4" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 4</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel5" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 5</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel6" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 6</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel7" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 7</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel8" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 8</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel9" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 9</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="nivel modal fade row" id="nivel10" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 id="Nivel" class="modal-title" id="ModalTitle">Nivel 10</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <section class=" modal-body col-12 mx-auto pt-3 pr-3 pl-3 pb-0 text-center">
-                                    <div class="row">
-                                        <img src="imagenes/regular.png" class="face  mx-auto">
-                                        <div class="col-12"></div>
-                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
-                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
-                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
-                                        <span class="col-12 modal-nivel puntos-totales mb-0">0</span>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="prev" class="btn btn-warning  ml-auto" disabled="" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
-                                <button type="button" id="reload" class="btn btn-warning" disabled="" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
-                                <button type="button" id="next" class="btn btn-warning mr-auto" disabled="" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 <!-- ===== ===== MENU ===== ===== -->
                 <article class="row">
@@ -355,7 +64,7 @@
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link ml-3 mb-2" data-toggle="modal" data-target="#estadistica">Estadistica</a>
+                                        <a class="nav-link ml-3 mb-2" data-toggle="modal" data-target="#niveles">Niveles</a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
@@ -373,6 +82,209 @@
                     </nav>
                 </article>
                 <!-- ===== ===== MENU ===== ===== -->
+                <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                <!-- ===== ===== MODAL-NIVELES ===== ===== -->
+                <article class="nivel modal fade row" id="nivel1" value="1" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel2" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 2</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel3" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 3</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel4" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 4</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel5" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 5</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel6" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 6</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel7" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 7</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="nivel modal fade row" id="nivel8" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 id="Nivel" class="modal-title mx-auto">Nivel 8</h4>
+                            </div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                    <div class="row">
+                                        <img src="imagenes/regular.png" class="face  mx-auto">
+                                        <div class="col-12"></div>
+                                        <img id="star1" src="imagenes/star-off.png" class="star col-2 ml-auto">
+                                        <img id="star2" src="imagenes/star-off.png" class="star col-2 ">
+                                        <img id="star3" src="imagenes/star-off.png" class="star col-2 mr-auto">
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><img src="imagenes/prev.png" alt="prev"></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><img src="imagenes/reload.png" alt="prev"></button>
+                                <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><img src="imagenes/next.png" alt="prev"></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- ===== ===== MODAL-NIVELES ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 <!-- ===== ===== MODAL-REGLAS ===== ===== -->
                 <article class="modal fade row" id="reglas" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
@@ -470,18 +382,12 @@
                 </article>
                 <!-- ===== ===== MODAL-REGLAS ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                <!-- ===== ===== MODAL-ESTADISTICA ===== ===== -->
-                <article class="modal fade row" id="estadistica" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                <!-- ===== ===== MODAL-NIVELES ===== ===== -->
+                <article class="modal fade row" id="niveles" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="ModalTitle">Estadisticas</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                        <div class="modal-content col-7 mx-auto">
                             <div class="modal-body">
-                                <section class="estadistica modal-body col-6 mx-auto pt-3 pr-3 pl-3 text-center">
+                                <section class="niveles modal-body col-12  mx-auto pt-3 pr-3 pl-3 text-center">
                                     <a id="modalNivel" class="nivel1" data-toggle="modal" data-target="">Nivel 1</a>
                                     <a id="modalNivel" class="nivel2" data-toggle="modal" data-target="">Nivel 2</a>
                                     <a id="modalNivel" class="nivel3" data-toggle="modal" data-target="">Nivel 3</a>
@@ -490,17 +396,12 @@
                                     <a id="modalNivel" class="nivel6" data-toggle="modal" data-target="">Nivel 6</a>
                                     <a id="modalNivel" class="nivel7" data-toggle="modal" data-target="">Nivel 7</a>
                                     <a id="modalNivel" class="nivel8" data-toggle="modal" data-target="">Nivel 8</a>
-                                    <a id="modalNivel" class="nivel9" data-toggle="modal" data-target="">Nivel 9</a>
-                                    <a id="modalNivel" class="nivell0" data-toggle="modal" data-target="">Nivel 10</a>
                                 </section>
-                            </div>
-                            <div class="modal-footer">
-                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
                             </div>
                         </div>
                     </div>
                 </article>
-                <!-- ===== ===== MODAL-ESTADISTICA ===== ===== -->
+                <!-- ===== ===== MODAL-NIVELES ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 <article class="row">
                     <section class="col-12">
@@ -523,29 +424,6 @@
                             <section id="left" class="col-3 ">
                                 <article id="start" class="row ">
                                     <button class="col-10 mx-auto  start" name="start">Start</button>
-                                    <section class="col-12">
-                                        <article id="tiempo" class="row mt-5 ml-2">
-                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                            <!-- ===== ===== PUNTOS ===== ===== -->
-                                            <table id="puntos"  class="col-12 mx-auto table">
-                                                <thead class="thead-light text-center">
-                                                    <tr><th colspan="2" scope="col">Puntuaci&oacute;n</th></tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row" class="title text-left">Puntos</th>
-                                                        <td class="puntos">0</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row" class="title text-left">Puntos totales</th>
-                                                        <td class="puntos-totales">0</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <!-- ===== ===== PUNTOS ===== ===== -->
-                                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                        </article>
-                                    </section>
                                 </article>
                             </section>
                             <!-- ===== ===== START ===== ===== -->
@@ -560,7 +438,7 @@
                                     <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                     <!-- ===== ===== PISTA ===== ===== -->
                                     <section id="pista" class="col-md-1 col-sm-2 col-3 mr-auto p-0 text-left "><span>pista:</span></section>
-                                    <section id="" class="col-md-11 col-sm-10 col-9 text-left "><span class="descripcion">"descripci&oacute;n"palabra mas larga 23 letras</span></section>
+                                    <section id="" class="col-md-11 col-sm-10 col-9 text-left "><span class="descripcion"></span></section>
                                     <!-- ===== ===== PISTA ===== ===== -->
                                     <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 </article>

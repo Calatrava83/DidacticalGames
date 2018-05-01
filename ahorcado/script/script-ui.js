@@ -1,21 +1,23 @@
 $(document).ready(function () {
-    
-$("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
-//$("#nivel1").modal("show"); /*asi se ejecuta el modal de forma automatica*/
-   
-   $(".nivel1,.nivel2,.nivel3,.nivel4.nivel5,.nivel6,.nivel7,.nivel8,.nivel9,.nivel10").click(function (){
-       var panel='#'+$(this).attr("class");
-       console.log(panel);
-       setTimeout(function (){$("#estadistica").modal("hide");},500); 
-       setTimeout(function (){$(panel).modal("show");},500); 
-       
-   });
+
+//    $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
+
+    $(".nivel1,.nivel2,.nivel3,.nivel4.nivel5,.nivel6,.nivel7,.nivel8,.nivel9,.nivel10").click(function () {
+        var panel = '#' + $(this).attr("class");
+        setTimeout(function () {
+            $("#niveles").modal("hide");
+        }, 500);
+        setTimeout(function () {
+            $(panel).modal("show");
+        }, 500);
+
+    });
 
     /**************************************************************************/
     /**************************************************************************/
     /*********************COMPORTAMIENTO PARA MENU*****************************/
     function boton() {
-        $("#comprobar-palabra,#letras,#letras-palabra").button({
+        $("#comprobar-palabra,#letras,#letras-palabra,#prev,#reload,#next").button({
             disabled: true
         });
         $(".start").button({
@@ -55,6 +57,13 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     /**************************************************************************/
     /******************************VARIABLES***********************************/
     var arrayPalabra = ["amistad", "ayuda", "bullying", "felicidad", "ira", "pareja", "tragedia", "tristeza"];
+    var arrayDescripcion = {"amistad": "Afecto personal, puro y desinteresado, compartido con otra persona, que nace y se fortalece con el trato.",
+        "ayuda": "Hacer un esfuerzo, poner los medios para el logro de algo.",
+        "bullying": "Acoso escolar y toda forma de maltrato físico, verbal o psicológico de forma reiterada y a lo largo del tiempo.",
+        "felicidad": "Estado de grata satisfacción espiritual y física.",
+        "ira": "Sentimiento de indignación que causa enojo.",
+        "pareja": "Conjunto de dos personas, animales o cosas que tienen entre sí alguna correlación o semejanza.",
+        "tragedia": "Situación o suceso lamentable que afecta a personas o sociedades humanas.", "tristeza": "Afligido, apesadumbrado."};
     var PALABRA = "";
     var letra = "";
     var preguntas = {1: "1º palabra", 2: "2º Palabra", 3: "3º Palabra"};
@@ -63,16 +72,17 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     var imagen = "";
     var nivel = 1;
     var puntos;
-    var puntosTotales = 0;
+    var puntosTotales = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0};
+    var paneles = {1: "#nivel1", 2: "#nivel2", 3: "#nivel3", 4: "#nivel4", 5: "#nivel5", 6: "#nivel6", 7: "#nivel7", 8: "#nivel8"};
     var puntosLetra = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 30, 7: 35, 8: 40};
-    var puntosPalabra = {1: 20, 2: 40, 3: 60, 4: 80, 5: 100, 6: 120, 7: 140, 8: 160};
-    var puntosLetraInc = {1: 2, 2: 4, 3: 8, 4: 16, 5: 20, 6: 26, 7: 30, 8: 35};
-    var puntosPalabraInc = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60, 7: 70, 8: 80};
+    var puntosPalabra = {1: 20, 2: 30, 3: 40, 4: 50, 5: 60, 6: 70, 7: 80, 8: 90};
     var celdasTablero = 36;
     var descubiertas = [];
     var COUNT = 0;
-    var ACIERTO;
+    var ACIERTO = 0;
     var ERROR;
+    var starOFF_ON = ["imagenes/star-off.png", "imagenes/star-on.png"];
+    var imgAcierto = ["imagenes/mal.png", "imagenes/bien.png", "imagenes/regular.png"];
     var longitud_3 = [[6, 3], [0, 1, 2], [4, 5, 7, 8]];
     var longitud_5 = [[6], [3], [0, 1, 2], [4, 5], [7, 8]];
     var longitud_6 = [[6], [3], [0], [1, 2], [4, 5], [7, 8]];
@@ -81,8 +91,7 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     var longitud_9 = [[6], [3], [0], [1], [2], [4], [5], [7], [8]];
     var inicio = 0;
     var segundo = 1000;
-    var tiempoOcultacion = {1: 1000, 2: 15000, 3: 20000, 4: 25000, 5: 30000, 6: 35000, 7: 40000, 8: 45000};
-    var tiempoNiveles = {1: 200, 2: 190, 3: 180, 4: 150, 5: 140, 6: 130, 7: 100, 8: 75};
+    var tiempoOcultacion = {1: 2000, 2: 4000, 3: 6000, 4: 8000, 5: 10000, 6: 12000, 7: 14000, 8: 16000};
     var TIEMPORESTANTE;
     var tempoSTART;
     var tempoSTOP;
@@ -90,18 +99,60 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     var flag;
     /**************************************************************************/
 
+    function rellenarPanel() {
+        var reloader;
+        for (var i = 0; i < ACIERTO; i++) {
+            var star = "#nivel" + nivel + " #star" + (i + 1);
+            $(star).attr("src", starOFF_ON[1]);
+        }
+        var panelPuntos = "#nivel" + nivel + " .modal-body .row";
+        $(panelPuntos).append('<span class="col-12 modal-nivel puntosTotales mx-auto">' + puntosTotales[nivel] + '</span>');
+        var face = "#nivel" + nivel + " .face";
+        switch (ACIERTO) {
+            case 0:
+                reloader = "#nivel" + nivel + " #reload";
+                if (nivel > 1) {
+                    reloader += ",#nivel" + nivel + " #prev";
+                }
+                $(face).attr("src", imgAcierto[0]);
+                $(reloader).button({
+                    disabled: false
+                });
+                break;
+            case 1:
+            case 2:
+                reloader = "#nivel" + nivel + " #reload,#nivel" + nivel + " #prev,#nivel" + nivel + " #next";
+                $(face).attr("src", imgAcierto[2]);
+                $(reloader).button({
+                    disabled: false
+                });
+                break;
+            case 3:
+                reloader = "#nivel" + nivel + " #reload,#nivel" + nivel + " #prev,#nivel" + nivel + " #next";
+                $(face).attr("src", imgAcierto[1]);
+                $(reloader).button({
+                    disabled: false
+                });
+                break;
+        }
+        ACIERTO = 0;
+        setTimeout(function () {
+            $(paneles[nivel]).modal("show");
+        }, 500);
+    }
     /**************************************************************************/
     /*****************************COLOCAR IMAGENES*****************************/
     function colocarImagenTablero() {
         TIEMPORESTANTE = 0;
-        puntos = 0;
-        ERROR=0;
+        ERROR = 0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
+        $(".descripcion").text('"'+arrayDescripcion[PALABRA]+'"');
         tempoSTART = setInterval(tempo, segundo);
         destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
+        
     }
     function colocarImagenAhorcado() {
         imagen = "url(./imagenes/ahorcado.gif)";
@@ -133,36 +184,65 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
         $("#tablero-ahorcado").html(ahorcado);
     }
     /**************************************************************************/
-    
+
     /**************************************************************************/
     /**********************************PARADA**********************************/
+    function sumaGlobalPuntos() {
+        puntosTotales[0] = 0;
+        for (var i = nivel; i < nivel + 1; i++) {
+            puntosTotales[0] += puntosTotales[nivel];
+            $(".puntos-totales").html(puntosTotales[0]);
+        }
+    }
     function pararTiempo() {
         clearInterval(destaparImagen);
         tempoSTOP = clearInterval(tempoSTART);
     }
     function parada() {
-        /***********/
-        ACIERTO++;//por configurar
-        /***********/
-        descubiertas=[];
-        puntosTotales += puntos;
-        $(".puntos-totales").html(puntosTotales);
+        ACIERTO++;
+        descubiertas = [];
+        puntosTotales[nivel] += puntos;
+        puntos = 0;
+        sumaGlobalPuntos();
+        $(".puntos").html(puntos);
         COUNT++;
-        inicio=0;
-        if (COUNT === 3) {
-            nivel++;
+        inicio = 0;
+        if (COUNT < 3) {
+            level();
+        } else {
             COUNT = 0;
+            rellenarPanel();
         }
-        inputsON();
-        animacion();
+    }
+    function paradaDestape() {
+        descubiertas = [];
+        puntosTotales[nivel] += puntos;
+        puntos = 0;
+        sumaGlobalPuntos();
+        $(".puntos").html(puntos);
+        COUNT++;
+        inicio = 0;
+        if (COUNT < 3) {
+            level();
+        } else {
+            COUNT = 0;
+            rellenarPanel();
+        }
     }
     function paradaAhorcado() {
-        COUNT++;
+        descubiertas = [];
         pararTiempo();
-        inicio=0;
-        if (COUNT === 3) {
+        COUNT++;
+        inicio = 0;
+        if (COUNT < 3) {
+            level();
+        } else {
             COUNT = 0;
+            rellenarPanel();
         }
+    }
+    function level() {
+        inputsON();
         animacion();
     }
     /**************************************************************************/
@@ -207,6 +287,8 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
             }
             puntos += puntosPalabra[nivel];
             destapando();
+        } else {
+            destaparAhorcado();
         }
         $("#letras-palabra").val("");
         $(".puntos").html(puntos);
@@ -221,7 +303,7 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
         destapar();
         if (descubiertas.length > celdasTablero) {
             pararTiempo();
-            setTimeout(parada, 5000);
+            setTimeout(paradaDestape, 5000);
         }
     }
     function destapar() {
@@ -241,19 +323,20 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
         $("#tablero").children().eq(posicion).children(".green").toggle("fade", "options", 500);
         descubiertas.push(posicion);
     }
-    function destapando(){
+    function destapando() {
         inputsOFF();
-        puntos+=(celdasTablero-descubiertas.length)*10;
+        puntos += (celdasTablero - descubiertas.length) * 10;
+        puntosTotales[nivel] += puntos;
         pararTiempo();
-        for (var i=0;i<$("#tablero").children().length;i++){
-            if(!descubiertas.includes(i)){
+        for (var i = 0; i < $("#tablero").children().length; i++) {
+            if (!descubiertas.includes(i)) {
                 $("#tablero").children().eq(i).children(".green").toggle("fade", "options", 500);
                 descubiertas.push(i);
             }
         }
         setTimeout(parada, 5000);
     }
-                
+
 
     /**************************************************************************/
     /**************************************************************************/
@@ -269,7 +352,13 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
             inicio++;
         }
         if (ERROR === PALABRA.length) {
-            setTimeout(paradaAhorcado,5000);
+            for (var i = 0; i < $("#tablero").children().length; i++) {
+                if (descubiertas.includes(i)) {
+                    $("#tablero").children().eq(i).children(".green").toggle("fade", "options", 500);
+                    descubiertas.pop(i);
+                }
+            }
+            setTimeout(paradaAhorcado, 3000);
         }
     }
 
@@ -312,6 +401,8 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
         $(".start").button({
             disabled: true
         });
+        $("#letras").select();
+        puntos = 0;
         colocarImagenTablero();
         colocarImagenAhorcado();
         pintarTablero();
@@ -319,8 +410,8 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     }
     /**************************************************************************/
     /****************************CREACION DE MODAL*****************************/
-    function modalNivel(nivel){
-        $(".estadistica").html('<a id="modalNivel" data-toggle="modal" data-target="#nivel'+(nivel-1)+'">Nivel '+(nivel-1)+'</a>');
+    function modalNivel(nivel) {
+        $(".niveles").html('<a id="modalNivel" data-toggle="modal" data-target="#nivel' + (nivel - 1) + '">Nivel ' + (nivel - 1) + '</a>');
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -338,5 +429,33 @@ $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
     $(".start").click(animacion);
 
     $("#letra").keyup(destaparLetra);
+
     $("#comprobar-palabra").click(comprobarPalabra);
+    $("#letras-palabra").keypress(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code === 13) {
+            comprobarPalabra();
+        }
+    });
+
+    var prev = "#nivel" + nivel + " #prev";
+    var next = "#nivel" + nivel + " #next";
+    ;
+    var reload = "#nivel" + nivel + " #reload";
+    ;
+    $(prev).click(function () {
+        $(paneles[nivel]).modal("hide");
+        if (nivel > 1)
+            nivel--;
+        level();
+    });
+    $(reload).click(function () {
+        $(paneles[nivel]).modal("hide");
+        level();
+    });
+    $(next).click(function () {
+        $(paneles[nivel]).modal("hide");
+        nivel++;
+        level();
+    });
 });
