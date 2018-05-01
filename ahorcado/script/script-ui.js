@@ -1,7 +1,15 @@
 $(document).ready(function () {
     
 $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
-
+//$("#nivel1").modal("show"); /*asi se ejecuta el modal de forma automatica*/
+   
+   $(".nivel1,.nivel2,.nivel3,.nivel4.nivel5,.nivel6,.nivel7,.nivel8,.nivel9,.nivel10").click(function (){
+       var panel='#'+$(this).attr("class");
+       console.log(panel);
+       setTimeout(function (){$("#estadistica").modal("hide");},500); 
+       setTimeout(function (){$(panel).modal("show");},500); 
+       
+   });
 
     /**************************************************************************/
     /**************************************************************************/

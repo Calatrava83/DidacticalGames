@@ -95,16 +95,34 @@
     padding-right: 45px;
 }
 #modalNivel{
-    z-index: 100;
+    z-index: 0;
     font-size: 1.8rem;
     font-weight: 700;
     margin: 1rem 1rem 1rem 1rem;
     cursor: pointer;
     color:rgba(239,170,6,0.65);
 }
+#Nivel{
+    z-index: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 1rem 1rem 1rem;
+    color:rgba(239,170,6,1);
+}
+.modal-nivel.puntos-totales{
+    z-index: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 1rem 1rem 1rem;
+    color:rgba(239,170,6,1);
+}
 #modalNivel:hover{
     font-size: 2.5rem;
     color:rgba(239,170,6,0.9);
+}
+#prev img,#next img, #reload img{
+    width: 50px;
+    height: 50px;
 }
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -119,12 +137,18 @@
     background-color: rgba(0, 96, 161, 1);
     color: rgba(255, 255, 255, 1) !important;
 }
-.btn.start{
+.start{
     text-transform: uppercase;
     font-size: 35px;
     font-weight: 900;
     padding: 10px;
-    /*border:15px #28a745 solid;*/
+}
+.star{
+    height: 35px;
+}
+.face{
+    width: 150px;
+    height: 150px;
 }
 .footer{
     margin-top: 4%;
@@ -275,6 +299,11 @@ thead th{
 }
 .table th, .table td {
      padding: 0rem; 
+}
+.btn{
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
 }
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
