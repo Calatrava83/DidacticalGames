@@ -58,23 +58,29 @@
                                 <li class="nav-item hover ">
                                     <div>
                                         <a class="nav-link user" href="">
-                                            <img class="glyphicon-user mr-2 mt-2 mb-2"src="" alt="user"/><span>usuario</span>
+                                            <img class="mr-2 mt-2 mb-2" src="../svg/person.svg" alt="user"/><span>usuario</span>
                                         </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link ml-3 mb-2" data-toggle="modal" data-target="#niveles">Niveles</a>
+                                        <a class="nav-link ml-3" data-toggle="modal" data-target="#niveles">
+                                            <img class="mr-2 mt-2 mb-2" src="../svg/list-ordered.svg" alt="niveles"/><span>Niveles</span>
+                                        </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link ml-3 mb-2" data-toggle="modal" data-target="#reglas">Reglas de juego</a>
+                                        <a class="nav-link ml-3" data-toggle="modal" data-target="#reglas">
+                                            <img class="mr-2 mt-2 mb-2" src="../svg/checklist.svg" alt="reglas"/><span>Reglas de juego</span>
+                                        </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">cerrar sesion</a>
+                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
+                                            <img class="mr-2 mt-2 mb-2" src="../svg/sign-out.svg" alt="sign-out"/><span>cerrar sesion</span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
@@ -409,58 +415,53 @@
                         <!-- ===== ===== HEADER ===== ===== -->
                         <header class="row">
                             <!-- ===== ===== NIVEL ===== ===== -->
-                            <section id="nivel" class="col-12 mx-auto text-center font-weight-bold">Nivel</section>
+                            <section id="nivel" class="col-12 mx-auto text-right pr-4 font-weight-bold"></section>
                             <!-- ===== ===== NIVEL ===== ===== -->
                         </header>
                         <!-- ===== ===== HEADER ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                        <!-- ===== ===== BODY ===== ===== -->
-                        <article class="row">
-                            <section class="col-12  altura-min"></section>
+                        <article class="row ">
+                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                            <!-- ===== ===== PISTA ===== ===== -->
+                            <section id="" class="col-9 mx-auto mb-3 text-center"><span class="descripcion"></span></section>
+                            <!-- ===== ===== PISTA ===== ===== -->
+                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         </article>
+                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                        <!-- ===== ===== BODY ===== ===== -->
+                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                        <!-- ===== ===== START ===== ===== -->
+                        <article class="row ">
+                            <button id="start"  class="col-2 mx-auto pb-3 pl-3 pr-3 start" name="start">Start</button>
+                        </article>
+                        <!-- ===== ===== START ===== ===== -->
+                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <article class="row">
-                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                            <!-- ===== ===== START ===== ===== -->
-                            <section id="left" class="col-3 ">
-                                <article id="start" class="row ">
-                                    <button class="col-10 mx-auto  start" name="start">Start</button>
-                                </article>
-                            </section>
-                            <!-- ===== ===== START ===== ===== -->
-                            <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                            <section class="col-6 ">
+                            <section class="col-5 ml-auto">
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== TABLERO ===== ===== -->
                                 <article id="tablero" class="row"></article>
                                 <!-- ===== ===== TABLERO ===== ===== -->
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                <article class="row">
-                                    <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                    <!-- ===== ===== PISTA ===== ===== -->
-                                    <section id="pista" class="col-md-1 col-sm-2 col-3 mr-auto p-0 text-left "><span>pista:</span></section>
-                                    <section id="" class="col-md-11 col-sm-10 col-9 text-left "><span class="descripcion"></span></section>
-                                    <!-- ===== ===== PISTA ===== ===== -->
-                                    <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                                </article>
                             </section>
                             <!-- ===== ===== TABLERO ===== ===== -->
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                            <section id="" class="col-3 mt-auto mb-auto">
+                            <section id="" class="col-5 mr-auto mt-5 mb-auto">
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== TABLERO AHORCADO ===== ===== -->
                                 <article class="row">
-                                    <section class="col-10 ml-auto mr-auto mt-auto mb-auto ">
+                                    <section class="col-6 ml-auto mr-auto mt-auto mb-5 ">
                                         <article id="tablero-ahorcado" class="row">
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
-                                            <section class="tablero-ahorcado ahorcado col-4 "></section>
                                         </article>
+                                    </section>
+                                </article>
+                                <article class="row">
+                                    <section class="col-12 mx-auto mt-5 text-center">
+                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
+                                        <!-- ===== ===== PALABRA ===== ===== -->
+                                        <article id="palabra" class="row"></article>
+                                        <!-- ===== ===== PALABRA ===== ===== -->
+                                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                     </section>
                                 </article>
                                 <!-- ===== ===== TABLERO AHORCADO ===== ===== -->
@@ -471,46 +472,28 @@
                     <!-- ===== ===== TIEMPO ===== ===== -->
                     <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 </article>
-                <article class="row">
-                    <section class="col-12 mx-auto text-center ">
-                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                        <!-- ===== ===== PALABRA ===== ===== -->
-                        <article id="palabra" class="row ">
-                            <span class="col-1 ml-auto">¿</span>
-                            <span class="col-1 mr-auto">?</span>
-                        </article>
-                        <!-- ===== ===== PALABRA ===== ===== -->
-                        <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                    </section>
-                </article>
-                <article class="row">
-                    <section class="col-5 ml-auto mr-auto mt-auto mb-auto ">
+                <article id="seccion" class="row">
+                    <section class="col-6 ml-auto mr-auto mt-3 mb-auto ">
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== COMPROBAR LETRA ===== ===== -->
                         <article id="letra" class="row">
                             <label class="col-12 mx-auto text-center ">Introduce la letra a comprobar</label>
-                            <section class="col-12"></section>
-                            <label class="col-auto ml-auto text-right">¿</label>
-                            <input class="col-2 text-center letra" type="text" name="letra" id="letras" min="1" maxlength="1"/>
-                            <label class="col-auto mr-auto text-left">?</label>
+                            <input class="col-2 mx-auto text-center letra" type="text" name="letra" id="letras" min="1" maxlength="1"/>
                         </article>
                         <!-- ===== ===== COMPROBAR LETRA ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                     </section>
-                    <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                    <!-- ===== ===== BOTON ===== ===== -->
-                    <button id="comprobar-palabra" class="col-2 text-center mx-auto ">Comprobar palabra</button>
-                    <!-- ===== ===== BOTON ===== ===== -->
-                    <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                    <section class="col-5 ml-auto mr-auto mt-auto mb-auto ">
+                    <section class="col-10 ml-auto mr-auto mt-2 mb-1 ">
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== COMPROBAR PALABRA ===== ===== -->
                         <article id="nombre-palabra" class="row">
                             <label class="col-12 mx-auto text-center ">Introduce la palabra para comprobarla</label>
-                            <section class="col-12"></section>
-                            <label class="col-auto ml-auto text-right">¿</label>
-                            <input class="col-5 text-center" type="text" name="letra" id="letras-palabra" />
-                            <label class="col-auto mr-auto text-left">?</label>
+                            <div class=" col-12 text-center input-group">
+                                <input class="ml-auto text-center" type="text" name="letra" id="letras-palabra" />
+                                <div class="input-group-append mr-auto">
+                                    <button id="comprobar-palabra" class="p-0"><img class="pt-0 pl-1 pb-0 pr-1" src="../svg/arrow-right.svg" alt="comprobar"></button>
+                                </div>
+                            </div>
                         </article>
                         <!-- ===== ===== COMPROBAR PALABRA ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -521,7 +504,7 @@
                 <article class="row ">
                     <!--===== ===== ===== ===== ===== ===== =====--> 
                     <!--===== ===== COPYGATE ===== =====--> 
-                    <section class="footer col-6 pt-2 mx-auto text-center small ">
+                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small ">
                         <span>Copygate &Psi; 2018 www.didactical-games.com</span>
                     </section>
                     <!--===== ===== COPYGATE ===== =====--> 

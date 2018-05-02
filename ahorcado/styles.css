@@ -1,6 +1,11 @@
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS TAG ===== =====*/ 
-
+body{
+    background-image: url(../imagenes/FONDO/cat.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
 /*===== ===== CSS TAG ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -36,22 +41,23 @@
 #navbars{
     background-color: rgba(0, 96, 161, 1) ;
 }
-#menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,
-#nombre-palabra,#comprobar-palabra,#niveles,#puntos{
+#menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,#comprobar-palabra,#niveles,#puntos{
     font-variant: all-petite-caps;
 }
 #altura{
     height: 125px;
 }
 #tablero{
-    height: 615px;
+    height: 500px;
     background-size: cover;
     background-position: center;
 }
 #user,#nombre-juego{
 }
 #nivel{
-    font-size: 45px;
+    font-size: 55px;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 #tablero section{
     height: auto;
@@ -74,8 +80,10 @@
     background-repeat: no-repeat;
     height: 300px !important;
 }
-#letra label,#nombre-palabra label{
+#letra ,#nombre-palabra {
     font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
 }
 #reglas{
 }
@@ -84,9 +92,6 @@
 }
 #regla-puntos{
     margin-bottom: 50px;
-}
-#left #start{
-    margin: 40% 0 0 0;
 }
 #comprobar-palabra{
     font-size: 25px;
@@ -100,13 +105,15 @@
     font-weight: 700;
     margin: 1rem 1rem 1rem 1rem;
     cursor: pointer;
-    color:rgba(239,170,6,0.65);
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 #Nivel{
     z-index: 0;
     font-size: 5rem;
     font-weight: 700;
-    color:#b1dcff;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 .modal-nivel.puntos-totales,.modal-nivel.puntosTotales{
     z-index: 0;
@@ -123,6 +130,15 @@
     width: 45px;
     height: 45px;
 }
+#comprobar-palabra img{
+    width: 32px;
+}
+#seccion{
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -137,10 +153,18 @@
     color: rgba(255, 255, 255, 1) !important;
 }
 .start{
+    position: absolute;
+    bottom: 0%;
+    left: 42%;
+    z-index: 500;
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 75px;
     font-weight: 900;
-    padding: 10px;
+    padding: 0px;
+    opacity: 0.5;
+}
+.start:hover{
+    opacity: 0.85;
 }
 .star{
     height: 35px;
@@ -150,8 +174,18 @@
     height: 150px;
 }
 .footer{
-    margin-top: 4%;
-    font-size: 15px;
+    font-size: 13px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+.descripcion{
+    font-style: oblique;
+    color: #fff;
+    font-size: 20px !important;
+    padding: 2px 4px 2px 2px;
+    border-radius: 5px;
 }
 .rotacion {
     transform: rotate(90deg);
@@ -192,12 +226,12 @@
 }
 .transparentTablero{
     background-color: transparent;
-    height: 100px;
+    height: 83.3333px;
 }
 .green{
     background-color: green;
     border:1px #ffffff solid;
-    height: 102px;
+    height: 83.3333px;
 }
 .tablero{
     border:hidden;
@@ -222,10 +256,6 @@
 .glyphicon-user{
     height: 25px !important;
     width: 25px !important;
-}
-.descripcion{
-    font-style: oblique;
-    font-size: 18px;
 }
 .reglas{
     text-align: justify;
@@ -297,7 +327,7 @@ thead th{
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 .table th, .table td {
-     padding: 0rem; 
+    padding: 0rem; 
 }
 .btn{
     border-radius: 50%;

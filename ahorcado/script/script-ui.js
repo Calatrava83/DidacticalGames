@@ -106,7 +106,7 @@ $(document).ready(function () {
             $(star).attr("src", starOFF_ON[1]);
         }
         var panelPuntos = "#nivel" + nivel + " .modal-body .row";
-        $(panelPuntos).append('<span class="col-12 modal-nivel puntosTotales mx-auto">' + puntosTotales[nivel] + '</span>');
+        $(panelPuntos).append('<span class="col-12 modal-nivel puntosTotales mx-auto">' + puntosTotales[nivel] + ' P</span>');
         var face = "#nivel" + nivel + " .face";
         switch (ACIERTO) {
             case 0:
@@ -149,10 +149,11 @@ $(document).ready(function () {
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
-        $(".descripcion").text('"'+arrayDescripcion[PALABRA]+'"');
+        $(".descripcion").text('"' + arrayDescripcion[PALABRA] + '"');
+        $(".descripcion").attr("style","background-color: rgba(0, 96, 161, 0.55)");
         tempoSTART = setInterval(tempo, segundo);
         destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
-        
+
     }
     function colocarImagenAhorcado() {
         imagen = "url(./imagenes/ahorcado.gif)";
@@ -252,11 +253,15 @@ $(document).ready(function () {
     function pintarPalabra() {
         arrayPALABRA = PALABRA.split("");
         var palabra = "";
-        palabra = "<span class='col-1 ml-auto'>¿</span>";
         for (var i = 0; i < PALABRA.length; i++) {
-            palabra += "<section class='col-auto oculta ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+            if (i === 0) {
+                palabra += "<section class='col-auto oculta p-1 ml-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+            }else if((i+1)===PALABRA.length){
+                palabra += "<section class='col-auto oculta p-1 ml-1 mr-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+            }else{
+                palabra += "<section class='col-auto oculta p-1 ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+            }
         }
-        palabra += "<span class='col-1 mr-auto'>?</span>";
         $("#palabra").html(palabra);
         $("#palabra section.oculta span").hide();
     }
@@ -395,13 +400,17 @@ $(document).ready(function () {
     /**************************************************************************/
     /**************************************************************************/
     function animacion() {
+        $("#seccion").attr("style","display:flex");
         $("#comprobar-palabra,#letras,#letras-palabra").button({
             disabled: false
         });
         $(".start").button({
             disabled: true
         });
+        $(".start").hide();
         $("#letras").select();
+        $("#nivel").text("Nivel "+nivel);
+        
         puntos = 0;
         colocarImagenTablero();
         colocarImagenAhorcado();
