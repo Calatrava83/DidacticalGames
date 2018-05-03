@@ -66,7 +66,6 @@ $(document).ready(function () {
         "tragedia": "Situación o suceso lamentable que afecta a personas o sociedades humanas.", "tristeza": "Afligido, apesadumbrado."};
     var PALABRA = "";
     var letra = "";
-    var preguntas = {1: "1º palabra", 2: "2º Palabra", 3: "3º Palabra"};
     var arrayPALABRA = "";
     var CONSTIMAGEN = 4;
     var imagen = "";
@@ -91,7 +90,7 @@ $(document).ready(function () {
     var longitud_9 = [[6], [3], [0], [1], [2], [4], [5], [7], [8]];
     var inicio = 0;
     var segundo = 1000;
-    var tiempoOcultacion = {1: 2000, 2: 4000, 3: 6000, 4: 8000, 5: 10000, 6: 12000, 7: 14000, 8: 16000};
+    var tiempoOcultacion = {1: 1000, 2: 1500, 3: 2000, 4: 2500, 5: 3000, 6: 3500, 7: 4000, 8: 4500};
     var TIEMPORESTANTE;
     var tempoSTART;
     var tempoSTOP;
@@ -149,7 +148,7 @@ $(document).ready(function () {
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
-        $(".descripcion").text('"' + arrayDescripcion[PALABRA] + '"');
+        $(".descripcion span").text('"' + arrayDescripcion[PALABRA] + '"');
         $(".descripcion").attr("style","background-color: rgba(0, 96, 161, 0.55)");
         tempoSTART = setInterval(tempo, segundo);
         destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
@@ -255,11 +254,11 @@ $(document).ready(function () {
         var palabra = "";
         for (var i = 0; i < PALABRA.length; i++) {
             if (i === 0) {
-                palabra += "<section class='col-auto oculta p-1 ml-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+                palabra += "<section class='col-auto oculta p-0 ml-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             }else if((i+1)===PALABRA.length){
-                palabra += "<section class='col-auto oculta p-1 ml-1 mr-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+                palabra += "<section class='col-auto oculta p-0 ml-1 mr-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             }else{
-                palabra += "<section class='col-auto oculta p-1 ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+                palabra += "<section class='col-auto oculta p-0 ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             }
         }
         $("#palabra").html(palabra);

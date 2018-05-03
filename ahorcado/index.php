@@ -415,7 +415,7 @@
                         <!-- ===== ===== HEADER ===== ===== -->
                         <header class="row">
                             <!-- ===== ===== NIVEL ===== ===== -->
-                            <section id="nivel" class="col-12 mx-auto text-right pr-4 font-weight-bold"></section>
+                            <section id="nivel" class="col-12 mx-auto text-right pr-4 pb-xl-2 font-weight-bold"></section>
                             <!-- ===== ===== NIVEL ===== ===== -->
                         </header>
                         <!-- ===== ===== HEADER ===== ===== -->
@@ -423,7 +423,7 @@
                         <article class="row ">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== PISTA ===== ===== -->
-                            <section id="" class="col-9 mx-auto mb-3 text-center"><span class="descripcion"></span></section>
+                            <section id="" class="descripcion col-xl-8 col-lg-7 mx-auto mb-3 text-center"><span class=""></span></section>
                             <!-- ===== ===== PISTA ===== ===== -->
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         </article>
@@ -487,8 +487,9 @@
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== COMPROBAR PALABRA ===== ===== -->
                         <article id="nombre-palabra" class="row">
-                            <label class="col-12 mx-auto text-center ">Introduce la palabra para comprobarla</label>
-                            <div class=" col-12 text-center input-group">
+                            <label class="col-12 col-lg-6 mx-auto text-center ">Introduce la palabra para comprobarla</label>
+                            <div class="col-12"></div>
+                            <div class="comprueba col-lg-12 col-12 text-center input-group">
                                 <input class="ml-auto text-center" type="text" name="letra" id="letras-palabra" />
                                 <div class="input-group-append mr-auto">
                                     <button id="comprobar-palabra" class="p-0"><img class="pt-0 pl-1 pb-0 pr-1" src="../svg/arrow-right.svg" alt="comprobar"></button>

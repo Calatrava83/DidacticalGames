@@ -135,9 +135,9 @@ body{
 }
 #seccion{
     display: none;
-    position: absolute;
+    position: relative;
     bottom: 10%;
-    left: 5%;
+    left: 0;
 }
 /*===== ===== CSS ID ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
@@ -183,9 +183,12 @@ body{
 .descripcion{
     font-style: oblique;
     color: #fff;
-    font-size: 20px !important;
+    font-size: 30px !important;
     padding: 2px 4px 2px 2px;
     border-radius: 5px;
+    position: relative;
+    top: -80px;
+    left: 0;
 }
 .rotacion {
     transform: rotate(90deg);
@@ -229,8 +232,9 @@ body{
     height: 83.3333px;
 }
 .green{
-    background-color: green;
-    border:1px #ffffff solid;
+    background: rgba(20,72,28,0.85);
+    background: repeating-linear-gradient(45deg,rgba(20,72,28,0.85) ,rgba(255,255,255,0.75) 20%);
+    border:1px rgba(255,255,255,0.85) solid;
     height: 83.3333px;
 }
 .tablero{
@@ -241,8 +245,9 @@ body{
 }
 .ahorcado{
     text-align: center;
-    background-color: red !important;
-    border:2px #fff solid;
+    background: red;
+    background: repeating-linear-gradient(45deg,red ,white 20%);
+    border:3.5px rgba(255,255,255,0.85) solid;
     height: 100px;
 }
 .tablero-ahorcado{
@@ -336,3 +341,94 @@ thead th{
 }
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
+@media (max-width:576px){
+    
+}
+@media (min-width:576px) and (max-width:767.98px){
+    
+}
+@media (min-width:768px) and (max-width:991.98px){
+    
+}
+@media (min-width:992px) and (max-width:1199.98px){
+    
+}
+@media (min-width:1200px) and (max-width:1365.98px){
+    #tablero {
+        position: relative;
+        top: -60px;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        left: -30px;
+    }
+
+    .descripcion{
+        font-style: oblique;
+        color: #fff;
+        font-size: 20px !important;
+        padding: 2px 4px 2px 2px;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        left:15%;
+    }
+    #tablero-ahorcado {
+        position: relative;
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        top: -85px;
+        right: -50px;
+    }
+    #letra, #nombre-palabra {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        bottom: -50px;
+        right: 310px;
+    }
+    #palabra {
+        font-size: 25px;
+        width: 600px;
+        height: 50px;
+        position: relative;
+        left: 20px;
+        bottom: 30px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+    }
+    .start {
+        position: absolute;
+        bottom: 30%;
+        left: 42%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 75px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.5;
+    }
+    .comprueba{
+        position: relative;
+        right: 0px;
+    }
+    .green{
+        background: rgba(20,72,28,0.85);
+        background: repeating-linear-gradient(45deg,rgba(20,72,28,0.85) ,rgba(255,255,255,0.75) 20%);
+        border:1px rgba(255,255,255,0.85) solid;
+        height: 66.6666px;
+    }
+    .transparentTablero {
+        background-color: transparent;
+        height: 66.6666px;
+    }
+}
+@media (min-width:1900px){
+    #seccion {
+        position: relative;
+        left: 0;
+    }
+}
