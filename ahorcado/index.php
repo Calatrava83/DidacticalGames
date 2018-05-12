@@ -105,7 +105,7 @@
                         <article class="row ">
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                             <!-- ===== ===== PISTA ===== ===== -->
-                            <section id="" class="descripcion col-xl-8 col-lg-7 mx-auto mb-3 text-center"><span class=""></span></section>
+                            <section id="" class="descripcion col-xl-8 col-lg-7 col-md-6 mx-auto pt-3 pl-3 pr-3 text-center"><span class=""></span></section>
                             <!-- ===== ===== PISTA ===== ===== -->
                             <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         </article>
@@ -114,12 +114,12 @@
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <!-- ===== ===== START ===== ===== -->
                         <article class="row ">
-                            <button id="start"  class="col-2 mx-auto pb-3 pl-3 pr-3 start" name="start">Start</button>
+                            <button id="start"  class="col-lg-2 col-4 mx-auto pb-3 pl-3 pr-3 start" name="start">Start</button>
                         </article>
                         <!-- ===== ===== START ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
                         <article class="row">
-                            <section class="col-5 ml-auto">
+                            <section class="col-5 ml-auto d-none d-xl-block">
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== TABLERO ===== ===== -->
                                 <article id="tablero" class="row"></article>
@@ -132,7 +132,7 @@
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== TABLERO AHORCADO ===== ===== -->
                                 <article class="row">
-                                    <section class="col-6 ml-auto mr-auto mt-auto mb-5 ">
+                                    <section class="col-xl-6 col-12 ml-auto mr-auto mt-auto mb-5 ">
                                         <article id="tablero-ahorcado" class="row">
                                         </article>
                                     </section>

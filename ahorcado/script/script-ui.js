@@ -177,7 +177,7 @@ $(document).ready(function () {
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
         $(".descripcion span").text('"' + arrayDescripcion[PALABRA] + '"');
-        $(".descripcion").attr("style", "background-color: rgba(0, 96, 161, 0.55)");
+        $(".descripcion").attr("style", "background-color: rgba(0, 96, 161, 0.55);height:140px;");
         tempoSTART = setInterval(tempo, segundo);
         destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
 
@@ -279,9 +279,9 @@ $(document).ready(function () {
         var palabra = "";
         for (var i = 0; i < PALABRA.length; i++) {
             if (i === 0) {
-                palabra += "<section class='col-auto oculta p-0 ml-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+                palabra += "<section class='col-auto oculta p-0 ml-md-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             } else if ((i + 1) === PALABRA.length) {
-                palabra += "<section class='col-auto oculta p-0 ml-1 mr-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
+                palabra += "<section class='col-auto oculta p-0 ml-1 mr-md-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             } else {
                 palabra += "<section class='col-auto oculta p-0 ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             }
@@ -447,7 +447,11 @@ $(document).ready(function () {
     /**************************************************************************/
     /**************************************************************************/
     $(function () {
+        if(screen.height>719.98){
         var height = "max-height:" + (screen.height - 100) + "px ; max-width:" + (screen.width) + "px ;overflow: hidden;";
+    }else{
+        var height = "max-height:" + (screen.height + 80) + "px ; overflow: hidden;";
+    }
         $("#body").attr("style", height);
     });
     /**************************************************************************/

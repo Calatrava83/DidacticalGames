@@ -8,14 +8,20 @@ function imprimirModalNiveles() {
                             <div class="modal-header"><h4 id="Nivel" class="modal-title mx-auto">Nivel ' . $i . '</h4></div>
                             <div class="modal-body">
                                 <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                <div class="row">
+                                    <div class="col-lg-12 col-6">
                                     <div class="row  mx-auto face"><span class="text-center fas fa-meh fa-9x"></span></div>
+                                    </div>
+                                    <div class="col-lg-12 col-6">
                                     <div class="row pt-3">
-                                        <span id="star1" class="star col-2 ml-auto material-icons icon">stars</span>
-                                        <span id="star2" class="star col-2 material-icons icon">stars</span>
-                                        <span id="star3" class="star col-2 mr-auto material-icons icon">stars</span>
+                                        <span id="star1" class="star col-2 m-lg-0 ml-lg-auto m-1 ml-4 material-icons icon">stars</span>
+                                        <span id="star2" class="star col-2 m-lg-0 m-1 material-icons icon">stars</span>
+                                        <span id="star3" class="star col-2 m-lg-0 mr-lg-auto m-1 material-icons icon">stars</span>
+                                    </div>
+                                    <div class="row puntaje"></div>
+                                    </div>
                                     </div>
                                 </section>
-                                <div class="row puntaje"></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><span class="material-icons icon">reply</span></button>

@@ -144,7 +144,7 @@ body{
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS CLASS ===== =====*/ 
 .icon{
-    font-size: 48px;
+    font-size: 52px;
 }
 .gold{
     color:goldenrod;
@@ -350,16 +350,114 @@ thead th{
 /*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
 /*===== ===== ===== ===== ===== ===== =====*/ 
 @media (max-width:576px){
-    
+
 }
-@media (min-width:576px) and (max-width:767.98px){
-    
+@media (min-width:576px) and (max-width:991.98px){
+    .start {
+        position: absolute;
+        bottom: 50%;
+        left: 33%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 75px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.8;
+    }
+    .descripcion {
+        font-style: oblique;
+        color: #fff;
+        font-size: 20px !important;
+        padding: 2px 4px 2px 2px;
+        border-radius: 5px;
+        position: relative;
+        top: -80px;
+        left: 0;
+        height: 120px !important;
+    }
+    #tablero-ahorcado {
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        position: relative;
+        bottom: 120px;
+        left: 35px;
+    }
+    #palabra {
+        font-size: 25px;
+        height: 50px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+        position: relative;
+        bottom: 520px;
+        left: 450px;
+        width: 500px;
+    }
+    .oculta {
+        background-color: #0060a1;
+        color: #fff;
+        width: 40px;
+    }
+    #seccion {
+        display: none;
+        position: relative;
+        bottom: 500px;
+        left: 230px;
+    }
+
+    #Nivel {
+        z-index: 0;
+        font-size: 4rem;
+    }
+}
+/*@media (min-width:576px) and (max-width:767.98px){
+
 }
 @media (min-width:768px) and (max-width:991.98px){
-    
-}
+
+}*/
 @media (min-width:992px) and (max-width:1199.98px){
-    
+    .start {
+        position: absolute;
+        bottom: 30%;
+        left: 42%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.5;
+    }
+    .descripcion {
+        font-style: oblique;
+        color: #fff;
+        font-size: 25px !important;
+    }
+    #tablero-ahorcado {
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        position: relative;
+        left: 30px;
+        bottom: 50px;
+    }
+    #palabra {
+        font-size: 25px;
+        height: 50px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+        position: relative;
+        bottom: 460px;
+        left: 480px;
+        width: 500px;
+    }
+    #seccion {
+        position: relative;
+        bottom: 445px;
+        left: 240px;
+    }
 }
 @media (min-width:1200px) and (max-width:1365.98px){
     #tablero {
