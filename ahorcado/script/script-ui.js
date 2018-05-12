@@ -2,14 +2,14 @@ $(document).ready(function () {
 
 //    $("#estadistica").modal("show"); /*asi se ejecuta el modal de forma automatica*/
 
-    $(".nivel1,.nivel2,.nivel3,.nivel4.nivel5,.nivel6,.nivel7,.nivel8,.nivel9,.nivel10").click(function () {
-        var panel = '#' + $(this).attr("class");
+    $("a[name='nivel1'],a[name='nivel2'],a[name='nivel3'],a[name='nivel4'],a[name='nivel5'],a[name='nivel6'],a[name='nivel7'],a[name='nivel8']").click(function () {
+        var panel = '#' + $(this).attr("name");
         setTimeout(function () {
             $("#niveles").modal("hide");
-        }, 500);
+        }, 100);
         setTimeout(function () {
             $(panel).modal("show");
-        }, 500);
+        }, 100);
 
     });
 
@@ -96,16 +96,23 @@ $(document).ready(function () {
     var tempoSTOP;
     var destaparImagen;
     var flag;
+    var prev = "#nivel" + nivel + " #prev";
+    var next = "#nivel" + nivel + " #next";
+    var reload = "#nivel" + nivel + " #reload";
     /**************************************************************************/
 
     function rellenarPanel() {
         var reloader;
+        for (var i = 0; i < 3; i++) {
+            var star = "#nivel" + nivel + " #star" + (i + 1);
+            $(star).removeClass("gold");
+        }
         for (var i = 0; i < ACIERTO; i++) {
             var star = "#nivel" + nivel + " #star" + (i + 1);
-            $(star).attr("src", starOFF_ON[1]);
+            $(star).addClass("gold");
         }
-        var panelPuntos = "#nivel" + nivel + " .modal-body .row";
-        $(panelPuntos).append('<span class="col-12 modal-nivel puntosTotales mx-auto">' + puntosTotales[nivel] + ' P</span>');
+        var panelPuntos = "#nivel" + nivel + " .modal-body .puntaje";
+        $(panelPuntos).html('<span class="col-12 pt-3 text-center modal-nivel puntosTotales mx-auto">' + puntosTotales[nivel] + ' P</span>');
         var face = "#nivel" + nivel + " .face";
         switch (ACIERTO) {
             case 0:
@@ -113,7 +120,7 @@ $(document).ready(function () {
                 if (nivel > 1) {
                     reloader += ",#nivel" + nivel + " #prev";
                 }
-                $(face).attr("src", imgAcierto[0]);
+                $(face).html('<span class="text-center fas fa-frown fa-9x"></span>');
                 $(reloader).button({
                     disabled: false
                 });
@@ -121,14 +128,14 @@ $(document).ready(function () {
             case 1:
             case 2:
                 reloader = "#nivel" + nivel + " #reload,#nivel" + nivel + " #prev,#nivel" + nivel + " #next";
-                $(face).attr("src", imgAcierto[2]);
+                $(face).html('<span class="text-center fas fa-meh fa-9x"></span>');
                 $(reloader).button({
                     disabled: false
                 });
                 break;
             case 3:
                 reloader = "#nivel" + nivel + " #reload,#nivel" + nivel + " #prev,#nivel" + nivel + " #next";
-                $(face).attr("src", imgAcierto[1]);
+                $(face).html('<span class="text-center fas fa-smile fa-9x"></span>');
                 $(reloader).button({
                     disabled: false
                 });
@@ -137,7 +144,28 @@ $(document).ready(function () {
         ACIERTO = 0;
         setTimeout(function () {
             $(paneles[nivel]).modal("show");
-        }, 500);
+            prev = "#nivel" + nivel + " #prev";
+            next = "#nivel" + nivel + " #next";
+            reload = "#nivel" + nivel + " #reload";
+            nivel++;
+            $(".letra").val("");
+            $("#letras-palabra").val("");
+            $(prev).click(function () {
+                $(paneles[nivel]).modal("hide");
+                if (nivel > 1)
+                    nivel -= 2;
+                level();
+            });
+            $(reload).click(function () {
+                $(paneles[nivel]).modal("hide");
+                nivel--;
+                level();
+            });
+            $(next).click(function () {
+                $(paneles[nivel]).modal("hide");
+                level();
+            });
+        }, 100);
     }
     /**************************************************************************/
     /*****************************COLOCAR IMAGENES*****************************/
@@ -149,7 +177,7 @@ $(document).ready(function () {
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
         $(".descripcion span").text('"' + arrayDescripcion[PALABRA] + '"');
-        $(".descripcion").attr("style","background-color: rgba(0, 96, 161, 0.55)");
+        $(".descripcion").attr("style", "background-color: rgba(0, 96, 161, 0.55)");
         tempoSTART = setInterval(tempo, segundo);
         destaparImagen = setInterval(ocultacion, tiempoOcultacion[nivel]);
 
@@ -191,7 +219,6 @@ $(document).ready(function () {
         puntosTotales[0] = 0;
         for (var i = nivel; i < nivel + 1; i++) {
             puntosTotales[0] += puntosTotales[nivel];
-            $(".puntos-totales").html(puntosTotales[0]);
         }
     }
     function pararTiempo() {
@@ -204,7 +231,6 @@ $(document).ready(function () {
         puntosTotales[nivel] += puntos;
         puntos = 0;
         sumaGlobalPuntos();
-        $(".puntos").html(puntos);
         COUNT++;
         inicio = 0;
         if (COUNT < 3) {
@@ -219,7 +245,6 @@ $(document).ready(function () {
         puntosTotales[nivel] += puntos;
         puntos = 0;
         sumaGlobalPuntos();
-        $(".puntos").html(puntos);
         COUNT++;
         inicio = 0;
         if (COUNT < 3) {
@@ -255,9 +280,9 @@ $(document).ready(function () {
         for (var i = 0; i < PALABRA.length; i++) {
             if (i === 0) {
                 palabra += "<section class='col-auto oculta p-0 ml-auto mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
-            }else if((i+1)===PALABRA.length){
+            } else if ((i + 1) === PALABRA.length) {
                 palabra += "<section class='col-auto oculta p-0 ml-1 mr-auto'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
-            }else{
+            } else {
                 palabra += "<section class='col-auto oculta p-0 ml-1 mr-1'><span class=''>" + PALABRA[i].toUpperCase() + "</span></section>";
             }
         }
@@ -281,7 +306,6 @@ $(document).ready(function () {
         if (!flag)
             destaparAhorcado();
         $(".letra").val("");
-        $(".puntos").html(puntos);
     }
 
     function comprobarPalabra() {
@@ -295,7 +319,6 @@ $(document).ready(function () {
             destaparAhorcado();
         }
         $("#letras-palabra").val("");
-        $(".puntos").html(puntos);
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -394,12 +417,11 @@ $(document).ready(function () {
     /****************************CONTROL DE TIEMPO*****************************/
     function tempo() {
         TIEMPORESTANTE++;
-        $(".tiempo").html(TIEMPORESTANTE);
     }
     /**************************************************************************/
     /**************************************************************************/
     function animacion() {
-        $("#seccion").attr("style","display:flex");
+        $("#seccion").attr("style", "display:flex");
         $("#comprobar-palabra,#letras,#letras-palabra").button({
             disabled: false
         });
@@ -408,9 +430,10 @@ $(document).ready(function () {
         });
         $(".start").hide();
         $("#letras").select();
-        $("#nivel").text("Nivel "+nivel);
-        
+        $("#nivel").text("Nivel " + nivel);
+
         puntos = 0;
+
         colocarImagenTablero();
         colocarImagenAhorcado();
         pintarTablero();
@@ -418,9 +441,6 @@ $(document).ready(function () {
     }
     /**************************************************************************/
     /****************************CREACION DE MODAL*****************************/
-    function modalNivel(nivel) {
-        $(".niveles").html('<a id="modalNivel" data-toggle="modal" data-target="#nivel' + (nivel - 1) + '">Nivel ' + (nivel - 1) + '</a>');
-    }
     /**************************************************************************/
     /**************************************************************************/
 
@@ -446,24 +466,5 @@ $(document).ready(function () {
         }
     });
 
-    var prev = "#nivel" + nivel + " #prev";
-    var next = "#nivel" + nivel + " #next";
-    ;
-    var reload = "#nivel" + nivel + " #reload";
-    ;
-    $(prev).click(function () {
-        $(paneles[nivel]).modal("hide");
-        if (nivel > 1)
-            nivel--;
-        level();
-    });
-    $(reload).click(function () {
-        $(paneles[nivel]).modal("hide");
-        level();
-    });
-    $(next).click(function () {
-        $(paneles[nivel]).modal("hide");
-        nivel++;
-        level();
-    });
+
 });
