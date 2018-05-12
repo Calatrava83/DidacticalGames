@@ -352,7 +352,9 @@ $(document).ready(function () {
     }
     function destapando() {
         inputsOFF();
-        puntos += (celdasTablero - descubiertas.length) * 10;
+        if (screen.width > 720) {
+            puntos += (celdasTablero - descubiertas.length) * 10;
+        }
         puntosTotales[nivel] += puntos;
         pararTiempo();
         for (var i = 0; i < $("#tablero").children().length; i++) {
@@ -447,11 +449,11 @@ $(document).ready(function () {
     /**************************************************************************/
     /**************************************************************************/
     $(function () {
-        if(screen.height>719.98){
-        var height = "max-height:" + (screen.height - 100) + "px ; max-width:" + (screen.width) + "px ;overflow: hidden;";
-    }else{
-        var height = "max-height:" + (screen.height + 80) + "px ; overflow: hidden;";
-    }
+        if (screen.height > 719.98) {
+            var height = "max-height:" + (screen.height - 100) + "px ; max-width:" + (screen.width) + "px ;overflow: hidden;";
+        } else {
+            var height = "max-height:" + (screen.height + 80) + "px ; overflow: hidden;";
+        }
         $("#body").attr("style", height);
     });
     /**************************************************************************/

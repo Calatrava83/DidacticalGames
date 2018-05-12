@@ -244,8 +244,7 @@ body{
     height: 83.3333px;
 }
 .green{
-    background: rgba(20,72,28,0.85);
-    background: repeating-linear-gradient(45deg,rgba(20,72,28,0.85) ,rgba(255,255,255,0.75) 20%);
+    background: repeating-linear-gradient(45deg,rgba(20,72,28,1) ,rgba(255,255,255,0.95) 20%);
     border:1px rgba(255,255,255,0.85) solid;
     height: 83.3333px;
 }
