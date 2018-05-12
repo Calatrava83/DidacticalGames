@@ -320,9 +320,8 @@ thead th{
 .visible{
     background-color: #0069d9;
     border: 3px goldenrod solid;
-    color: #fff;
     width: 50px;
-    color: goldenrod;
+    color: goldenrod !important;
     font-weight: 800;
 }
 /*===== ===== CSS CLASS ===== =====*/ 
