@@ -80,8 +80,6 @@ $(document).ready(function () {
     var COUNT = 0;
     var ACIERTO = 0;
     var ERROR;
-    var starOFF_ON = ["imagenes/star-off.png", "imagenes/star-on.png"];
-    var imgAcierto = ["imagenes/mal.png", "imagenes/bien.png", "imagenes/regular.png"];
     var longitud_3 = [[6, 3], [0, 1, 2], [4, 5, 7, 8]];
     var longitud_5 = [[6], [3], [0, 1, 2], [4, 5], [7, 8]];
     var longitud_6 = [[6], [3], [0], [1, 2], [4, 5], [7, 8]];
