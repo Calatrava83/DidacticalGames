@@ -5,23 +5,21 @@
         <title>Ahorcado</title>
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== CSS ===== ===== -->
-        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.css"/>
-        <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.theme.css"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="styles.css"/>
         <link rel="icon" href=""/>
         <!-- ===== ===== CSS ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== SCRIPT ===== ===== -->
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js"></script>
-        <script type="text/javascript" src="../jquery-ui/jquery-ui.js"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+        <script type="text/javascript" defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
         <script type="text/javascript" src="script/script-ui.js"></script>
+        
         <!-- ===== ===== SCRIPT ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <style>
@@ -79,8 +77,7 @@
                 <!-- ===== ===== MENU ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 <!-- ===== ===== MODAL-NIVELES ===== ===== -->
-                                    <?php imprimirNiveles(); ?>
-                                
+                <?php imprimirNiveles(); ?>
                 <!-- ===== ===== MODAL-NIVELES ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                 <!-- ===== ===== MODAL-NIVELES ===== ===== -->
@@ -118,7 +115,7 @@
                         </article>
                         <!-- ===== ===== START ===== ===== -->
                         <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                        <article class="row">
+                        <article class="row posicion">
                             <section class="col-5 ml-auto d-none d-xl-block">
                                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
                                 <!-- ===== ===== TABLERO ===== ===== -->

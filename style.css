@@ -1,0 +1,225 @@
+
+#menu {
+    width: 200px;
+    z-index: 10000;
+    padding: 0px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+#menu{
+    font-variant: all-petite-caps;
+}
+
+#menu #navbars{
+    width: 200px !important;
+}
+#boton:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+#boton span{
+    background-color: rgba(0, 96, 161, 1);
+}
+#boton{
+    padding: 0px 0px 0px 0px !important;
+    width: 30px;
+    height:30px;
+    font-size: 20px !important;
+    color: rgba(0, 0, 0,1) ;
+}
+#navbars{
+    background-color: rgba(0, 96, 161, 1) ;
+}
+.menu{
+    z-index: 10006;
+    width: 115px;
+    height:45px;
+    font-size: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 96, 161, 1);
+    color: rgba(255, 255, 255, 1) !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.rotacion {
+    transform: rotate(90deg);
+}
+
+.hover div {
+    width: 200px;
+}
+
+.hover a {
+    padding: 5px 0px 2.5px 15px !important;
+    text-transform: uppercase;
+}
+
+.hover {
+    width: 0px;
+    transition: width 1.5s;
+}
+
+.hover:hover {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.hover .user{
+    width: 200px;
+    border-bottom: 1px #ffffff solid;
+}
+
+body{
+    background-image: url(./imagenes/FONDO/amistad.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+/*=====================================================*/
+
+/*TARJETAS*/
+
+/*=====================================================*/
+
+div[class="card-img-top"] {
+	width: 100%;
+	height: 200px;
+}
+
+.card-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 35px;
+	font-weight: 600;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.front h6 {
+	color: #133155;
+	font-weight: 600;
+}
+
+.back h5 {
+	color: #f6ce47;
+	font-size: 18px;
+}
+
+div[class="card-body d-none d-md-flex"] .material-icons {
+	display: flex;
+	align-items: center;
+}
+
+.back .material-icons {
+	font-size: 24px;
+}
+
+.back span {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.back a {
+	font-weight: bold !important;
+	font-size: 20px;
+	color: #133155
+}
+
+.tarjeta .front,
+.tarjeta .back {
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+}
+
+.btn-primary {
+	background-color: #fff;
+	border-color: #fff;
+	color: #133155;
+	font-size: 22px;
+	font-weight: 500 !important;
+}
+
+.btn-primary:hover {
+	background-color: #f6ce47 !important;
+	border-color: #f6ce47 !important;
+	color: #133155;
+}
+
+/*=====================================================*/
+
+
+
+
+/****************************************************/
+
+/*EFECTO TARJETAS*/
+
+/****************************************************/
+
+#card {
+
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    perspective-origin: center;
+}
+
+.tarjeta {
+    height: 280px;
+    background: #fff;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+    background-color: #f8f9fa;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    width: 100.3%;
+    padding: 15px;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    text-align: center;
+    color: #fff;
+    font-family: "open sans";
+    background: #133155;
+}
+
+/*=====================================================*/

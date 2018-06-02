@@ -121,3 +121,39 @@ function imprimirReglasAhorcado() {
                     </div>
                 </article>';
 }
+function imprimirReglasQuiz() {
+    echo '<article class="modal fade row" id="reglas" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="ModalTitle">Reglas de juego</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <section class="reglas modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
+                                    <h5 class="modal-title">Reglas:</h5>
+                                    <div class="scroll">
+                                        <ol class="pl-4">
+                                            <li>Se determina una palabra que se va a adivinar como meta del juego.</li>
+                                            <li>El jugador va nombramdo posibles letras que puedan conformar la palabra.</li>
+                                            <li>El jugador tambien podra intentar adivinar la palabra</li>
+                                            <li>Si el jugador acierta una letra, &eacute;sta se dibuja sobre su espacio correspondiente.</li>
+                                            <li>Si la letra aparece m&aacute;s de una vez se escribe tantas veces como aparezca.</li>
+                                            <li>Se mostrara una pista de texto, siendo esta la descripcion de la palabra.</li>
+                                            <li>Se ira desbloqueando una imagen como pista visaul de la palabra a descubrir.</li>
+                                        </ol>
+                                    </div>
+                                </section>
+                                <section class="regla-puntos mx-auto col-12  pt-3">
+                                    
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </article>';
+}

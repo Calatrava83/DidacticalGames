@@ -56,6 +56,8 @@ $(document).ready(function () {
 
     /**************************************************************************/
     /******************************VARIABLES***********************************/
+    /**************************************************************************/
+    /**************variables que se rellenan con la base de datos**************/
     var arrayPalabra = ["amistad", "ayuda", "bullying", "felicidad", "ira", "pareja", "tragedia", "tristeza"];
     var arrayDescripcion = {"amistad": "Afecto personal, puro y desinteresado, compartido con otra persona, que nace y se fortalece con el trato.",
         "ayuda": "Hacer un esfuerzo, poner los medios para el logro de algo.",
@@ -64,6 +66,9 @@ $(document).ready(function () {
         "ira": "Sentimiento de indignación que causa enojo.",
         "pareja": "Conjunto de dos personas, animales o cosas que tienen entre sí alguna correlación o semejanza.",
         "tragedia": "Situación o suceso lamentable que afecta a personas o sociedades humanas.", "tristeza": "Afligido, apesadumbrado."};
+    var paneles = {1: "#nivel1", 2: "#nivel2", 3: "#nivel3", 4: "#nivel4", 5: "#nivel5", 6: "#nivel6", 7: "#nivel7", 8: "#nivel8"};
+    /**************************************************************************/
+    /**************************************************************************/
     var PALABRA = "";
     var letra = "";
     var arrayPALABRA = "";
@@ -72,7 +77,6 @@ $(document).ready(function () {
     var nivel = 1;
     var puntos;
     var puntosTotales = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0};
-    var paneles = {1: "#nivel1", 2: "#nivel2", 3: "#nivel3", 4: "#nivel4", 5: "#nivel5", 6: "#nivel6", 7: "#nivel7", 8: "#nivel8"};
     var puntosLetra = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25, 6: 30, 7: 35, 8: 40};
     var puntosPalabra = {1: 20, 2: 30, 3: 40, 4: 50, 5: 60, 6: 70, 7: 80, 8: 90};
     var celdasTablero = 36;
@@ -171,9 +175,11 @@ $(document).ready(function () {
         TIEMPORESTANTE = 0;
         ERROR = 0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
+        
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);
+        $("#tablero").css("box-shadow", "0px 0px 30px #0060a1");
         $(".descripcion span").text('"' + arrayDescripcion[PALABRA] + '"');
         $(".descripcion").attr("style", "background-color: rgba(0, 96, 161, 0.55);height:140px;");
         tempoSTART = setInterval(tempo, segundo);

@@ -28,10 +28,10 @@ $(document).ready(function () {
     imagenes['enfado1'] = "images/preguntasImagenes/enfado1.png";
     imagenes['enfado2'] = "images/preguntasImagenes/enfado2.jpg";
     imagenes['enfado3'] = "images/preguntasImagenes/enfado3.jpg";
-    
-    imagenes['deprimido1']="imagenes/preguntasImagenes/deprimido1.jpg";
-    imagenes['deprimido2']="imagenes/preguntasImagenes/deprimido2.jpg";
-    imagenes['deprimido3']="imagenes/preguntasImagenes/deprimido3.png";
+
+    imagenes['deprimido1'] = "imagenes/preguntasImagenes/deprimido1.jpg";
+    imagenes['deprimido2'] = "imagenes/preguntasImagenes/deprimido2.jpg";
+    imagenes['deprimido3'] = "imagenes/preguntasImagenes/deprimido3.png";
     var preguntas = [];
     preguntas['feliz1'] = '¿Como ves la mujer y el bebe?';
     preguntas['feliz2'] = 'Reconoce a la persona que este feliz:';
@@ -60,10 +60,10 @@ $(document).ready(function () {
     preguntas['enfado1'] = "Di que niño esta cabreado";
     preguntas['enfado2'] = "¿Que te hace sentir enfadado/a?";
     preguntas['enfado3'] = "Cuando alguien se enfada:";
-    
-    preguntas['deprimido1']="Como se siente el chico de la imagen";
-    preguntas['deprimido2']="Cuando fracasas, ¿Qué sientes?";
-    preguntas['deprimido3']="Identifica a la persona que esta decaida";
+
+    preguntas['deprimido1'] = "Como se siente el chico de la imagen";
+    preguntas['deprimido2'] = "Cuando fracasas, ¿Qué sientes?";
+    preguntas['deprimido3'] = "Identifica a la persona que esta decaida";
     var respuestas = [];
     respuestas['feliz1'] = 'op1';
     respuestas['feliz2'] = 'op1';
@@ -92,10 +92,10 @@ $(document).ready(function () {
     respuestas['enfado1'] = "op4";
     respuestas['enfado2'] = "op2";
     respuestas['enfado3'] = "op1";
-    
-    respuestas['deprimido1']="op4";
-    respuestas['deprimido2']="op1";
-    respuestas['deprimido3']="op4";
+
+    respuestas['deprimido1'] = "op4";
+    respuestas['deprimido2'] = "op1";
+    respuestas['deprimido3'] = "op4";
     var posibles = [];
     posibles['feliz1'] = {
         'op1': 'felices',
@@ -237,20 +237,20 @@ $(document).ready(function () {
         'op3': 'Se cruza de brazos',
         'op4': 'Escuchas tu cancion favorita'
     };
-    
-    posibles['deprimido1']={
+
+    posibles['deprimido1'] = {
         'op1': 'Alegre',
         'op2': 'Enfadado',
         'op3': 'Pensativo',
         'op4': 'Desanimado'
     };
-    posibles['deprimido2']={
+    posibles['deprimido2'] = {
         'op1': 'Me siento desanimado',
         'op2': 'Pierdo el interes',
         'op3': 'Me siento afortunado',
         'op4': 'Siento tranquilidad'
     };
-    posibles['deprimido3']={
+    posibles['deprimido3'] = {
         'op1': 'Primera',
         'op2': 'Segunda',
         'op3': 'Tercera',
@@ -274,7 +274,7 @@ $(document).ready(function () {
         };
     }
 
-   // $('#user').click(mostrarJugador);
+    // $('#user').click(mostrarJugador);
 
 
 
@@ -308,10 +308,12 @@ $(document).ready(function () {
                     nivelPasado = true;
                     juego();
                     $(this).dialog("close");
+                    $(".respuesta").removeClass("correcta");
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    $(".respuesta").removeClass("correcta");
                 }
             }
         });
@@ -329,17 +331,19 @@ $(document).ready(function () {
                     nivelPasado = false;
                     juego();
                     $(this).dialog("close");
+                    $(".respuesta").removeClass("incorrecta");
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    $(".respuesta").removeClass("incorrecta");
                 }
             }
         });
     }
     //******FUNCIONES RELACIONADAS CON EL TIEMPO EN LA PARTIDA***********//
     function correrTiempo() {
-        if (tiempo == 0) {
+        if (tiempo === 0) {
             tiempo = 0;
         } else {
             tiempo--;
@@ -351,7 +355,7 @@ $(document).ready(function () {
     var botonesRespuesta = $('.respuesta');
     var LIMITEboton = 5;
     var pregunta;
-    var imagenPregunta = $('img');
+    var imagenPregunta = $('#imagen img');
 
     function asginacionPreguntaRespuesta(nivel) {
         switch (nivel) {
@@ -380,8 +384,8 @@ $(document).ready(function () {
                 pregunta = "enfado" + Math.floor((Math.random() * 3) + 1);
                 break;
                 /*case 9:
-                    pregunta = "varios" + Math.floor((Math.random() * 5) + 0);
-                    break;*/
+                 pregunta = "varios" + Math.floor((Math.random() * 5) + 0);
+                 break;*/
         }
         // pregunta = "feliz"+Math.floor((Math.random()*3)+1);
         var opciones = posibles[pregunta];
@@ -418,18 +422,19 @@ $(document).ready(function () {
         clearInterval(idTiempo);
         botonesRespuesta.addClass('disabled');
         botonesRespuesta.off('onclick');
-        if (respuesta == respuestas[pregunta]) {
+        if (respuesta === respuestas[pregunta]) {
+            $(this).addClass("correcta");
             audioCorrecto[0].play();
             audioCorrecto[0].currenTime = 0;
             jugador.acertadas++;
             windowOK();
 
-
         } else {
+            $(this).addClass("incorrecta");
             audioIncorrecto[0].currentTime = 0;
             audioIncorrecto[0].play();
-            jugador.falladas++
-                windowFAIL();
+            jugador.falladas++;
+            windowFAIL();
         }
 
     }
@@ -459,17 +464,17 @@ $(document).ready(function () {
         /* $("#nameJugador").text(jugador.nombre);
          $("#niveles").text(jugador.completado+" de 10");
          /*for(i=0;i<jugador.tiempoNiveles.length;i++){
-             $("#tablaTime").add("tr");
-             $("#tablaTime :tr").add("<td>"+jugador.tiempoNiveles[i]+"</td>");
+         $("#tablaTime").add("tr");
+         $("#tablaTime :tr").add("<td>"+jugador.tiempoNiveles[i]+"</td>");
          };
          $("#aciertos").text(jugador.aciertos);
          $("#fallos").text(jugador.falladas);
          $("#infojugador").dialog({
-           
-          
+         
+         
          });*/
         /*windowJugador=window.open("","verjugador","width=350,height=250","resizable=no");
-        windowJugador.document.write('');**/
+         windowJugador.document.write('');**/
         alert("nombre del jugador: " + jugador.nombreJugador);
         alert("Niveles pasados: " + jugador.completado);
         alert("Aciertos: " + jugador.aciertos);
@@ -504,13 +509,16 @@ $(document).ready(function () {
 
         idTiempo = setInterval(correrTiempo, 1000);
     }
+    $(".respuesta").button({
+        disabled: false
+    });
 
     //---FIN FUNCION PRINCIPAL DEL JUEGO--------------//
 
-    while (nombreJugador == null || nombreJugador == ' ') {
-        nombreJugador = prompt("Introduce tu nombre");
-    }
-    $("#user").text(nombreJugador)
-    jugador = new jugador(nombreJugador);
+//    while (nombreJugador == null || nombreJugador == ' ') {
+//        nombreJugador = prompt("Introduce tu nombre");
+//    }
+//    $("#user").text(nombreJugador);
+//    jugador = new jugador(nombreJugador);
     juego();
 });
