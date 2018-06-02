@@ -54,11 +54,11 @@
                     </div>
                 </nav>
             </article>
-                <!-- ===== ===== ===== ===== ===== ===== ===== -->
-                <!-- ===== ===== MODAL-REGLAS ===== ===== -->
-                <?php imprimirReglasQuiz(); ?>
-                <!-- ===== ===== MODAL-REGLAS ===== ===== -->
-                <!-- ===== ===== ===== ===== ===== ===== ===== -->
+            <!-- ===== ===== ===== ===== ===== ===== ===== -->
+            <!-- ===== ===== MODAL-REGLAS ===== ===== -->
+            <?php imprimirReglasQuiz(); ?>
+            <!-- ===== ===== MODAL-REGLAS ===== ===== -->
+            <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MENU ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <header class="row" id="informacion">
@@ -68,7 +68,7 @@
                 </article>
                 <article id="tempo" class="ml-md-auto mr-md-auto col-md-5">
                     <span>Tiempo: <span id="tiempo">99</span></span>
-                    
+
                 </article>
             </header>
             <!--Seccion central donde se desarrolla el juego!-->
@@ -132,15 +132,18 @@
                     <h4>Fallos</h4><p id="fallos"></p>
                 </div>
             </div>
-                <article class="row ">
-                    <!--===== ===== ===== ===== ===== ===== =====--> 
-                    <!--===== ===== COPYGATE ===== =====--> 
-                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small ">
-                        <span>Copygate &Psi; 2018 www.didactical-games.com</span>
-                    </section>
-                    <!--===== ===== COPYGATE ===== =====--> 
-                    <!--===== ===== ===== ===== ===== ===== =====--> 
-                </article>
+            <article class="row ">
+                <!--===== ===== ===== ===== ===== ===== =====--> 
+                <!--===== ===== COPYGATE ===== =====--> 
+                <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
+                    <a href="../index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                </section>
+                <section class="footer col-6 ml-auto mr-auto mt-4 text-center small fixed-bottom ">
+                    <span>Copygate &Psi; 2018 www.didactical-games.com</span>
+                </section>
+                <!--===== ===== COPYGATE ===== =====--> 
+                <!--===== ===== ===== ===== ===== ===== =====--> 
+            </article>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>

@@ -194,12 +194,16 @@ body{
     width: 150px;
     height: 150px;
 }
-.footer{
-    font-size: 13px;
-    color: #fff;
-    position: absolute;
-    bottom: 0;
-    left: 25%;
+
+.footer a{
+    color: rgba(100,18,21,0.5);
+}
+.footer a:hover{
+    color: rgba(100,18,21,1);
+}
+.footer .material-icons{
+    font-size: 50px;
+    
 }
 .descripcion{
     font-style: oblique;

@@ -14,7 +14,7 @@
 
 .tarjeta {
     height: 545px;
-    /*background: #fff;*/
+        border-radius: 25px;
     position: relative;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -34,13 +34,13 @@
     left: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    padding: 15px;
 }
 
 .back {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     width: 100.3%;
-    padding: 15px;
     display: -moz-box;
     display: -moz-flex;
     display: -webkit-box;

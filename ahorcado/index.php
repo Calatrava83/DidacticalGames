@@ -6,7 +6,8 @@
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== CSS ===== ===== -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.theme.css"/>
+    
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="styles.css"/>
         <link rel="icon" href=""/>
@@ -19,7 +20,7 @@
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <script type="text/javascript" defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
         <script type="text/javascript" src="script/script-ui.js"></script>
-        
+
         <!-- ===== ===== SCRIPT ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <style>
@@ -184,7 +185,10 @@
                 <article class="row ">
                     <!--===== ===== ===== ===== ===== ===== =====--> 
                     <!--===== ===== COPYGATE ===== =====--> 
-                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small ">
+                    <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
+                        <a href="../index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                    </section>
+                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small border fixed-bottom ">
                         <span>Copygate &Psi; 2018 www.didactical-games.com</span>
                     </section>
                     <!--===== ===== COPYGATE ===== =====--> 

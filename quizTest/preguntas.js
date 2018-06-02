@@ -308,12 +308,16 @@ $(document).ready(function () {
                     nivelPasado = true;
                     juego();
                     $(this).dialog("close");
+                    /************/
                     $(".respuesta").removeClass("correcta");
+                    /************/
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    /************/
                     $(".respuesta").removeClass("correcta");
+                    /************/
                 }
             }
         });
@@ -331,12 +335,16 @@ $(document).ready(function () {
                     nivelPasado = false;
                     juego();
                     $(this).dialog("close");
+                    /************/
                     $(".respuesta").removeClass("incorrecta");
+                    /************/
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    /************/
                     $(".respuesta").removeClass("incorrecta");
+                    /************/
                 }
             }
         });
@@ -423,14 +431,18 @@ $(document).ready(function () {
         botonesRespuesta.addClass('disabled');
         botonesRespuesta.off('onclick');
         if (respuesta === respuestas[pregunta]) {
+            /*****************/
             $(this).addClass("correcta");
+            /*****************/
             audioCorrecto[0].play();
             audioCorrecto[0].currenTime = 0;
             jugador.acertadas++;
             windowOK();
 
         } else {
+            /*****************/
             $(this).addClass("incorrecta");
+            /*****************/
             audioIncorrecto[0].currentTime = 0;
             audioIncorrecto[0].play();
             jugador.falladas++;
@@ -521,4 +533,7 @@ $(document).ready(function () {
 //    $("#user").text(nombreJugador);
 //    jugador = new jugador(nombreJugador);
     juego();
+    /*******************/
+    $('[data-toggle="tooltip"]').tooltip();
+    /*******************/
 });
