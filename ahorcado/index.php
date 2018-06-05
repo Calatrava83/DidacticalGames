@@ -31,7 +31,7 @@
         </style>
     </head>
     <body>
-        <?php include './ficheros/modales.php'; ?>
+        <?php include '../ficheros/modales.php'; ?>
         <section class="container-fluid">
             <div  id="body" class="p-0">
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -186,9 +186,9 @@
                     <!--===== ===== ===== ===== ===== ===== =====--> 
                     <!--===== ===== COPYGATE ===== =====--> 
                     <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
-                        <a href="../index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                        <a href="../user/index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
                     </section>
-                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small border fixed-bottom ">
+                    <section class="footer col-6 ml-auto mr-auto mt-4 text-center small fixed-bottom ">
                         <span>Copygate &Psi; 2018 www.didactical-games.com</span>
                     </section>
                     <!--===== ===== COPYGATE ===== =====--> 

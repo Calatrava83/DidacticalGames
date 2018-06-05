@@ -1,6 +1,6 @@
 
 #menu {
-    width: 200px;
+    width: 240px;
     z-index: 10000;
     padding: 0px;
     position: fixed;
@@ -13,7 +13,7 @@
 }
 
 #menu #navbars{
-    width: 200px !important;
+    width: 230px !important;
 }
 #boton:hover {
     color: rgba(255, 255, 255, 1) !important;
@@ -55,7 +55,7 @@
 }
 
 .hover div {
-    width: 200px;
+    width: 240px;
 }
 
 .hover a {
@@ -73,16 +73,48 @@
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 .hover .user{
-    width: 200px;
+    width:240px;
     border-bottom: 1px #ffffff solid;
 }
-
+/*#tabs li{
+    padding: 5px;
+}
+li[class="active"]{
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+}*/
+#autismo{
+    background-image: url(../imagenes/FONDO/asperger.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+}
+#pizarra{
+    background-image: url(../imagenes/FONDO/pizarra.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#pizarra span{
+    color:#fff;
+    position: absolute !important;
+    top: 20% !important;
+    left: 25%;
+    font-family: fantasy;
+    font-size: 75px;
+}
 #juegos{
-    background-image: url(./imagenes/FONDO/amistad.jpg);
+    background-image: url(../imagenes/FONDO/autismo.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+.espacio{
+    height: 5px;
+    background: linear-gradient(to bottom,red ,white ,red );
 }
 /*=====================================================*/
 
@@ -99,21 +131,21 @@
     background-repeat: no-repeat;
 }
 .quiz{
-    background-image: url(imagenes/FONDO/quiz.jpg);
+    background-image: url(../imagenes/FONDO/quiz.jpg);
 }
 .ahorcado{
-    background-image: url(imagenes/FONDO/ahorcado.jpg);
+    background-image: url(../imagenes/FONDO/ahorcado.jpg);
 }
 .memory-game{
-    background-image: url(imagenes/FONDO/memory-game.jpg);
+    background-image: url(../imagenes/FONDO/memory-game.jpg);
 }
-    
+
 div[class="card-back row p-2"] {
     width: 100%;
     height: 100%;
     padding-top: 15px;
     border-radius: 25px;
-    background-image: url(imagenes/FONDO/card-back.jpg);
+    background-image: url(../imagenes/FONDO/card-back.jpg);
     background-position: center;
     background-repeat: repeat;
 }
@@ -165,7 +197,7 @@ div[class="card-back row p-2"] {
 }
 .tarjeta .front,
 .tarjeta .back {
-    
+
 }
 
 .btn-primary {
@@ -196,7 +228,7 @@ div[class="card-back row p-2"] {
 #card:hover .tarjeta {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    box-shadow: 0px 0px 45px #0060a1;
+    box-shadow: 0px 0px 45px #fff;
 }
 .back a {
     border-radius: 15px;
@@ -204,7 +236,7 @@ div[class="card-back row p-2"] {
 }
 
 
-#asperger,#autismo{
+#indice,#autismo{
     height: 100vh;
 }
 /*=====================================================*/
@@ -214,31 +246,31 @@ div[class="card-back row p-2"] {
 /*=====================================================*/
 
 .inicio a {
-	color: #133155;
-	font-size: 24px;
-	text-decoration: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: font-size 1s;
+    color: #133155;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: font-size 1s;
 }
 
 .inicio {
-	width: 45px;
-	height: 45px;
-	background-color: #f6ce47;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	position: fixed;
-	bottom: -25px;
-	right: 10px;
-	cursor: pointer;
-	transition: bottom 1s;
-	z-index: 1000;
+    width: 45px;
+    height: 45px;
+    background-color: #f6ce47;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    bottom: -25px;
+    right: 10px;
+    cursor: pointer;
+    transition: bottom 1s;
+    z-index: 1000;
 }
 
 .inicio:hover {
-	bottom: -1px;
+    bottom: -1px;
 }
 
 

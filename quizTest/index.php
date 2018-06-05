@@ -15,7 +15,7 @@
         <script src="preguntas.js"></script>
     </head>
     <body>
-        <?php include '../ahorcado/ficheros/modales.php'; ?> 
+        <?php include '../ficheros/modales.php'; ?> 
         <audio id='acierto' src="sounds/acierto.mp3" ></audio>
         <audio id ='fail' src="sounds/fail.mp3"></audio>
         <div class="container">
@@ -136,7 +136,7 @@
                 <!--===== ===== ===== ===== ===== ===== =====--> 
                 <!--===== ===== COPYGATE ===== =====--> 
                 <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
-                    <a href="../index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                    <a href="../user/index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
                 </section>
                 <section class="footer col-6 ml-auto mr-auto mt-4 text-center small fixed-bottom ">
                     <span>Copygate &Psi; 2018 www.didactical-games.com</span>
