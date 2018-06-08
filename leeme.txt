@@ -1,0 +1,2 @@
+SI NO FUNCIONA LA CONEXION A LA BDD EN EL JUEGO U OTRA FUNCION,
+IR AL FICHERO conf.php situado en admin/adminPreguntas y cambiar el usuario y contraseña en los campos DB_USER y DB_PASSWD respectivamente con tus credenciales de tu base de datos.

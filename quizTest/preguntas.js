@@ -1,261 +1,90 @@
 $(document).ready(function () {
     //Estos arrays se iniciarian cuando se cargue el juego puesto que tanto las preguntas como las respuestas se cargan desde bDD//
-    var imagenes = [];
-    imagenes['feliz1'] = 'images/preguntasImagenes/feliz1.jpg';
-    imagenes['feliz2'] = 'images/preguntasImagenes/feliz2.png';
-    imagenes['feliz3'] = 'images/preguntasImagenes/feliz3.png';
-
-    imagenes['contento1'] = "images/preguntasImagenes/contento1.jpg";
-    imagenes['contento2'] = "images/preguntasImagenes/contento2.jpg";
-    imagenes['contento3'] = "images/preguntasImagenes/contento3.jpg";
-
-    imagenes['asco1'] = "images/preguntasImagenes/asco1.png";
-    imagenes['asco2'] = "images/preguntasImagenes/asco2.png";
-    imagenes['asco3'] = "images/preguntasImagenes/asco3.jpg";
-
-    imagenes['ira1'] = "images/preguntasImagenes/ira1.jpg";
-    imagenes['ira2'] = "images/preguntasImagenes/ira2.jpg";
-    imagenes['ira3'] = "images/preguntasImagenes/ira3.jpg";
-
-    imagenes['triste1'] = "images/preguntasImagenes/triste1.jpg";
-    imagenes['triste2'] = "images/preguntasImagenes/triste2.jpg";
-    imagenes['triste3'] = "images/preguntasImagenes/triste3.jpg";
-
-    imagenes['miedo1'] = "images/preguntasImagenes/miedo1.jpg";
-    imagenes['miedo2'] = "images/preguntasImagenes/miedo2.jpg";
-    imagenes['miedo3'] = "images/preguntasImagenes/miedo3.png";
-
-    imagenes['enfado1'] = "images/preguntasImagenes/enfado1.png";
-    imagenes['enfado2'] = "images/preguntasImagenes/enfado2.jpg";
-    imagenes['enfado3'] = "images/preguntasImagenes/enfado3.jpg";
     
-    imagenes['deprimido1']="imagenes/preguntasImagenes/deprimido1.jpg";
-    imagenes['deprimido2']="imagenes/preguntasImagenes/deprimido2.jpg";
-    imagenes['deprimido3']="imagenes/preguntasImagenes/deprimido3.png";
-    var preguntas = [];
-    preguntas['feliz1'] = '¿Como ves la mujer y el bebe?';
-    preguntas['feliz2'] = 'Reconoce a la persona que este feliz:';
-    preguntas['feliz3'] = '¿Con que color identificas la felicidad?';
+    var preguntas=new Array('nivel1','nivel2','nivel3','nivel4','nivel5','nivel6','nivel7','nivel8','nivel9','nivel10');
+    preguntas['nivel1']= new Array();
+    preguntas['nivel2']= new Array();
+    preguntas['nivel3']= new Array();
+    preguntas['nivel4']= new Array();
+    preguntas['nivel5']= new Array();
+    preguntas['nivel6']= new Array();
+    preguntas['nivel7']= new Array();
+    preguntas['nivel8']= new Array();
+    preguntas['nivel9']= new Array();
+    preguntas['nivel10']= new Array();
 
-    preguntas['contento1'] = "Me Pongo contento cuando:";
-    preguntas['contento2'] = "¿Cómo te sientes cuando ganas un juego?";
-    preguntas['contento3'] = "¿Cómo me siento cuando ayudo a mi compañero/a?";
-
-    preguntas['asco1'] = "¿Qué refleja este hombre?";
-    preguntas['asco2'] = "¿Qué sientes cuando ves un bicho en tu plato?";
-    preguntas['asco3'] = "¿Qué te produce mas asco?";
-
-    preguntas['ira1'] = "¿Qué representa esta cara?";
-    preguntas['ira2'] = "¿Qué frase identificas con la ira?";
-    preguntas['ira3'] = "Me provoca ira cuando:";
-
-    preguntas['triste1'] = "¿Con que frase indentificas la tristeza?";
-    preguntas['triste2'] = "Al ver esta imagen, ¿Que sientes?";
-    preguntas['triste3'] = "Cuando castigan a mi mejor amigo/a, ¿Cómo me siento?";
-
-    preguntas['miedo1'] = "¿Cómo esta la niña?";
-    preguntas['miedo2'] = "¿Por qué crees que se siente miedo?";
-    preguntas['miedo3'] = "Di la accion que te produzca mas miedo";
-
-    preguntas['enfado1'] = "Di que niño esta cabreado";
-    preguntas['enfado2'] = "¿Que te hace sentir enfadado/a?";
-    preguntas['enfado3'] = "Cuando alguien se enfada:";
     
-    preguntas['deprimido1']="Como se siente el chico de la imagen";
-    preguntas['deprimido2']="Cuando fracasas, ¿Qué sientes?";
-    preguntas['deprimido3']="Identifica a la persona que esta decaida";
-    var respuestas = [];
-    respuestas['feliz1'] = 'op1';
-    respuestas['feliz2'] = 'op1';
-    respuestas['feliz3'] = 'op3';
-
-    respuestas['contento1'] = 'op1';
-    respuestas['contento2'] = 'op1';
-    respuestas['contento3'] = 'op2';
-
-    respuestas['asco1'] = "op4";
-    respuestas['asco2'] = "op3";
-    respuestas['asco3'] = "op3";
-
-    respuestas['ira1'] = "op2";
-    respuestas['ira2'] = "op1";
-    respuestas['ira3'] = "op1";
-
-    respuestas['triste1'] = "op4";
-    respuestas['triste2'] = "op3";
-    respuestas['triste3'] = "op2";
-
-    respuestas['miedo1'] = "op1";
-    respuestas['miedo2'] = "op2";
-    respuestas['miedo3'] = "op2";
-
-    respuestas['enfado1'] = "op4";
-    respuestas['enfado2'] = "op2";
-    respuestas['enfado3'] = "op1";
     
-    respuestas['deprimido1']="op4";
-    respuestas['deprimido2']="op1";
-    respuestas['deprimido3']="op4";
-    var posibles = [];
-    posibles['feliz1'] = {
-        'op1': 'felices',
-        'op2': 'asustados',
-        'op3': 'preocupados',
-        'op4': 'tristes'
-    };
-    posibles['feliz2'] = {
-        'op1': 'primera',
-        'op2': 'segunda',
-        'op3': 'tercera',
-        'op4': 'cuarta'
-    };
-    posibles['feliz3'] = {
-        'op1': 'Marron',
-        'op2': 'Negro',
-        'op3': 'Amarillo',
-        'op4': 'Naranja'
-    };
-
-    posibles['contento1'] = {
-        'op1': 'Juego con mis amigos',
-        'op2': 'Mis amigos no me dejan jugar',
-        'op3': 'Mis amigos no me hacen caso',
-        'op4': 'Siempre pierdo en los juegos'
-    };
-
-    posibles['contento2'] = {
-        'op1': 'Me siento contento',
-        'op2': 'Me siento euforico',
-        'op3': 'Me siento triste',
-        'op4': 'Siento ira'
-    };
-
-    posibles['contento3'] = {
-        'op1': 'Enfadado',
-        'op2': 'Contento',
-        'op3': 'Asqueado',
-        'op4': 'Celoso'
-    };
-
-    posibles['asco1'] = {
-        'op1': 'Ira',
-        'op2': 'Amor',
-        'op3': 'Tristeza',
-        'op4': 'Asco'
-    };
-    posibles['asco2'] = {
-        'op1': 'Miedo',
-        'op2': 'Ira',
-        'op3': 'Asco',
-        'op4': 'Sorpresa'
-    };
-    posibles['asco3'] = {
-        'op1': 'Olor a fruta',
-        'op2': 'Olor a flores',
-        'op3': 'Olor a basura',
-        'op4': 'Olor a chuches'
-    };
-
-    posibles['ira1'] = {
-        'op1': 'Furia',
-        'op2': 'Ira',
-        'op3': 'Miedo',
-        'op4': 'Rencor'
-    };
-    posibles['ira2'] = {
-        'op1': '¡Esto es intorelable!',
-        'op2': 'Mi trabajo esta bien hecho',
-        'op3': 'Mi equipo favorito ha ganado',
-        'op4': 'He perdido mi juguete favorito'
-    };
-
-    posibles['ira3'] = {
-        'op1': 'Hacen trampa',
-        'op2': 'Me pegan',
-        'op3': 'Me Felicitan',
-        'op4': 'Me ayudan'
-    };
-
-    posibles['triste1'] = {
-        'op1': '¿Compartimos el bocadillo?',
-        'op2': 'Mi hermana esta mala',
-        'op3': 'Me han regaldo un movil por mi cumple',
-        'op4': '¿Por qué me tratan mal?'
-    };
-
-    posibles['triste2'] = {
-        'op1': 'Soledad',
-        'op2': 'Pena',
-        'op3': 'Tristeza',
-        'op4': 'Emocion'
-    };
-    posibles['triste3'] = {
-        'op1': 'Cabreado/a',
-        'op2': 'Triste',
-        'op3': 'Feliz',
-        'op4': 'Culpable'
-    };
-
-    posibles['miedo1'] = {
-        'op1': 'Tiene miedo',
-        'op2': 'Esta Feliz',
-        'op3': 'Esta asqueada',
-        'op4': 'Esta enfadada'
-    };
-
-    posibles['miedo2'] = {
-        'op1': 'Por que te sientes en peligro',
-        'op2': 'Por que alguien te amenaza',
-        'op3': 'Por que llega el verano',
-        'op4': 'Por que voy al campo a pasear'
-    };
-
-    posibles['miedo3'] = {
-        'op1': 'Tirarte por un tobogan',
-        'op2': 'Que te pique una avispa',
-        'op3': 'Pintarte la cara',
-        'op4': 'Halloween'
-    };
-
-    posibles['enfado1'] = {
-        'op1': 'El Ultimo',
-        'op2': 'El Tercero',
-        'op3': 'El Primero',
-        'op4': 'El Segundo'
-    };
-
-    posibles['enfado2'] = {
-        'op1': 'Que te rompan un juego',
-        'op2': 'Cuando me hacen algo aposta',
-        'op3': 'Que no me pongan deberes',
-        'op4': 'El ultimo dia de clase'
-    };
-
-    posibles['enfado3'] = {
-        'op1': 'Frunce el ceño y se cruza de brazos',
-        'op2': 'Da saltos de algeria',
-        'op3': 'Se cruza de brazos',
-        'op4': 'Escuchas tu cancion favorita'
-    };
+    function cargadoAjaxPreguntas(){
+        $.ajax({
+            url: "ajax_preguntas.php",
+            type: 'POST',
+            async:false,
+            success:function(response){
+                alert("operacion exitosa");
+                lista = response;
+                },
+            error:function(){
+                alert("Ha ocurido un error");
+                }
+            });
+        return lista;
+    }
     
-    posibles['deprimido1']={
-        'op1': 'Alegre',
-        'op2': 'Enfadado',
-        'op3': 'Pensativo',
-        'op4': 'Desanimado'
-    };
-    posibles['deprimido2']={
-        'op1': 'Me siento desanimado',
-        'op2': 'Pierdo el interes',
-        'op3': 'Me siento afortunado',
-        'op4': 'Siento tranquilidad'
-    };
-    posibles['deprimido3']={
-        'op1': 'Primera',
-        'op2': 'Segunda',
-        'op3': 'Tercera',
-        'op4': 'Ultima'
-    };
+    
+   var nuebo=JSON.parse(cargadoAjaxPreguntas());
+ 
+    for(var i =0; i<nuebo.length;i++){
+        //console.log(nuebo[i]);
+        p = new pregunta(nuebo[i][0],nuebo[i][1],nuebo[i][2],nuebo[i][3],nuebo[i][9],nuebo[i][5],nuebo[i][6],nuebo[i][7],nuebo[i][8])
+        switch(nuebo[i][0]){
+            case '1':
+               preguntas['nivel1'].push(p);
+            break;
+            case '2':
+                preguntas['nivel2'].push(p); 
+            break;
+            case '3':
+                 preguntas['nivel3'].push(p); 
+            break;
+            case '4':
+                 preguntas['nivel4'].push(p);
+            break;
+            case '5':
+                 preguntas['nivel5'].push(p);
+            break;
+            case '6':
+                 preguntas['nivel6'].push(p);
+            break;
+            case '7':
+                 preguntas['nivel7'].push(p);
+            break;
+            case '8':
+                 preguntas['nivel8'].push(p);
+            break;
+            case '9':
+                 preguntas['nivel9'].push(p);
+            break;
+            case '10':
+                 preguntas['nivel10'].push(p);
+            break;
+        }
+    }
+    
+    
+    function pregunta(nivel,emocion,nombre,solucion,imagen,opcion1,opcion2,opcion3,opcion4){
+        this.nivel = nivel;
+        this.emocion = emocion;
+        this.nombre=nombre;
+        this.imagen = imagen;
+        this.solucion = solucion;
+        this.opciones = new Array();
+        this.opciones['op1']=opcion1;
+        this.opciones['op2']=opcion2;
+        this.opciones['op3']=opcion3;
+        this.opciones['op4']=opcion4;
+        
+    }
     /*-------------VARIABLES RELACIONADAS CON EL JUGADOR--------------------*/
     var nombreJugador;
     var numPasados = 0;
@@ -263,18 +92,37 @@ $(document).ready(function () {
     var preguntasAcertadas = 0;
     var preguntasFallidas = 0;
 
-    function jugador(nombreJugador) {
-        this.nombreJugador = nombreJugador;
+    function recoveryJugador(idUser){
+        if(!idUser == "" || !idUser == null){
+           //a medio//
+        }
+    }
+    
+    function jugador(id_jugador,nombreJugador) {
+        this.idJugador = id_jugador;
+        this.nombreJugador= nombreJugador;
         this.completado = 0;
-        this.tiempoNiveles = [];
+        this.respondidas =0;
+        this.tiempoNiveles=new Array(10);
         this.aciertos = 0;
         this.falladas = 0;
-        guardarTiempo = function (nivel, tiempo) {
-            this.tiempoNiveles[nivel] = tiempo;
+        this.intentos=0;
+        this.porcentajeAciertos=0;
+        this.porcentajeFallos=0;
+        this.guardarTiempo = function (nivel, tiempo) {
+            $.post("ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel},function(){
+               alert("guardado exitoso");
+                tiempoNiveles[nivel]=tiempo;
+                
+            });
+            
         };
+        this.calculoPorcentaje = function(aciertos,respondidas){
+            
+        }
     }
 
-   // $('#user').click(mostrarJugador);
+     $('#user').click(mostrarJugador);
 
 
 
@@ -308,10 +156,16 @@ $(document).ready(function () {
                     nivelPasado = true;
                     juego();
                     $(this).dialog("close");
+                    /************/
+                    $(".respuesta").removeClass("correcta");
+                    /************/
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    /************/
+                    $(".respuesta").removeClass("correcta");
+                    /************/
                 }
             }
         });
@@ -329,17 +183,23 @@ $(document).ready(function () {
                     nivelPasado = false;
                     juego();
                     $(this).dialog("close");
+                    /************/
+                    $(".respuesta").removeClass("incorrecta");
+                    /************/
                 },
                 "Salir": function () {
                     botonesRespuesta.off('onclick');
                     $(this).dialog("close");
+                    /************/
+                    $(".respuesta").removeClass("incorrecta");
+                    /************/
                 }
             }
         });
     }
     //******FUNCIONES RELACIONADAS CON EL TIEMPO EN LA PARTIDA***********//
     function correrTiempo() {
-        if (tiempo == 0) {
+        if (tiempo === 0) {
             tiempo = 0;
         } else {
             tiempo--;
@@ -351,60 +211,71 @@ $(document).ready(function () {
     var botonesRespuesta = $('.respuesta');
     var LIMITEboton = 5;
     var pregunta;
-    var imagenPregunta = $('img');
+    var imagenPregunta = $('#imagen img');
 
     function asginacionPreguntaRespuesta(nivel) {
+       var cant;
         switch (nivel) {
             case 1:
-                pregunta = "feliz" + Math.floor((Math.random() * 3) + 1);
+                cant=preguntas['nivel1'].length;
+                pregunta = preguntas['nivel1'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 2:
-                pregunta = "contento" + Math.floor((Math.random() * 3) + 1);
+               cant=preguntas['nivel2'].length;
+                pregunta = preguntas['nivel2'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 3:
-                pregunta = "asco" + Math.floor((Math.random() * 3) + 1);
+               cant=preguntas['nivel3'].length;
+                pregunta = preguntas['nivel3'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 4:
-                pregunta = "ira" + Math.floor((Math.random() * 3) + 1);
+                cant=preguntas['nivel4'].length;
+                pregunta = preguntas['nivel4'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 5:
-                pregunta = "triste" + Math.floor((Math.random() * 3) + 1);
+                cant=preguntas['nivel5'].length;
+                pregunta = preguntas['nivel5'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 6:
-                pregunta = "miedo" + Math.floor((Math.random() * 3) + 1);
+               cant=preguntas['nivel6'].length;
+                pregunta = preguntas['nivel6'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 7:
-                pregunta = "deprimido" + Math.floor((Math.random() * 3) + 1);
+                cant=preguntas['nivel7'].length;
+                pregunta = preguntas['nivel7'][Math.floor((Math.random() * cant) + 0)];
                 break;
             case 8:
-                pregunta = "enfado" + Math.floor((Math.random() * 3) + 1);
+                cant=preguntas['nivel8'].length;
+                pregunta = preguntas['nivel8'][Math.floor((Math.random() * cant) + 0)];
                 break;
-                /*case 9:
-                    pregunta = "varios" + Math.floor((Math.random() * 5) + 0);
-                    break;*/
+            case 9:
+                cant=preguntas['nivel9'].length;
+                pregunta = preguntas['nivel9'][Math.floor((Math.random() * cant) + 0)];
+            break;
+            case 10:
+                cant=preguntas['nivel10'].length;
+                pregunta = preguntas['nivel10'][Math.floor((Math.random() * cant) + 0)];
+                break;
         }
-        // pregunta = "feliz"+Math.floor((Math.random()*3)+1);
-        var opciones = posibles[pregunta];
-
-        enunciado.text(preguntas[pregunta]);
+        console.log(pregunta);
+        enunciado.text(pregunta.nombre);
         //-----ASIGNACION DE RESPUESTAS A LOS BOTONES---------//
         var pos = Math.floor((Math.random() * 4) + 1);
         var opcionesBotones = false;
 
         for (var posBoton = 0; posBoton < 4; posBoton++) {
-            //console.log(pos);
             if (pos == LIMITEboton) {
                 pos = 1;
 
             }
-            botonesRespuesta[posBoton].setAttribute('value', posibles[pregunta]['op' + pos]);
+            botonesRespuesta[posBoton].setAttribute('value', pregunta.opciones['op' + pos]);
             botonesRespuesta[posBoton].setAttribute('name', 'op' + pos);
             pos++;
         }
     }
 
     function asginarImagen() {
-        imagenPregunta.attr('src', imagenes[pregunta]);
+        imagenPregunta.attr('src', pregunta.imagen);
     }
 
     //*-------------------FIN DE FUNCIONES DE ASIGNACION------------------------------*//
@@ -418,19 +289,27 @@ $(document).ready(function () {
         clearInterval(idTiempo);
         botonesRespuesta.addClass('disabled');
         botonesRespuesta.off('onclick');
-        if (respuesta == respuestas[pregunta]) {
+        if (respuesta === pregunta.solucion) {
+            /*****************/
+            $(this).addClass("correcta");
+            /*****************/
             audioCorrecto[0].play();
             audioCorrecto[0].currenTime = 0;
-            jugador.acertadas++;
+            jugador.aciertos++;
+            jugador.guardarTiempo(nivel,tiempo);
+            jugador.completado++;
             windowOK();
 
-
         } else {
+            /*****************/
+            $(this).addClass("incorrecta");
+            /*****************/
             audioIncorrecto[0].currentTime = 0;
             audioIncorrecto[0].play();
-            jugador.falladas++
-                windowFAIL();
+            jugador.falladas++;
+            windowFAIL();
         }
+        jugador.intentos++;
 
     }
 
@@ -451,6 +330,11 @@ $(document).ready(function () {
             tiempo = 60;
             reducTiempo = 20;
         }
+        if(nivel == 10){
+            if(tiempo!=0){
+                reducTiempo=20;
+            }
+        }
 
     }
 
@@ -459,17 +343,17 @@ $(document).ready(function () {
         /* $("#nameJugador").text(jugador.nombre);
          $("#niveles").text(jugador.completado+" de 10");
          /*for(i=0;i<jugador.tiempoNiveles.length;i++){
-             $("#tablaTime").add("tr");
-             $("#tablaTime :tr").add("<td>"+jugador.tiempoNiveles[i]+"</td>");
+         $("#tablaTime").add("tr");
+         $("#tablaTime :tr").add("<td>"+jugador.tiempoNiveles[i]+"</td>");
          };
          $("#aciertos").text(jugador.aciertos);
          $("#fallos").text(jugador.falladas);
          $("#infojugador").dialog({
-           
-          
+         
+         
          });*/
         /*windowJugador=window.open("","verjugador","width=350,height=250","resizable=no");
-        windowJugador.document.write('');**/
+         windowJugador.document.write('');**/
         alert("nombre del jugador: " + jugador.nombreJugador);
         alert("Niveles pasados: " + jugador.completado);
         alert("Aciertos: " + jugador.aciertos);
@@ -498,19 +382,21 @@ $(document).ready(function () {
         indicadorNivel.text(nivel);
         botonesRespuesta.removeClass('disabled');
 
-        asginacionPreguntaRespuesta(Math.floor((Math.random() * 9) + 1));
+        asginacionPreguntaRespuesta(nivel);
         asginarImagen();
 
 
         idTiempo = setInterval(correrTiempo, 1000);
     }
+    $(".respuesta").button({
+        disabled: false
+    });
 
     //---FIN FUNCION PRINCIPAL DEL JUEGO--------------//
-
-    while (nombreJugador == null || nombreJugador == ' ') {
-        nombreJugador = prompt("Introduce tu nombre");
-    }
-    $("#user").text(nombreJugador)
-    jugador = new jugador(nombreJugador);
+   
+    jugador = new jugador($("#id_user").val(),$("#nombre").val());
     juego();
+    /*******************/
+    $('[data-toggle="tooltip"]').tooltip();
+    /*******************/
 });

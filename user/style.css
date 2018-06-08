@@ -1,0 +1,277 @@
+
+#menu {
+    width: 240px;
+    z-index: 10000;
+    padding: 0px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+#menu{
+    font-variant: all-petite-caps;
+}
+
+#menu #navbars{
+    width: 230px !important;
+}
+#boton:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+#boton span{
+    background-color: rgba(0, 96, 161, 1);
+}
+#boton{
+    padding: 0px 0px 0px 0px !important;
+    width: 30px;
+    height:30px;
+    font-size: 20px !important;
+    color: rgba(0, 0, 0,1) ;
+}
+#navbars{
+    background-color: rgba(0, 96, 161, 1) ;
+}
+.menu{
+    z-index: 10006;
+    width: 115px;
+    height:45px;
+    font-size: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 96, 161, 1);
+    color: rgba(255, 255, 255, 1) !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.rotacion {
+    transform: rotate(90deg);
+}
+
+.hover div {
+    width: 240px;
+}
+
+.hover a {
+    padding: 5px 0px 2.5px 15px !important;
+    text-transform: uppercase;
+}
+
+.hover {
+    width: 0px;
+    transition: width 1.5s;
+}
+
+.hover:hover {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.hover .user{
+    width:240px;
+    border-bottom: 1px #ffffff solid;
+}
+/*#tabs li{
+    padding: 5px;
+}
+li[class="active"]{
+    border-top: 1px #ccc solid;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+}*/
+#autismo{
+    background-image: url(../imagenes/FONDO/asperger.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+}
+#pizarra{
+    background-image: url(../imagenes/FONDO/pizarra.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#pizarra span{
+    color:#fff;
+    position: absolute !important;
+    top: 20% !important;
+    left: 25%;
+    font-family: fantasy;
+    font-size: 75px;
+}
+#juegos{
+    background-image: url(../imagenes/FONDO/autismo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.espacio{
+    height: 5px;
+    background: linear-gradient(to bottom,red ,white ,red );
+}
+/*=====================================================*/
+
+/*TARJETAS*/
+
+/*=====================================================*/
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    border-radius: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.quiz{
+    background-image: url(../imagenes/FONDO/quiz.jpg);
+}
+.ahorcado{
+    background-image: url(../imagenes/FONDO/ahorcado.jpg);
+}
+.memory-game{
+    background-image: url(../imagenes/FONDO/memory-game.jpg);
+}
+
+div[class="card-back row p-2"] {
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    border-radius: 25px;
+    background-image: url(../imagenes/FONDO/card-back.jpg);
+    background-position: center;
+    background-repeat: repeat;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.front h6 {
+    color: #133155;
+    font-weight: 600;
+}
+
+.back h5 {
+    color: #f6ce47;
+    font-size: 18px;
+}
+
+
+.back .material-icons {
+    font-size: 24px;
+}
+
+.back span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.back a {
+    font-weight: bold !important;
+    font-size: 36px;
+    text-transform: uppercase;
+    height: 70px;
+    color: #133155;
+    position: absolute;
+    top: 43%;
+    left: 33%;
+}
+.proximamente{
+    left: 13% !important;
+    background-color: #f6ce47 !important;
+    border-color: #f6ce47 !important;
+    color: #133155;
+}
+.tarjeta .front,
+.tarjeta .back {
+
+}
+
+.btn-primary {
+    background-color: #fff;
+    border-color: #fff;
+    color: #133155;
+    font-size: 22px;
+    font-weight: 500 !important;
+}
+
+.btn-primary:hover {
+    background-color: #f6ce47 !important;
+    border-color: #f6ce47 !important;
+    color: #133155;
+}
+
+#juegos{
+    height: 100vh;
+}
+/*=====================================================*/
+.inicio a {
+    position: relative;
+    top: 0px;
+}
+.inicio:hover a {
+    font-size: 50px !important;
+}
+#card:hover .tarjeta {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-shadow: 0px 0px 45px #fff;
+}
+.back a {
+    border-radius: 15px;
+    color: #133155 !important;
+}
+
+
+#indice,#autismo{
+    height: 100vh;
+}
+/*=====================================================*/
+
+/*BOTON INICIO*/
+
+/*=====================================================*/
+
+.inicio a {
+    color: #133155;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: font-size 1s;
+}
+
+.inicio {
+    width: 45px;
+    height: 45px;
+    background-color: #f6ce47;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: fixed;
+    bottom: -25px;
+    right: 10px;
+    cursor: pointer;
+    transition: bottom 1s;
+    z-index: 1000;
+}
+
+.inicio:hover {
+    bottom: -1px;
+}
+
+
+/*=====================================================*/

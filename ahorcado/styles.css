@@ -1,0 +1,555 @@
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== CSS TAG ===== =====*/ 
+body{
+    background-image: url(../imagenes/FONDO/amistad.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+/*===== ===== CSS TAG ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== CSS ID ===== =====*/ 
+
+#menu {
+    width: 200px;
+    z-index: 10000;
+    padding: 0px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+#boton{
+}
+#menu #navbars{
+    width: 200px !important;
+}
+#boton:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+#boton span{
+    background-color: rgba(0, 96, 161, 1);
+}
+#boton{
+    padding: 0px 0px 0px 0px !important;
+    width: 30px;
+    height:30px;
+    font-size: 20px !important;
+    color: rgba(0, 0, 0,1) ;
+}
+#navbars{
+    background-color: rgba(0, 96, 161, 1) ;
+}
+#menu,#user,#pista,#reglas,#nombre-juego,#nivel,#nombre-regla,#start,#tiempo,#comprobar-palabra,#niveles,#puntos{
+    font-variant: all-petite-caps;
+}
+#altura{
+    height: 125px;
+}
+#tablero{
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+#user,#nombre-juego{
+}
+#nivel{
+    font-size: 55px;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+#tablero section{
+    height: auto;
+}
+#pista{
+    font-size: 20px;
+}
+#nombre-regla,#tiempo,#user,#nombre-juego{
+    font-size: 30px;
+}
+#palabra{
+    font-size: 25px;
+    height: 50px;
+    padding: 5px 0px 0px 0px;
+    margin: 2% 0px 2% 0px;
+}
+#tablero-ahorcado{
+    background-size: contain;
+    background-position: 45px bottom;
+    background-repeat: no-repeat;
+    height: 300px !important;
+}
+#letra ,#nombre-palabra {
+    font-size: 20px;
+    text-transform: uppercase;
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.75),0px -1px 1px rgba(0,0,0,0.3);
+}
+#reglas{
+}
+#puntos{
+    font-size: 30px;
+}
+#regla-puntos{
+    margin-bottom: 50px;
+}
+#comprobar-palabra{
+    font-size: 25px;
+}
+#puntos{
+    padding-right: 45px;
+}
+#modalNivel{
+    z-index: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    /*margin: 1rem 1rem 1rem 1rem;*/
+    cursor: pointer;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+#Nivel{
+    z-index: 0;
+    font-size: 5rem;
+    font-weight: 700;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+.modal-nivel.puntos-totales,.modal-nivel.puntosTotales{
+    z-index: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 1rem 1rem 1rem 1rem;
+    color:#1484e6 ;
+}
+#modalNivel:hover{
+    font-size: 2.5rem;
+    color:rgba(239,170,6,0.9);
+}
+#prev img,#next img, #reload img{
+    width: 45px;
+    height: 45px;
+}
+#comprobar-palabra img{
+    width: 32px;
+}
+#seccion{
+    display: none;
+    position: relative;
+    bottom: 10%;
+    left: 0;
+    top: -65px;
+}
+/*===== ===== CSS ID ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== CSS CLASS ===== =====*/ 
+.icon{
+    font-size: 52px;
+}
+.gold{
+    color:goldenrod;
+}
+.rotate{
+    transform: rotateY(180deg);
+}
+.face{
+    color:#1484e6 ;
+}
+.menu{
+    z-index: 10006;
+    width: 115px;
+    height:45px;
+    font-size: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 96, 161, 1);
+    color: rgba(255, 255, 255, 1) !important;
+}
+.posicion{
+    position: relative;
+    top: -70px;
+}
+.start{
+    position: absolute;
+    bottom: 0%;
+    left: 42%;
+    z-index: 500;
+    text-transform: uppercase;
+    font-size: 75px;
+    font-weight: 900;
+    padding: 0px;
+    opacity: 0.5;
+}
+.start:hover{
+    opacity: 0.85;
+}
+.star{
+    height: 35px;
+}
+.face{
+    width: 150px;
+    height: 150px;
+}
+
+.footer a{
+    color: rgba(100,18,21,0.5);
+}
+.footer a:hover{
+    color: rgba(100,18,21,1);
+}
+.footer .material-icons{
+    font-size: 50px;
+    
+}
+.descripcion{
+    font-style: oblique;
+    color: #fff;
+    font-size: 30px !important;
+    padding: 2px 4px 2px 2px;
+    border-radius: 5px;
+    position: relative;
+    top: -80px;
+    left: 0;   
+    display: flex;
+    justify-content: center;
+}
+.rotacion {
+    transform: rotate(90deg);
+}
+
+.hover div {
+    width: 200px;
+}
+
+.hover a {
+    padding: 5px 0px 2.5px 15px !important;
+    text-transform: uppercase;
+}
+
+.hover {
+    width: 0px;
+    transition: width 1.5s;
+}
+
+.hover:hover {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.hover .user{
+    width: 200px;
+    border-bottom: 1px #ffffff solid;
+}
+.cerrar-sesion{
+    width: 200px;
+    border-top: 1px #ffffff solid ;
+}
+.hover .user img,.hover .user span{
+    z-index: 11000;
+}
+.transparent{
+    background-color: transparent;
+    height: 100px;
+}
+.transparentTablero{
+    background-color: transparent;
+    height: 83.3333px;
+}
+.green{
+    background: repeating-linear-gradient(45deg,rgba(20,72,28,1) ,rgba(255,255,255,0.95) 20%);
+    border:1px rgba(255,255,255,0.85) solid;
+    height: 83.3333px;
+    filter: blur(3px);
+}
+.tablero{
+    border:hidden;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+.ahorcado{
+    text-align: center;
+    background: red;
+    background: repeating-linear-gradient(45deg,red ,white 20%);
+    border:3.5px rgba(255,255,255,0.85) solid;
+    height: 100px;
+    filter: blur(3px);
+}
+.tablero-ahorcado{
+    text-align: center;
+    background-color: transparent;
+    height: 100px;
+}
+.altura-min{
+    height: 25px;
+}
+.glyphicon-user{
+    height: 25px !important;
+    width: 25px !important;
+}
+.reglas{
+    text-align: justify;
+    font-variant: normal !important;
+    font-style: oblique !important;
+    font-size: 13px;
+}
+.regla-puntos{
+    list-style: square!important;
+    text-align: justify;
+    font-variant: small-caps !important;
+    font-style: oblique !important;
+    font-size: 13px;
+}
+.regla-puntos ul{
+    list-style: square!important;
+}
+.title-modal,.tabla th{
+    text-align: justify;
+    font-variant: normal !important;
+    font-style: oblique !important;
+    font-size: 13px;
+}
+thead th{
+    width: 50px;
+    padding: 0;
+}
+.tabla td,.tabla th{
+    text-align: center;
+}
+.title{
+    font-size: 18px !important;
+}
+.title-modal{
+    font-size: 11px !important;
+}
+.scroll{
+}
+.oculta{
+    background-color: #0060a1;
+    /*border: 1px #fff solid;*/
+    color: #fff;
+    width: 50px;
+}
+.visible{
+    background-color: #0069d9;
+    border: 3px goldenrod solid;
+    width: 50px;
+    color: goldenrod !important;
+    font-weight: 800;
+}
+/*===== ===== CSS CLASS ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+/*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.table th, .table td {
+    padding: 0rem; 
+}
+.btn{
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+/*===== ===== CSS BOOTSTRAP SOBREESCRITURA ===== =====*/ 
+/*===== ===== ===== ===== ===== ===== =====*/ 
+@media (max-width:576px){
+
+}
+@media (min-width:576px) and (max-width:991.98px){
+    .start {
+        position: absolute;
+        bottom: 50%;
+        left: 33%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 75px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.8;
+    }
+    .descripcion {
+        font-style: oblique;
+        color: #fff;
+        font-size: 20px !important;
+        padding: 2px 4px 2px 2px;
+        border-radius: 5px;
+        position: relative;
+        top: -80px;
+        left: 0;
+        height: 120px !important;
+    }
+    #tablero-ahorcado {
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        position: relative;
+        bottom: 120px;
+        left: 35px;
+    }
+    #palabra {
+        font-size: 25px;
+        height: 50px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+        position: relative;
+        bottom: 520px;
+        left: 450px;
+        width: 500px;
+    }
+    .oculta {
+        background-color: #0060a1;
+        color: #fff;
+        width: 40px;
+    }
+    #seccion {
+        display: none;
+        position: relative;
+        bottom: 500px;
+        left: 230px;
+    }
+
+    #Nivel {
+        z-index: 0;
+        font-size: 4rem;
+    }
+}
+/*@media (min-width:576px) and (max-width:767.98px){
+
+}
+@media (min-width:768px) and (max-width:991.98px){
+
+}*/
+@media (min-width:992px) and (max-width:1199.98px){
+    .start {
+        position: absolute;
+        bottom: 30%;
+        left: 42%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 50px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.5;
+    }
+    .descripcion {
+        font-style: oblique;
+        color: #fff;
+        font-size: 25px !important;
+    }
+    #tablero-ahorcado {
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        position: relative;
+        left: 30px;
+        bottom: 50px;
+    }
+    #palabra {
+        font-size: 25px;
+        height: 50px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+        position: relative;
+        bottom: 460px;
+        left: 480px;
+        width: 500px;
+    }
+    #seccion {
+        position: relative;
+        bottom: 445px;
+        left: 240px;
+    }
+}
+@media (min-width:1200px) and (max-width:1365.98px){
+    #tablero {
+        position: relative;
+        top: -60px;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        left: -30px;
+    }
+
+    .descripcion{
+        font-style: oblique;
+        color: #fff;
+        font-size: 20px !important;
+        padding: 2px 4px 2px 2px;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        left:15%;
+    }
+    #tablero-ahorcado {
+        position: relative;
+        background-size: contain;
+        background-position: 45px bottom;
+        background-repeat: no-repeat;
+        height: 300px !important;
+        top: -85px;
+        right: -50px;
+    }
+    #letra, #nombre-palabra {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        bottom: -50px;
+        right: 310px;
+    }
+    #palabra {
+        font-size: 25px;
+        width: 600px;
+        height: 50px;
+        position: relative;
+        left: 20px;
+        bottom: 30px;
+        padding: 5px 0px 0px 0px;
+        margin: 2% 0px 2% 0px;
+    }
+    .start {
+        position: absolute;
+        bottom: 30%;
+        left: 42%;
+        z-index: 500;
+        text-transform: uppercase;
+        font-size: 75px;
+        font-weight: 900;
+        padding: 0px;
+        opacity: 0.5;
+    }
+    .comprueba{
+        position: relative;
+        right: 0px;
+    }
+    .green{
+        background: rgba(20,72,28,0.85);
+        background: repeating-linear-gradient(45deg,rgba(20,72,28,0.85) ,rgba(255,255,255,0.75) 20%);
+        border:1px rgba(255,255,255,0.85) solid;
+        height: 66.6666px;
+    }
+    .transparentTablero {
+        background-color: transparent;
+        height: 66.6666px;
+    }
+}
+@media (min-width:1900px){
+    #seccion {
+        position: relative;
+        left: 0;
+    }
+}
