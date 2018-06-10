@@ -12,7 +12,25 @@ body{
 }
 .footer .material-icons{
     font-size: 50px;
-    
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+.footer span{
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 #informacion{
     text-align:center;
@@ -61,7 +79,7 @@ body{
     box-shadow: 0 0 0 0 rgba(0,123,255,.25);
 }
 #menu {
-    width: 200px;
+    width: 240px;
     z-index: 10000;
     padding: 0px;
     position: fixed;
@@ -123,7 +141,7 @@ header{
 #boton{
 }
 #menu #navbars{
-    width: 200px !important;
+    width: 240px !important;
 }
 #boton:hover {
     color: rgba(255, 255, 255, 1) !important;
@@ -165,7 +183,7 @@ header{
 }
 
 .hover div {
-    width: 200px;
+    width: 240px;
 }
 
 .hover a {
@@ -183,6 +201,6 @@ header{
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 .hover .user{
-    width: 200px;
+    width: 240px;
     border-bottom: 1px #ffffff solid;
 }

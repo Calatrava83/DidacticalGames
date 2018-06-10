@@ -11,8 +11,18 @@ body{
 /*===== ===== ===== ===== ===== ===== =====*/ 
 /*===== ===== CSS ID ===== =====*/ 
 
+.btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
 #menu {
-    width: 200px;
+    width: 240px;
     z-index: 10000;
     padding: 0px;
     position: fixed;
@@ -23,7 +33,7 @@ body{
 #boton{
 }
 #menu #navbars{
-    width: 200px !important;
+    width: 240px !important;
 }
 #boton:hover {
     color: rgba(255, 255, 255, 1) !important;
@@ -56,6 +66,10 @@ body{
 }
 #nivel{
     font-size: 55px;
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
     color: transparent; 
     text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
@@ -84,10 +98,11 @@ body{
     font-size: 20px;
     text-transform: uppercase;
     background: #202020; 
-    -webkit-background-clip: text; 
-    -moz-background-clip: text; 
-    background-clip: text; 
-    text-shadow: 0px 3px 3px rgba(255,255,255,0.75),0px -1px 1px rgba(0,0,0,0.3);
+     color: #fff;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(0,0,0,0.75), 0px -1px 1px rgba(0,0,0,0.3);
 }
 #reglas{
 }
@@ -203,7 +218,15 @@ body{
 }
 .footer .material-icons{
     font-size: 50px;
-    
+}
+
+.footer span{
+    background: #202020; 
+    -webkit-background-clip: text; 
+    -moz-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
 .descripcion{
     font-style: oblique;
@@ -222,7 +245,7 @@ body{
 }
 
 .hover div {
-    width: 200px;
+    width: 240px;
 }
 
 .hover a {
@@ -240,11 +263,11 @@ body{
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 .hover .user{
-    width: 200px;
+    width: 240px;
     border-bottom: 1px #ffffff solid;
 }
 .cerrar-sesion{
-    width: 200px;
+    width: 240px;
     border-top: 1px #ffffff solid ;
 }
 .hover .user img,.hover .user span{

@@ -2,14 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Ahorcado</title>
+        <title>Juegos didacticos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== CSS ===== ===== -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.theme.css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/jquery-ui/jquery-ui.theme.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="card-effect.css"/>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/user/card-effect.css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/user/style.css"/>
+<!--        <link rel="stylesheet" type="text/css" href="card-effect.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>-->
 
         <link rel="icon" href=""/>
         <!-- ===== ===== CSS ===== ===== -->
@@ -21,14 +24,15 @@
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script type="text/javascript" defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-       
+
         <script>
             $(document).ready(function () {
+                $("html head").append('');
                 /**************************************************************/
                 /*VELOCIDAD SCROLL*/
 
                 //gestión de la velocidad del scroll al pulsar el boton de inicio
-                linkInterno = $('a[href^="#indice"]');
+                linkInterno = $('a[href^="#indice"],a[href^="#juegos"],a[href^="#autismo]');
                 linkInterno.on('click', function (e) {
                     e.preventDefault();
                     var href = $(this).attr('href');
@@ -64,10 +68,14 @@
                 $("a[href='']").click(function (event) {
                     event.preventDefault();
                 });
+                $("#autismo").attr("style", "");
             });
+
         </script>
         <!-- ===== ===== SCRIPT ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
+
+
     </head>
     <body>
         <section class="container-fluid">
@@ -84,7 +92,7 @@
                                 <li class="nav-item hover ">
                                     <div>
                                         <a class="nav-link user" href="">
-                                            <img class="mr-2 " src="./svg/person.svg" alt="user"/><span>usuario</span>
+                                            <span class=" mr-2  fas fa-user-circle"></span><span><?php print $_SESSION['user'][1] . ", " . $_SESSION['user'][2]; ?></span>
                                         </a>
                                     </div>
                                 </li>
@@ -112,8 +120,8 @@
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
-                                            <img class="mr-2 " src="./svg/sign-out.svg" alt="sign-out"/><span>cerrar sesion</span>
+                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#salida">
+                                            <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
                                         </a>
                                     </div>
                                 </li>
@@ -202,46 +210,47 @@
                     </section>
                 </article>
                 <section class="row espacio"></section>
-                <article id="juegos" class="row">
-                    <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
-                        <div class="tarjeta row">
-                            <div class="front col-12">
-                                <div class="card-img-top quiz">
+                <article >
+                    <form id="juegos" class="row" action="user/juegos.php" method="post">
+                        <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
+                            <div class="tarjeta row">
+                                <div class="front col-12">
+                                    <div class="card-img-top quiz">
+                                    </div>
+                                </div>
+                                <div class="back col-12 ">
+                                    <div class="card-back row p-2">
+                                        <button type="submit" name="quiz" id="quiz" class="col-auto mx-auto btn btn-primary font-weight-bold curso" >Jugar</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="back col-12 ">
-                                <div class="card-back row p-2">
-                                    <a href="../quizTest/index.php" class="col-auto mx-auto btn btn-primary font-weight-bold curso">Jugar</a>
+                        </article>
+                        <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
+                            <div class="tarjeta row">
+                                <div class="front col-12">
+                                    <div class="card-img-top ahorcado">
+                                    </div>
+                                </div>
+                                <div class="back col-12 ">
+                                    <div class="card-back row p-2">
+                                        <button type="submit" name="ahorcado" id="ahorcado" class="col-auto mx-auto btn btn-primary font-weight-bold curso" >Jugar</button>
+                                    </div>
+                                </div>
+                        </article>
+                        <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
+                            <div class="tarjeta row">
+                                <div class="front col-12">
+                                    <div class="card-img-top memory-game">
+                                    </div>
+                                </div>
+                                <div class="back col-12 ">
+                                    <div class="card-back row p-2">
+                                        <button type="submit" name="proximamente" id="proximamente" class="col-auto mx-auto btn btn-primary font-weight-bold curso" disabled>proximamente</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </article>
-                    <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
-                        <div class="tarjeta row">
-                            <div class="front col-12">
-                                <div class="card-img-top ahorcado">
-                                </div>
-                            </div>
-                            <div class="back col-12 ">
-                                <div class="card-back row p-2">
-                                    <a href="../ahorcado/index.php" class="col-auto mx-auto btn btn-primary font-weight-bold curso">Jugar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article id="card" class="col-lg-3 col-md-6 col-sm-6 col-11 ml-auto mr-auto mt-auto mb-auto">
-                        <div class="tarjeta row">
-                            <div class="front col-12">
-                                <div class="card-img-top memory-game">
-                                </div>
-                            </div>
-                            <div class="back col-12 ">
-                                <div class="card-back row p-2">
-                                    <a href="" class="proximamente col-auto mx-auto btn btn-primary font-weight-bold curso">Proximamente</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
+                    </form>
                 </article>
                 <!-- ===== ===== BODY ===== ===== -->
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->

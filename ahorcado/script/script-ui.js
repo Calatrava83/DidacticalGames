@@ -58,15 +58,57 @@ $(document).ready(function () {
     /******************************VARIABLES***********************************/
     /**************************************************************************/
     /**************variables que se rellenan con la base de datos**************/
-    var arrayPalabra = ["amistad", "ayuda", "bullying", "felicidad", "ira", "pareja", "tragedia", "tristeza"];
-    var arrayDescripcion = {"amistad": "Afecto personal, puro y desinteresado, compartido con otra persona, que nace y se fortalece con el trato.",
-        "ayuda": "Hacer un esfuerzo, poner los medios para el logro de algo.",
-        "bullying": "Acoso escolar y toda forma de maltrato físico, verbal o psicológico de forma reiterada y a lo largo del tiempo.",
-        "felicidad": "Estado de grata satisfacción espiritual y física.",
-        "ira": "Sentimiento de indignación que causa enojo.",
-        "pareja": "Conjunto de dos personas, animales o cosas que tienen entre sí alguna correlación o semejanza.",
-        "tragedia": "Situación o suceso lamentable que afecta a personas o sociedades humanas.", "tristeza": "Afligido, apesadumbrado."};
-    var paneles = {1: "#nivel1", 2: "#nivel2", 3: "#nivel3", 4: "#nivel4", 5: "#nivel5", 6: "#nivel6", 7: "#nivel7", 8: "#nivel8"};
+    var arrayPalabra = [];
+    var arrayDescripcion = [];
+    var paneles = [];
+    /**************************************/
+    function ajaxEstado() {
+        $.ajax({
+            url: "../ahorcado/script/ajax_estado.php",
+            type: 'POST',
+            async: false,
+            success: function (response) {
+                lista = response;
+            },
+            error: function () {
+                alert("Ha ocurido un error");
+            }
+        });
+        return lista;
+    }
+    var lista = JSON.parse(ajaxEstado());
+    for (var i = 0; i < lista.length; i++) {
+        arrayPalabra.push(lista[i][0]);
+        arrayDescripcion[lista[i][0]] = lista[i][1];
+    }
+    /**************************************/
+    /**************************************/
+    function ajaxNiveles() {
+        $.ajax({
+            url: "../ahorcado/script/ajax_niveles.php",
+            type: 'POST',
+            async: false,
+            success: function (response) {
+                ajaxNivel = response;
+            },
+            error: function () {
+                alert("Ha ocurido un error");
+            }
+        });
+        return ajaxNivel;
+    }
+    var ajaxNivel = JSON.parse(ajaxNiveles());
+    for (var i = 0; i < ajaxNivel.length; i++) {
+        paneles[ajaxNivel[i][0]] = ajaxNivel[i][1];
+    }
+    /**************************************/
+    function insertarDatosPartida(){
+        $.post("ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel},function(){
+               alert("guardado exitoso");
+                tiempoNiveles[nivel]=tiempo;
+                
+            });
+    }
     /**************************************************************************/
     /**************************************************************************/
     var PALABRA = "";
@@ -175,7 +217,7 @@ $(document).ready(function () {
         TIEMPORESTANTE = 0;
         ERROR = 0;
         var posicion = Math.round((Math.random() * (arrayPalabra.length - 1)));
-        
+
         PALABRA = arrayPalabra[posicion];
         imagen = "url(../imagenes/" + PALABRA + "/" + Math.round((Math.random() * CONSTIMAGEN) + 1) + ".jpg)";
         $("#tablero").css("background-image", imagen);

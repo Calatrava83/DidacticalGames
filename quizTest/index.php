@@ -1,8 +1,13 @@
+<?php
+require_once '../BBDD/config.php';
+require_once '../BBDD/Dbactions.php';
+?>  
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Juego 1</title>
+        <title>Quiz test!</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,11 +16,13 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <script type="text/javascript" defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="index.css">
-        <script src="preguntas.js"></script>
+        <link rel="stylesheet" href="http://localhost/DidacticalGame/quizTest/index.css">
+        <script src="http://localhost/DidacticalGame/quizTest/preguntas.js"></script>
     </head>
     <body>
-        <?php include '../ficheros/modales.php'; ?> 
+        <?php
+        include '../ficheros/modales.php';
+        ?> 
         <audio id='acierto' src="sounds/acierto.mp3" ></audio>
         <audio id ='fail' src="sounds/fail.mp3"></audio>
         <div class="container">
@@ -30,23 +37,23 @@
                     <div class="collapse navbar-collapse" id="navbars">
                         <ul class="navbar-nav">
                             <li class="nav-item hover ">
-                                <div>
-                                    <a class="nav-link user" href="">
-                                        <img class="mr-2 mt-2 mb-2" src="../svg/person.svg" alt="user"/><span>usuario</span>
+                                <div id="user">
+                                    <a class="nav-link user" data-toogle="modal" data-target="#usuario">
+                                        <span class=" mr-2  fas fa-user-circle"></span><span><?php print $_SESSION['user'][1] . ", " . $_SESSION['user'][2]; ?></span>
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item hover">
                                 <div>
                                     <a class="nav-link ml-3" data-toggle="modal" data-target="#reglas">
-                                        <img class="mr-2 mt-2 mb-2" src="../svg/checklist.svg" alt="reglas"/><span>Reglas de juego</span>
+                                        <span class=" mr-2  fab fa-gg-circle"></span><span>Reglas de juego</span>
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item hover">
                                 <div>
                                     <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
-                                        <img class="mr-2 mt-2 mb-2" src="../svg/sign-out.svg" alt="sign-out"/><span>cerrar sesion</span>
+                                        <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
                                     </a>
                                 </div>
                             </li>
@@ -106,6 +113,8 @@
             <div id="dialog_error" title="¡Respuesta Incorrecta!" class="d-none">
                 <p>Te has equivocado, ¿Que quieres hacer?</p>
             </div>
+
+
             <div id="infojugador" title="Informacion del Jugador" class="d-none">
                 <div id="nameJugador">
                     <h2></h2>
@@ -136,7 +145,11 @@
                 <!--===== ===== ===== ===== ===== ===== =====--> 
                 <!--===== ===== COPYGATE ===== =====--> 
                 <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
-                    <a href="../user/index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                    <form id="juegos" class="row" action="./juegos.php" method="post">
+                        <button type="submit" name="atras" id="atras" class="col-auto mx-auto btn btn-primary font-weight-bold curso" >
+                            <i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i>
+                        </button>
+                    </form>
                 </section>
                 <section class="footer col-6 ml-auto mr-auto mt-4 text-center small fixed-bottom ">
                     <span>Copygate &Psi; 2018 www.didactical-games.com</span>

@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Ahorcado</title>
+        
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== CSS ===== ===== -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/ahorcado/styles.css"/>
         <link rel="icon" href=""/>
         <!-- ===== ===== CSS ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -19,7 +22,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <script type="text/javascript" defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="script/script-ui.js"></script>
+        <script type="text/javascript" src="http://localhost/DidacticalGame/ahorcado/script/script-ui.js"></script>
 
         <!-- ===== ===== SCRIPT ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -31,7 +34,7 @@
         </style>
     </head>
     <body>
-        <?php include '../ficheros/modales.php'; ?>
+        <?php  include '../ficheros/modales.php'; ?>
         <section class="container-fluid">
             <div  id="body" class="p-0">
                 <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -46,28 +49,28 @@
                                 <li class="nav-item hover ">
                                     <div>
                                         <a class="nav-link user" href="">
-                                            <img class="mr-2 mt-2 mb-2" src="../svg/person.svg" alt="user"/><span>usuario</span>
+                                            <span class=" mr-2  fas fa-user-circle"></span><span><?php print $_SESSION['user'][1].", ".$_SESSION['user'][2]; ?></span>
                                         </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
                                         <a class="nav-link ml-3" data-toggle="modal" data-target="#niveles">
-                                            <img class="mr-2 mt-2 mb-2" src="../svg/list-ordered.svg" alt="niveles"/><span>Niveles</span>
+                                            <span class=" mr-2  fas fa-universal-access"></span><span>Niveles</span>
                                         </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
                                         <a class="nav-link ml-3" data-toggle="modal" data-target="#reglas">
-                                            <img class="mr-2 mt-2 mb-2" src="../svg/checklist.svg" alt="reglas"/><span>Reglas de juego</span>
+                                            <span class=" mr-2  fab fa-gg-circle"></span><span>Reglas de juego</span>
                                         </a>
                                     </div>
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
                                         <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
-                                            <img class="mr-2 mt-2 mb-2" src="../svg/sign-out.svg" alt="sign-out"/><span>cerrar sesion</span>
+                                            <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
                                         </a>
                                     </div>
                                 </li>
@@ -172,7 +175,7 @@
                             <div class="comprueba col-lg-12 col-12 text-center input-group">
                                 <input class="ml-auto text-center" type="text" name="letra" id="letras-palabra" />
                                 <div class="input-group-append mr-auto">
-                                    <button id="comprobar-palabra" class="p-0"><img class="pt-0 pl-1 pb-0 pr-1" src="../svg/arrow-right.svg" alt="comprobar"></button>
+                                    <button id="comprobar-palabra" class="p-0"><span class="pt-0 pl-1 pb-0 pr-1 fas fa-arrow-circle-right"></span></button>
                                 </div>
                             </div>
                         </article>
@@ -186,7 +189,11 @@
                     <!--===== ===== ===== ===== ===== ===== =====--> 
                     <!--===== ===== COPYGATE ===== =====--> 
                     <section class="footer col-2 ml-auto mt-4 text-center small fixed-bottom">
-                        <a href="../user/index.php"><i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i></a>
+                    <form id="juegos" class="row" action="./juegos.php" method="post">
+                        <button type="submit" name="atras" id="atras" class="col-auto mx-auto btn btn-primary font-weight-bold curso" >
+                            <i data-toggle="tooltip" title="Dejar de jugar" class="material-icons">backspace</i>
+                        </button>
+                    </form>
                     </section>
                     <section class="footer col-6 ml-auto mr-auto mt-4 text-center small fixed-bottom ">
                         <span>Copygate &Psi; 2018 www.didactical-games.com</span>
