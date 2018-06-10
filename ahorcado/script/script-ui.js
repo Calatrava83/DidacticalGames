@@ -12,7 +12,6 @@ $(document).ready(function () {
         }, 100);
 
     });
-
     /**************************************************************************/
     /**************************************************************************/
     /*********************COMPORTAMIENTO PARA MENU*****************************/
@@ -102,12 +101,9 @@ $(document).ready(function () {
         paneles[ajaxNivel[i][0]] = ajaxNivel[i][1];
     }
     /**************************************/
-    function insertarDatosPartida(){
-        $.post("ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel},function(){
-               alert("guardado exitoso");
-                tiempoNiveles[nivel]=tiempo;
-                
-            });
+    function insertarDatosPartida(nivel,puntos){
+        var idUser=$("#idUser").val();
+        $.post("../ahorcado/script/ajax_user.php",{id_user:idUser,nivel:nivel,puntos:puntos},function(){});
     }
     /**************************************************************************/
     /**************************************************************************/
@@ -186,6 +182,7 @@ $(document).ready(function () {
                 break;
         }
         ACIERTO = 0;
+        insertarDatosPartida(nivel,puntosTotales[nivel]);
         setTimeout(function () {
             $(paneles[nivel]).modal("show");
             prev = "#nivel" + nivel + " #prev";
@@ -229,7 +226,7 @@ $(document).ready(function () {
 
     }
     function colocarImagenAhorcado() {
-        imagen = "url(./imagenes/ahorcado.gif)";
+        imagen = "url(../ahorcado/imagenes/ahorcado.gif)";
         $("#tablero-ahorcado").css("background-image", imagen);
     }
 

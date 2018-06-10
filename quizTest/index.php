@@ -52,9 +52,11 @@ require_once '../BBDD/Dbactions.php';
                             </li>
                             <li class="nav-item hover">
                                 <div>
-                                    <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
-                                        <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
-                                    </a>
+                                        <form class="" action="../index.php" method="post">
+                                            <button type="submit" name="logoutQUIZ" class="nav-link cerrar-sesion ml-2 mr-2 mb-2 text-left" >
+                                                <span class="fas fa-sign-out-alt"></span><span>cerrar sesion</span>
+                                            </button>
+                                        </form>
                                 </div>
                             </li>
                         </ul>

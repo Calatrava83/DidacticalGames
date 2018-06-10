@@ -2,15 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Juegos didacticos</title>
+        <title>Administrador</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
         <!-- ===== ===== CSS ===== ===== -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../jquery-ui/jquery-ui.theme.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="card-effect.css"/>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="admin/style.css"/>
 
         <link rel="icon" href=""/>
         <!-- ===== ===== CSS ===== ===== -->
@@ -113,9 +112,11 @@
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#ofrece">
-                                            <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
-                                        </a>
+                                        <form class="" action="" method="post">
+                                            <button type="submit" name="logoutADMIN" class="nav-link cerrar-sesion ml-2 mr-2 mb-2" >
+                                                <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </li>
                             </ul>

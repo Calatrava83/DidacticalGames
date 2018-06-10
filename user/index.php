@@ -11,8 +11,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/user/card-effect.css"/>
         <link rel="stylesheet" type="text/css" href="http://localhost/DidacticalGame/user/style.css"/>
-<!--        <link rel="stylesheet" type="text/css" href="card-effect.css"/>
-        <link rel="stylesheet" type="text/css" href="style.css"/>-->
+        <!--        <link rel="stylesheet" type="text/css" href="card-effect.css"/>
+                <link rel="stylesheet" type="text/css" href="style.css"/>-->
 
         <link rel="icon" href=""/>
         <!-- ===== ===== CSS ===== ===== -->
@@ -68,13 +68,17 @@
                 $("a[href='']").click(function (event) {
                     event.preventDefault();
                 });
-                $("#autismo").attr("style", "");
             });
 
         </script>
         <!-- ===== ===== SCRIPT ===== ===== -->
         <!-- ===== ===== ===== ===== ===== ===== ===== -->
+        <script>
+            $(document).ready(function () {
+                $("#user").append("<span><?php print $_SESSION['user'][1] . ", " . $_SESSION['user'][2]; ?></span>");
+            });
 
+        </script>
 
     </head>
     <body>
@@ -91,8 +95,8 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item hover ">
                                     <div>
-                                        <a class="nav-link user" href="">
-                                            <span class=" mr-2  fas fa-user-circle"></span><span><?php print $_SESSION['user'][1] . ", " . $_SESSION['user'][2]; ?></span>
+                                        <a id="user" class="nav-link user" href="">
+                                            <span class=" mr-2  fas fa-user-circle"></span>
                                         </a>
                                     </div>
                                 </li>
@@ -120,9 +124,11 @@
                                 </li>
                                 <li class="nav-item hover">
                                     <div>
-                                        <a class="nav-link cerrar-sesion mr-2 mb-2" href="#salida">
-                                            <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
-                                        </a>
+                                        <form class="" action="" method="post">
+                                            <button type="submit" name="logout" class="nav-link cerrar-sesion ml-2 mr-2 mb-2" >
+                                                <span class=" mr-2  fas fa-sign-out-alt"></span><span>cerrar sesion</span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </li>
                             </ul>

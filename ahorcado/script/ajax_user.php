@@ -1,13 +1,13 @@
 <?php
-require_once '../BBDD/config.php';
-require_once '../BBDD/Dbactions.php';
+require_once '../../BBDD/config.php';
+require_once '../../BBDD/Dbactions.php';
 
-if(isset ($_POST['id_user']) && isset ($_POST['tiempo']) && isset($_POST['nivel'])){
+if(isset ($_POST['id_user'])  && isset($_POST['nivel']) && isset($_POST['puntos'])){
     $db = new dbactions();
-    $tiempo=$_POST['tiempo'];
     $id=$_POST['id_user'];
     $nivel = $_POST['nivel'];
-    $db->insertColumn("INSERT INTO nivel (id_user,cod_nivel,tiempo,fecha_actual,juego) VALUES ('".$id."','".$nivel."','".$tiempo."',CURRENT_DATE(),'quizTest')");
+    $puntos=$_POST['puntos'];
+    $db->insertColumn("INSERT INTO nivel (id_user,cod_nivel,puntos,fecha_actual,juego) VALUES (".$id.",".$nivel.",".$puntos.",CURRENT_DATE(),'ahorcado')");
     
     print "true";
 }else{

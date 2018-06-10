@@ -24,6 +24,26 @@ body{
     background-color: transparent;
     border-color: transparent;
 }
+
+.btn:focus {
+    outline: 0;
+     box-shadow: 0 0 0 0 rgba(0,123,255,.25); 
+}
+ .btn-primary:not(:disabled):not(.disabled):active{
+     color: #fff; 
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.hover button[name="logoutQUIZ"]{
+    background-color: transparent ;
+    border-color: transparent;
+    cursor: pointer;
+    font-variant: small-caps;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0 rgba(0,123,255,.5);
+}
 .footer span{
     background: #202020; 
     -webkit-background-clip: text; 
