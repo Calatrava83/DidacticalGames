@@ -2,13 +2,15 @@
 require_once '../admin/adminPreguntas/config.php';
 require_once '../admin/adminPreguntas/Dbactions.php';
 $_SESSION['user'][0]=1;
+
 function obtainUsuario($sesion){
 $db = new dbactions();
     
     $user=$db->queryRow("SELECT nombre from usuario where idUser = ".$_SESSION['user'][0]);
     $sesion[1]=$user->nombre;
-    print "<input id='id_user' type='text' disabled value= '".$sesion[0]."'/>";
-    print "<input id='nombre' type='text' disabled value= '".$sesion[1]."'/>";
+    print "<input id='id_user' type='text' disabled hidden value= '".$sesion[0]."'/>";
+    print "<input id='nombre' type='text' disabled hidden value= '".$sesion[1]."'/>";
+    return $sesion[1];
 }
 ?>  
 <!DOCTYPE html>
@@ -31,7 +33,8 @@ $db = new dbactions();
         <?php include '../ficheros/modales.php'; ?> 
         <?php 
             if(isset($_SESSION['user'])){
-                obtainUsuario($_SESSION['user']);
+               $usuario=obtainUsuario($_SESSION['user']);
+               
             }
         ?>
         <audio id='acierto' src="sounds/acierto.mp3" ></audio>
@@ -50,7 +53,7 @@ $db = new dbactions();
                             <li class="nav-item hover ">
                                 <div id="user">
                                     <a class="nav-link user" data-toogle="modal" data-target="#usuario">
-                                        <img class="mr-2 mt-2 mb-2" src="../svg/person.svg" alt="user"/><span>usuario</span>
+                                        <img class="mr-2 mt-2 mb-2" src="../svg/person.svg" alt="user"/><span><?php print $usuario; ?></span>
                                     </a>
                                 </div>
                             </li>
@@ -76,6 +79,10 @@ $db = new dbactions();
             <!-- ===== ===== MODAL-REGLAS ===== ===== -->
             <?php imprimirReglasQuiz(); ?>
             <!-- ===== ===== MODAL-REGLAS ===== ===== -->
+            
+            <!-- ===== ===== MODAL-JUGADOR ===== ===== -->
+  
+            <?php if(isset($_SESSION['user'])){estadisticasJugador($usuario);}?>
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MENU ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
@@ -126,32 +133,6 @@ $db = new dbactions();
             </div>
             
             
-            <div id="infojugador" title="Informacion del Jugador" class="d-none">
-                <div id="nameJugador">
-                    <h2></h2>
-                </div>
-                <div class="playerinformation">
-                    <h4>Niveles Completados:</h4><p id="niveles"></p>
-                </div>
-                <div class="playerinformation" >
-                    <h4>Tiempo de Niveles:</h4>
-                    <table id="tiempos">
-                        <thead>
-                        <td>Nivel</td>
-                        <td>Tiempo Realizado</td>
-                        </thead>
-                        <tbody id="tablaTime">
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="playerinformation">
-                    <h4>Aciertos:</h4><p id="aciertos"></p>
-                </div>
-                <div class="playerinformation">
-                    <h4>Fallos</h4><p id="fallos"></p>
-                </div>
-            </div>
             <article class="row ">
                 <!--===== ===== ===== ===== ===== ===== =====--> 
                 <!--===== ===== COPYGATE ===== =====--> 

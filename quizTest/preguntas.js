@@ -14,14 +14,13 @@ $(document).ready(function () {
     preguntas['nivel10']= new Array();
 
     
-    
+       /**********************************************AJAX***************************************************/
     function cargadoAjaxPreguntas(){
         $.ajax({
             url: "ajax_preguntas.php",
             type: 'POST',
             async:false,
             success:function(response){
-                alert("operacion exitosa");
                 lista = response;
                 },
             error:function(){
@@ -30,7 +29,7 @@ $(document).ready(function () {
             });
         return lista;
     }
-    
+       /**********************************************AJAX***************************************************/
     
    var nuebo=JSON.parse(cargadoAjaxPreguntas());
  
@@ -85,44 +84,54 @@ $(document).ready(function () {
         this.opciones['op4']=opcion4;
         
     }
-    /*-------------VARIABLES RELACIONADAS CON EL JUGADOR--------------------*/
-    var nombreJugador;
-    var numPasados = 0;
-    var tiempoNivel = 0;
-    var preguntasAcertadas = 0;
-    var preguntasFallidas = 0;
-
-    function recoveryJugador(idUser){
-        if(!idUser == "" || !idUser == null){
-           //a medio//
-        }
+    /*------------- RELACIONADO CON EL JUGADOR--------------------*/
+    //*------------------------FUNCIONES RELACIONADAS CON LA INFO DEL JUGADOR------------------*//
+    function mostrarJugador() {
+        
+        
+        $("#usuario").modal("show");
+        //alert("Nivel actual: "+nivel);
+       /* alert("nombre del jugador: " + jugador.nombreJugador);
+        alert("Niveles completados: " + jugador.completado);
+        alert("Aciertos: " + jugador.aciertos);
+        alert("Veces Fallados: " + jugador.falladas);*/
     }
+      //*------------------------FUNCIONES RELACIONADAS CON LA INFO DEL JUGADOR------------------*//
     
     function jugador(id_jugador,nombreJugador) {
         this.idJugador = id_jugador;
         this.nombreJugador= nombreJugador;
         this.completado = 0;
-        this.respondidas =0;
-        this.tiempoNiveles=new Array(10);
+        this.tiempoNiveles=new Array();
         this.aciertos = 0;
         this.falladas = 0;
         this.intentos=0;
         this.porcentajeAciertos=0;
         this.porcentajeFallos=0;
+        
+       /**********************************************AJAX***************************************************/
         this.guardarTiempo = function (nivel, tiempo) {
-            $.post("ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel},function(){
-               alert("guardado exitoso");
-                tiempoNiveles[nivel]=tiempo;
-                
-            });
+            $.post("ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel});
+            console.log(this.tiempoNiveles);
+               this.tiempoNiveles.push(tiempo);
+        };
+           /**********************************************AJAX***************************************************/
+        this.calculoPorcentaje = function(aciertos){
             
         };
-        this.calculoPorcentaje = function(aciertos,respondidas){
-            
-        }
+        this.updateEstadisticas=function(){
+            $("#acertadas").text(this.aciertos);
+            $("#falladas").text(this.falladas);
+            $("#intentos").text(this.intentos);
+            $("#porAciertos").text(this.porcentajeAciertos);
+            $("#porFallos").text(this.porcentajeFallos);
+            for (var i =0;i<this.tiempoNiveles;i++){
+                //SEGUIR POR AQUI//
+            }
+        };
     }
 
-     $('#user').click(mostrarJugador);
+    $('#user').click(mostrarJugador);
 
 
 
@@ -145,6 +154,7 @@ $(document).ready(function () {
 
     /*****FUNCIONES PARA LOS DIALOGOS**************/ //
     function windowOK() {
+        clearInterval(idTiempo);
         $('#dialog').dialog({
             dialogClass: "no-close",
             resizable: false,
@@ -172,6 +182,7 @@ $(document).ready(function () {
     }
 
     function windowFAIL() {
+        clearInterval(idTiempo);
         $("#dialog_error").dialog({
             dialogClass: "no-close",
             resizable: false,
@@ -201,6 +212,10 @@ $(document).ready(function () {
     function correrTiempo() {
         if (tiempo === 0) {
             tiempo = 0;
+            clearInterval(idTiempo);
+            nivelPasado=false;
+                juego();
+            
         } else {
             tiempo--;
         }
@@ -257,7 +272,7 @@ $(document).ready(function () {
                 pregunta = preguntas['nivel10'][Math.floor((Math.random() * cant) + 0)];
                 break;
         }
-        console.log(pregunta);
+        
         enunciado.text(pregunta.nombre);
         //-----ASIGNACION DE RESPUESTAS A LOS BOTONES---------//
         var pos = Math.floor((Math.random() * 4) + 1);
@@ -284,7 +299,10 @@ $(document).ready(function () {
 
     //*----------------------FUNCIONES DE COMPROBACION---------------------------*//
     function comprobarRespuesta(event) {
-        var allDisabled = false;
+        //var allDisabled = false;
+        console.log(jugador.intentos);
+          
+
         var respuesta = this.name;
         clearInterval(idTiempo);
         botonesRespuesta.addClass('disabled');
@@ -295,10 +313,9 @@ $(document).ready(function () {
             /*****************/
             audioCorrecto[0].play();
             audioCorrecto[0].currenTime = 0;
+           setTimeout (windowOK,9000);
             jugador.aciertos++;
-            jugador.guardarTiempo(nivel,tiempo);
-            jugador.completado++;
-            windowOK();
+           
 
         } else {
             /*****************/
@@ -309,8 +326,8 @@ $(document).ready(function () {
             jugador.falladas++;
             windowFAIL();
         }
-        jugador.intentos++;
-
+          jugador.intentos++;
+      
     }
 
     function comprobarTiempo(nivel) {
@@ -338,35 +355,19 @@ $(document).ready(function () {
 
     }
 
-    //*------------------------FUNCIONES RELACIONADAS CON LA INFO DEL JUGADOR------------------*//
-    function mostrarJugador() {
-        /* $("#nameJugador").text(jugador.nombre);
-         $("#niveles").text(jugador.completado+" de 10");
-         /*for(i=0;i<jugador.tiempoNiveles.length;i++){
-         $("#tablaTime").add("tr");
-         $("#tablaTime :tr").add("<td>"+jugador.tiempoNiveles[i]+"</td>");
-         };
-         $("#aciertos").text(jugador.aciertos);
-         $("#fallos").text(jugador.falladas);
-         $("#infojugador").dialog({
-         
-         
-         });*/
-        /*windowJugador=window.open("","verjugador","width=350,height=250","resizable=no");
-         windowJugador.document.write('');**/
-        alert("nombre del jugador: " + jugador.nombreJugador);
-        alert("Niveles pasados: " + jugador.completado);
-        alert("Aciertos: " + jugador.aciertos);
-        alert("Veces Fallados: " + jugador.falladas);
-    }
 
     //*----FUNCION PRINCIPAL DEL JUEGO----------------*//
     function juego() {
-        $('.respuesta').click(comprobarRespuesta);
+            console.log(nivelPasado);
+       jugador.updateEstadisticas();
+       
         numPregunta++;
         $('#numPregunta').text(numPregunta);
 
         if (nivelPasado) {
+             
+            jugador.completado++;
+            jugador.guardarTiempo(nivel,tiempo);
             botonesRespuesta.removeClass('disabled');
             if (nivel < 10) {
                 nivel++;
@@ -387,6 +388,8 @@ $(document).ready(function () {
 
 
         idTiempo = setInterval(correrTiempo, 1000);
+        
+         
     }
     $(".respuesta").button({
         disabled: false
@@ -395,6 +398,7 @@ $(document).ready(function () {
     //---FIN FUNCION PRINCIPAL DEL JUEGO--------------//
    
     jugador = new jugador($("#id_user").val(),$("#nombre").val());
+   $('.respuesta').click(comprobarRespuesta);
     juego();
     /*******************/
     $('[data-toggle="tooltip"]').tooltip();

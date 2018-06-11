@@ -158,3 +158,58 @@ function imprimirReglasQuiz() {
                 </article>';
 }
 
+// para juego Quiz// seguir por aqui
+function estadisticasJugador($nombre){
+    print '<article class="modal fade row" id="usuario" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="ModalTitle">Estadisticas del jugador: '.$nombre.'</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <section class="estadisticas modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
+                                    <h5 class="modal-title">General:</h5>
+                                    <div class="scroll">
+                                        <ol class="pl-4">
+                                            <li>Has acertado: <span id="acertadas"></span> veces</li>
+                                            <li>Has fallado: <span id="falladas"></span> veces</li>
+                                            <li>Has tenido: <span id="intentos"></span> intentos</li>
+                                            <li>Obtienes un <span id="porAciertos"></span> % de aciertos</li>
+                                            <li>Obtienes un <span id="porFallos"></span> % de fallos</li>
+                                        </ol>
+                                    </div>
+                                </section>
+                                <section class="regla-puntos mx-auto col-12  pt-2">
+                                       <table class="table tabla">
+                                        <thead class="thead-light text-center">
+                                            <tr><th colspan="9" scope="col">Tiempos</th></tr>
+                                            <tr>
+                                                <th scope="col">N-1</th>
+                                                <th scope="col">N-2</th>
+                                                <th scope="col">N-3</th>
+                                                <th scope="col">N-4</th>
+                                                <th scope="col">N-5</th>
+                                                <th scope="col">N-6</th>
+                                                <th scope="col">N-7</th>
+                                                <th scope="col">N-8</th>
+                                                <th scope="col">N-9</th>
+                                                <th scope="col">N-10</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tiempos">
+                                          
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                            </div>
+                        </div>
+                    </div>
+                </article>';
+}
+

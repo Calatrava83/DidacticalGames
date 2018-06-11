@@ -7,7 +7,7 @@ if(isset ($_POST['id_user']) && isset ($_POST['tiempo']) && isset($_POST['nivel'
     $tiempo=$_POST['tiempo'];
     $id=$_POST['id_user'];
     $nivel = $_POST['nivel'];
-    $db->insertColumn("INSERT INTO nivel (id_user,cod_nivel,tiempo,fecha_actual,juego) VALUES ('".$id."','".$nivel."','".$tiempo."',CURRENT_DATE(),'quizTest')");
+    $db->insertColumn("INSERT INTO nivel (id_user,cod_nivel,tiempo,fecha_actual,juego) VALUES ('".$id."',' ".$nivel." ',' ".$tiempo." ',CURRENT_DATE(),'quizTest')");
     
     print "true";
 }else{
