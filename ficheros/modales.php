@@ -25,7 +25,7 @@ function imprimirModalNiveles() {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="prev" class="btn ml-auto" data-dismiss="modal"><span class="material-icons icon">reply</span></button>
-                                <button type="button" id="reload" class="btn" data-dismiss="modal"><span class="material-icons icon">reply_all</span></button>
+                                <button type="button" id="reload" class="btn" data-dismiss="modal"><span class="material-icons icon">autorenew</span></button>
                                 <button type="button" id="next" class="btn mr-auto" data-dismiss="modal"><span class="material-icons icon rotate">reply</span></button>
                             </div>
                         </div>
