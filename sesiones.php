@@ -24,7 +24,6 @@ if ($_POST) {
 }else{
         header('Location: /DidacticalGame/index.php');
 }
-
 function sesionUser($usuario) {
     $_SESSION['user'] = [];
     $_SESSION['user'][0] = $usuario->idUser;

@@ -1,6 +1,13 @@
 <?php
 require_once '../BBDD/config.php';
 require_once '../BBDD/Dbactions.php';
+
+function obtainUsuario(){
+    
+    print "<input id='id_user' type='text' disabled hidden value= '".$_SESSION['user'][0]."'/>";
+    print "<input id='nombre' type='text' disabled hidden value= '".$_SESSION['user'][1]."'/>";
+    
+}
 ?>  
 <!DOCTYPE html>
 <html>
@@ -23,8 +30,8 @@ require_once '../BBDD/Dbactions.php';
         <?php
         include '../ficheros/modales.php';
         ?> 
-        <audio id='acierto' src="sounds/acierto.mp3" ></audio>
-        <audio id ='fail' src="sounds/fail.mp3"></audio>
+        <audio id='acierto' src="../quizTest/sounds/acierto.mp3" ></audio>
+        <audio id ='fail' src="../quizTest/sounds/fail.mp3"></audio>
         <div class="container">
 
             <!-- ===== ===== ===== ===== ===== ===== ===== -->

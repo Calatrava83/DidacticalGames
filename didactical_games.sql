@@ -41,6 +41,7 @@ CREATE TABLE `administradores` (
   `idAdmin` int(11) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `apellidos` varchar(75) NOT NULL,
+`password` varchar(255) not null,
   `departamento` varchar(75) NOT NULL,
   `categoria` varchar(75) NOT NULL,
   `telefono` int(9) DEFAULT NULL
@@ -104,37 +105,37 @@ INSERT INTO `imagen` (`idImagen`, `nombre_img`, `descripcion`, `source`) VALUES
 (7, 'tragedia', 'Situación o suceso lamentable que afecta a personas o sociedades humanas.', ''),
 (8, 'tristeza', 'Afligido, apesadumbrado.', ''),
 (9, 'amor', NULL, 'images/preguntasImagenes/amor.gif'),
-(10, 'asco1', NULL, 'images/preguntasImagenes/asco1.png'),
-(11, 'asco2', '', 'images/preguntasImagenes/asco2.png'),
-(12, 'asco3', NULL, 'images/preguntasImagenes/asco3.png'),
-(13, 'bullying', '', 'images/preguntasImagenes/bullying.jpg'),
-(14, 'caras1', NULL, 'images/preguntasImagenes/caras1.jpg'),
-(15, 'celos', NULL, 'images/preguntasImagenes/celos.png'),
-(16, 'contento1', NULL, 'images/preguntasImagenes/contento1.jpg'),
-(17, 'contento2', NULL, 'images/preguntasImagenes/contento2.jpg'),
-(18, 'contento3.jpg', NULL, 'images/preguntasImagenes/contento3.jpg'),
-(19, 'culpa', NULL, 'images/preguntasImagenes/culpa.jpg'),
-(20, 'deprimido1.jpg', NULL, 'images/preguntasImagenes/deprimido1.jpg'),
-(21, 'deprimido2', NULL, 'images/preguntasImagenes/deprimido2.jpg'),
-(22, 'deprimido3', NULL, 'images/preguntasImagenes/deprimido3.png'),
-(23, 'enfadado1', NULL, 'images/preguntasImagenes/enfadado1.png'),
-(24, 'enfado2', NULL, 'images/preguntasImagenes/enfado2.jpg'),
-(25, 'enfado3', NULL, 'images/preguntasImagenes/enfado3.jpg'),
-(26, 'euforia', NULL, 'images/preguntasImagenes/euforia.png'),
-(27, 'feliz1', NULL, 'images/preguntasImagenes/feliz1.jpg'),
-(28, 'feliz2', NULL, 'images/preguntasImagenes/feliz2.png'),
-(29, 'feliz3', NULL, 'images/preguntasImagenes/feliz3.png'),
-(30, 'ira1', NULL, 'images/preguntasImagenes/ira1.jpg'),
-(31, 'ira2', NULL, 'images/preguntasImagenes/ira2.jpg'),
-(32, 'ira3', NULL, 'images/preguntasImagenes/ira3.jpg'),
-(33, 'miedo1', NULL, 'images/preguntasImagenes/miedo1.jpg'),
-(34, 'miedo2', NULL, 'images/preguntasImagenes/miedo2.jpg'),
-(35, 'miedo3', NULL, 'images/preguntasImagenes/miedo3.png'),
-(36, 'soledad', NULL, 'images/preguntasImagenes/soledad.jpg'),
-(37, 'sorpresa.jpg', NULL, 'images/preguntasImagenes/sorpresa.jpg'),
-(38, 'triste1', NULL, 'images/preguntasImagenes/triste1.jpg'),
-(39, 'triste2', NULL, 'images/preguntasImagenes/triste2.jpg'),
-(40, 'triste3.jpg', NULL, 'images/preguntasImagenes/triste3.jpg');
+(10, 'asco1', NULL, '../quizTest/images/preguntasImagenes/asco1.png'),
+(11, 'asco2', '', '../quizTest/images/preguntasImagenes/asco2.png'),
+(12, 'asco3', NULL, '../quizTest/images/preguntasImagenes/asco3.png'),
+(13, 'bullying', '', '../quizTest/images/preguntasImagenes/bullying.jpg'),
+(14, 'caras1', NULL, '../quizTest/images/preguntasImagenes/caras1.jpg'),
+(15, 'celos', NULL, '../quizTest/images/preguntasImagenes/celos.png'),
+(16, 'contento1', NULL, '../quizTest/images/preguntasImagenes/contento1.jpg'),
+(17, 'contento2', NULL, '../quizTest/images/preguntasImagenes/contento2.jpg'),
+(18, 'contento3.jpg', NULL, '../quizTest/images/preguntasImagenes/contento3.jpg'),
+(19, 'culpa', NULL, '../quizTest/images/preguntasImagenes/culpa.jpg'),
+(20, 'deprimido1.jpg', NULL, '../quizTest/images/preguntasImagenes/deprimido1.jpg'),
+(21, 'deprimido2', NULL, '../quizTest/images/preguntasImagenes/deprimido2.jpg'),
+(22, 'deprimido3', NULL, '../quizTest/images/preguntasImagenes/deprimido3.png'),
+(23, 'enfadado1', NULL, '../quizTest/images/preguntasImagenes/enfadado1.png'),
+(24, 'enfado2', NULL, '../quizTest/images/preguntasImagenes/enfado2.jpg'),
+(25, 'enfado3', NULL, '../quizTest/images/preguntasImagenes/enfado3.jpg'),
+(26, 'euforia', NULL, '../quizTest/images/preguntasImagenes/euforia.png'),
+(27, 'feliz1', NULL, '../quizTest/images/preguntasImagenes/feliz1.jpg'),
+(28, 'feliz2', NULL, '../quizTest/images/preguntasImagenes/feliz2.png'),
+(29, 'feliz3', NULL, '../quizTest/images/preguntasImagenes/feliz3.png'),
+(30, 'ira1', NULL, '../quizTest/images/preguntasImagenes/ira1.jpg'),
+(31, 'ira2', NULL, '../quizTest/images/preguntasImagenes/ira2.jpg'),
+(32, 'ira3', NULL, '../quizTest/images/preguntasImagenes/ira3.jpg'),
+(33, 'miedo1', NULL, '../quizTest/images/preguntasImagenes/miedo1.jpg'),
+(34, 'miedo2', NULL, '../quizTest/images/preguntasImagenes/miedo2.jpg'),
+(35, 'miedo3', NULL, '../quizTest/images/preguntasImagenes/miedo3.png'),
+(36, 'soledad', NULL, '../quizTest/images/preguntasImagenes/soledad.jpg'),
+(37, 'sorpresa.jpg', NULL, '../quizTest/images/preguntasImagenes/sorpresa.jpg'),
+(38, 'triste1', NULL, '../quizTest/images/preguntasImagenes/triste1.jpg'),
+(39, 'triste2', NULL, '../quizTest/images/preguntasImagenes/triste2.jpg'),
+(40, 'triste3.jpg', NULL, '../quizTest/images/preguntasImagenes/triste3.jpg');
 
 -- --------------------------------------------------------
 
@@ -156,8 +157,6 @@ CREATE TABLE `nivel` (
 -- Volcado de datos para la tabla `nivel`
 --
 
-INSERT INTO `nivel` (`id`, `id_user`, `cod_nivel`, `puntos`, `tiempo`, `fecha_actual`, `juego`) VALUES
-(1, 1, 1, NULL, '99', '2018-06-08', 'quizTest');
 
 -- --------------------------------------------------------
 
@@ -303,16 +302,15 @@ CREATE TABLE `usuario` (
   `fecha_nac` date NOT NULL,
   `telefono` int(9) DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
-  `discapacidad` varchar(255) NOT NULL,
-  `imagen_user` varchar(255) DEFAULT NULL
+  `discapacidad` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUser`, `nombre`, `apellidos`, `password`, `padre`, `madre`, `fecha_nac`, `telefono`, `direccion`, `discapacidad`, `imagen_user`) VALUES
-(1, 'Pedro', 'Martinez Nuñez', '', NULL, NULL, '0000-00-00', NULL, NULL, 'asperger', NULL);
+INSERT INTO `usuario` (`idUser`, `nombre`, `apellidos`, `password`, `padre`, `madre`, `fecha_nac`, `telefono`, `direccion`, `discapacidad`) VALUES
+(1, 'usuario', 'prueba prueba', '1234', NULL, NULL, '0000-00-00', NULL, NULL, 'asperger');
 
 --
 -- Índices para tablas volcadas
