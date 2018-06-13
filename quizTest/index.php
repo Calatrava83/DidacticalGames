@@ -78,14 +78,17 @@ $db = new dbactions();
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MODAL-REGLAS ===== ===== -->
             <?php imprimirReglasQuiz(); ?>
-            <!-- ===== ===== MODAL-REGLAS ===== ===== -->
-            
+            <!-- ===== ===== ===== ===== -->
+            <!-- ===== ===== MODAL PARA SIGUIENTE NIVEL/REPETIR===== ===== -->
+            <?php imprimirModalQuiz();?>
+            <!-- ===== =====  ===== ===== -->
             <!-- ===== ===== MODAL-JUGADOR ===== ===== -->
-  
             <?php if(isset($_SESSION['user'])){estadisticasJugador($usuario);}?>
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MENU ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
+            
+            
             <header class="row" id="informacion">
                 <article class="col-md-4 d-none">
                     <h3>Numero de pregunta</h3><br>
@@ -124,13 +127,12 @@ $db = new dbactions();
                 </article>
             </section>
 
-            <div id="dialog" title="¡Respuesta correcta!" class="d-none">
-                <!--Especifica los controles para la siguiente pregunta!-->
+<!--            <div id="dialog" title="¡Respuesta correcta!" class="d-none">
                 <p>Has acertado,¿Que quieres hacer? </p>
             </div>  
             <div id="dialog_error" title="¡Respuesta Incorrecta!" class="d-none">
                 <p>Te has equivocado, ¿Que quieres hacer?</p>
-            </div>
+            </div>-->
             
             
             <article class="row ">

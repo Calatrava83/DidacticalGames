@@ -186,3 +186,26 @@ header{
     width: 200px;
     border-bottom: 1px #ffffff solid;
 }
+
+.rotate{
+    transform: rotateY(180deg);
+}
+
+.face{
+    color:#1484e6 ;
+}
+
+.modal-header{
+    height: auto;
+    
+}
+#cabecera{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.btn-rounded{
+    border-radius: 50% !important;
+}

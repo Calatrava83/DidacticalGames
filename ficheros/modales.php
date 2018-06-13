@@ -121,6 +121,7 @@ function imprimirReglasAhorcado() {
                     </div>
                 </article>';
 }
+
 function imprimirReglasQuiz() {
     echo '<article class="modal fade row" id="reglas" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -158,7 +159,7 @@ function imprimirReglasQuiz() {
                 </article>';
 }
 
-// para juego Quiz// seguir por aqui
+// para juego Quiz//
 function estadisticasJugador($nombre){
     print '<article class="modal fade row" id="usuario" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -171,38 +172,14 @@ function estadisticasJugador($nombre){
                             </div>
                             <div class="modal-body">
                                 <section class="estadisticas modal-body col-10 mx-auto pt-3 pr-3 pl-3 text-justify ">
-                                    <h5 class="modal-title">General:</h5>
+                                    <h5 class="modal-title">Estadisticas:</h5>
                                     <div class="scroll">
                                         <ol class="pl-4">
                                             <li>Has acertado: <span id="acertadas"></span> veces</li>
                                             <li>Has fallado: <span id="falladas"></span> veces</li>
                                             <li>Has tenido: <span id="intentos"></span> intentos</li>
-                                            <li>Obtienes un <span id="porAciertos"></span> % de aciertos</li>
-                                            <li>Obtienes un <span id="porFallos"></span> % de fallos</li>
                                         </ol>
                                     </div>
-                                </section>
-                                <section class="regla-puntos mx-auto col-12  pt-2">
-                                       <table class="table tabla">
-                                        <thead class="thead-light text-center">
-                                            <tr><th colspan="9" scope="col">Tiempos</th></tr>
-                                            <tr>
-                                                <th scope="col">N-1</th>
-                                                <th scope="col">N-2</th>
-                                                <th scope="col">N-3</th>
-                                                <th scope="col">N-4</th>
-                                                <th scope="col">N-5</th>
-                                                <th scope="col">N-6</th>
-                                                <th scope="col">N-7</th>
-                                                <th scope="col">N-8</th>
-                                                <th scope="col">N-9</th>
-                                                <th scope="col">N-10</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tiempos">
-                                          
-                                        </tbody>
-                                    </table>
                                 </section>
                             </div>
                             <div class="modal-footer">
@@ -213,3 +190,27 @@ function estadisticasJugador($nombre){
                 </article>';
 }
 
+function imprimirModalQuiz() {
+     echo '<article class="nivel modal fade row" id="dialog" value="1" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header"><h4 id="cabecera" class="modal-title mx-auto">Modal</h4></div>
+                            <div class="modal-body">
+                                <section class=" modal-body col-12 mx-auto pt-0 pr-3 pl-3 pb-0 text-center">
+                                <div class="row">
+                                    <div class="col-lg-12 col-6">
+                                    <div class="col-12  mx-auto face"><span class="text-center fas fa-meh fa-4x"></span></div>
+                                    </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="prev" class="btn btn-rounded ml-auto" data-dismiss="modal"><span class="material-icons icon">reply</span></button>
+                                <button type="button" id="reload" class="btn btn-rounded" data-dismiss="modal"><span class="material-icons icon">autorenew</span></button>
+                                <button type="button" id="next" class="btn btn-rounded mr-auto" data-dismiss="modal"><span class="material-icons icon rotate">reply</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </article>';
+    
+}
