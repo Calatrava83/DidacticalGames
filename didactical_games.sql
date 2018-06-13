@@ -310,7 +310,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUser`, `nombre`, `apellidos`, `password`, `padre`, `madre`, `fecha_nac`, `telefono`, `direccion`, `discapacidad`) VALUES
-(1, 'usuario', 'prueba prueba', '1234', NULL, NULL, '0000-00-00', NULL, NULL, 'asperger');
+(1, 'usuario', 'prueba prueba', md5('1234'), NULL, NULL, '0000-00-00', NULL, NULL, 'asperger');
 
 --
 -- Índices para tablas volcadas

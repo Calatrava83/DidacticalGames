@@ -73,7 +73,12 @@ function obtainUsuario(){
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MODAL-REGLAS ===== ===== -->
             <?php imprimirReglasQuiz(); ?>
-            <!-- ===== ===== MODAL-REGLAS ===== ===== -->
+            <!-- ===== ===== ===== ===== -->
+            <!-- ===== ===== MODAL PARA SIGUIENTE NIVEL/REPETIR===== ===== -->
+            <?php imprimirModalQuiz();?>
+            <!-- ===== =====  ===== ===== -->
+            <!-- ===== ===== MODAL-JUGADOR ===== ===== -->
+            <?php if(isset($_SESSION['user'])){estadisticasJugador($_SESSION['user'][1]);}?>
             <!-- ===== ===== ===== ===== ===== ===== ===== -->
             <!-- ===== ===== MENU ===== ===== -->
             <!-- ===== ===== ===== ===== ===== ===== ===== -->

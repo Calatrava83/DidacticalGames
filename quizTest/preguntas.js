@@ -14,7 +14,10 @@ $(document).ready(function () {
     preguntas['nivel10']= new Array();
 
     
-       /**********************************************AJAX***************************************************/
+    /*
+     * Ajax para preguntas de bdd
+     * @returns {lista|response}
+     */
     function cargadoAjaxPreguntas(){
         $.ajax({
             url: "../quizTest/ajax_preguntas.php",
@@ -29,12 +32,15 @@ $(document).ready(function () {
             });
         return lista;
     }
-       /**********************************************AJAX***************************************************/
     
+    /*
+     * Carga de preguntas de BDD al juego
+     * @type Array|Object
+     */
    var nuebo=JSON.parse(cargadoAjaxPreguntas());
  
     for(var i =0; i<nuebo.length;i++){
-        //console.log(nuebo[i]);
+       
         p = new pregunta(nuebo[i][0],nuebo[i][1],nuebo[i][2],nuebo[i][3],nuebo[i][9],nuebo[i][5],nuebo[i][6],nuebo[i][7],nuebo[i][8])
         switch(nuebo[i][0]){
             case '1':
@@ -70,7 +76,19 @@ $(document).ready(function () {
         }
     }
     
-    
+    /*
+     * Objeto para la pregunta.
+     * @param {type} nivel
+     * @param {type} emocion 
+     * @param {type} nombre
+     * @param {type} solucion
+     * @param {type} imagen
+     * @param {type} opcion1
+     * @param {type} opcion2
+     * @param {type} opcion3
+     * @param {type} opcion4
+     * @returns {preguntasL#1.pregunta}
+     */
     function pregunta(nivel,emocion,nombre,solucion,imagen,opcion1,opcion2,opcion3,opcion4){
         this.nivel = nivel;
         this.emocion = emocion;
@@ -86,18 +104,23 @@ $(document).ready(function () {
     }
     /*------------- RELACIONADO CON EL JUGADOR--------------------*/
     //*------------------------FUNCIONES RELACIONADAS CON LA INFO DEL JUGADOR------------------*//
+    /*
+     *  Activa el modal con las estadisticas hasta el momento del jugador. 
+     *
+     */
     function mostrarJugador() {
         
         
         $("#usuario").modal("show");
-        //alert("Nivel actual: "+nivel);
-       /* alert("nombre del jugador: " + jugador.nombreJugador);
-        alert("Niveles completados: " + jugador.completado);
-        alert("Aciertos: " + jugador.aciertos);
-        alert("Veces Fallados: " + jugador.falladas);*/
+        
     }
       //*------------------------FUNCIONES RELACIONADAS CON LA INFO DEL JUGADOR------------------*//
-    
+     /*
+      * Objeto que respresenta al jugador en la partida
+      * @param {type} id_jugador Pasado a traves de sessiones
+      * @param {type} nombreJugador Averigurado a traves de php
+      * @returns {preguntasL#1.jugador}
+      */
     function jugador(id_jugador,nombreJugador) {
         this.idJugador = id_jugador;
         this.nombreJugador= nombreJugador;
@@ -106,18 +129,18 @@ $(document).ready(function () {
         this.aciertos = 0;
         this.falladas = 0;
         this.intentos=0;
-        this.porcentajeAciertos=0;
-        this.porcentajeFallos=0;
-        
-       /**********************************************AJAX***************************************************/
         this.guardarTiempo = function (nivel, tiempo) {
             $.post("../quizTest/ajax_user.php",{id_user:this.idJugador,tiempo:tiempo,nivel:nivel});
             console.log(this.tiempoNiveles);
-               this.tiempoNiveles.push(tiempo);
+                if(this.tiempoNiveles <11){
+                this.tiempoNiveles.push(tiempo);    
+                }else{
+                    this.tiempoNiveles[10]=tiempo;
+                }
         };
-           /**********************************************AJAX***************************************************/
-        this.calculoPorcentaje = function(aciertos){
-            
+        this.calculoPorcentaje = function(nivel){
+            this.porcentajeAciertos=(this.aciertos/preguntas['nivel'+nivel].length)*100;
+            this.porcentajeFallos=(this.fallos/preguntas['nivel'+nivel].length)*100;
         };
         this.updateEstadisticas=function(){
             $("#acertadas").text(this.aciertos);
@@ -126,7 +149,8 @@ $(document).ready(function () {
             $("#porAciertos").text(this.porcentajeAciertos);
             $("#porFallos").text(this.porcentajeFallos);
             for (var i =0;i<this.tiempoNiveles;i++){
-                //SEGUIR POR AQUI//
+                $("#tiempos").append("<tr>");
+                $("#tiempos tr:last").append("<td>"+this.tiempoNiveles[i]+"</td>");
             }
         };
     }
@@ -147,6 +171,8 @@ $(document).ready(function () {
     var tiempo = 100;
     var reducTiempo = 20;
     var idTiempo;
+    
+    
     //SONIDOS PARA EL JUEGO//
     var audioCorrecto = $('#acierto');
     var audioIncorrecto = $('#fail');
@@ -155,60 +181,42 @@ $(document).ready(function () {
     /*****FUNCIONES PARA LOS DIALOGOS**************/ //
     function windowOK() {
         clearInterval(idTiempo);
-        $('#dialog').dialog({
-            dialogClass: "no-close",
-            resizable: false,
-            height: 'auto',
-            width: 500,
-            modal: true,
-            buttons: {
-                "Pasar al siguiente nivel": function () {
-                    nivelPasado = true;
-                    juego();
-                    $(this).dialog("close");
-                    /************/
-                    $(".respuesta").removeClass("correcta");
-                    /************/
-                },
-                "Salir": function () {
-                    botonesRespuesta.off('onclick');
-                    $(this).dialog("close");
-                    /************/
-                    $(".respuesta").removeClass("correcta");
-                    /************/
-                }
-            }
+        $("#cabecera").html("Correcto");
+        $("#prev").addClass("disabled");
+        $("#next").removeClass("disabled");
+        $("#reload").addClass("disabled");
+        
+         $("#next").click(function(){
+            nivelPasado=true;
+            juego();
+             $("#dialog").modal("hidden");
+               $(".respuesta").removeClass("correcta");
         });
+         $(".respuesta").removeClass("correcta");
+        $("#dialog").modal("show");
+
     }
 
     function windowFAIL() {
         clearInterval(idTiempo);
-        $("#dialog_error").dialog({
-            dialogClass: "no-close",
-            resizable: false,
-            height: 'auto',
-            width: 400,
-            modal: true,
-            buttons: {
-                "Reintentar": function () {
-                    nivelPasado = false;
-                    juego();
-                    $(this).dialog("close");
-                    /************/
-                    $(".respuesta").removeClass("incorrecta");
-                    /************/
-                },
-                "Salir": function () {
-                    botonesRespuesta.off('onclick');
-                    $(this).dialog("close");
-                    /************/
-                    $(".respuesta").removeClass("incorrecta");
-                    /************/
-                }
-            }
+        $("#cabecera").html("Has Fallado");
+        $("#next").addClass("disabled");
+        $("#prev").addClass("disabled");
+        $("#reload").click(function(){
+            nivelPasado=false;
+            juego();
+             $("#dialog").modal("hidden");
+               $(".respuesta").removeClass("incorrecta");
         });
+        $("#dialog").modal("show");
+          $(".respuesta").removeClass("incorrecta");
     }
     //******FUNCIONES RELACIONADAS CON EL TIEMPO EN LA PARTIDA***********//
+    /*
+     * Cuenta atras del tiempo. Cuando llegue a cero carga otra pregunta
+     * 
+     * 
+     */
     function correrTiempo() {
         if (tiempo === 0) {
             tiempo = 0;
@@ -221,13 +229,19 @@ $(document).ready(function () {
         }
         $('#tiempo').text(tiempo);
     }
-
+ //**********************************************************************************************************//
+ 
     /******************FUNCIONES PARA LA ASIGNACION ******/ //
     var botonesRespuesta = $('.respuesta');
     var LIMITEboton = 5;
     var pregunta;
     var imagenPregunta = $('#imagen img');
 
+/*
+ * Asigna una pregunta segun el nivel que este el usuario, la pregunta es aleatoria, tambien coloca el enunciado, las respuestas y la imagen en los campos correspondientes.
+ * @param {type} nivel nivel acutal del jugador.
+ * @returns {undefined}
+ */
     function asginacionPreguntaRespuesta(nivel) {
        var cant;
         switch (nivel) {
@@ -276,8 +290,6 @@ $(document).ready(function () {
         enunciado.text(pregunta.nombre);
         //-----ASIGNACION DE RESPUESTAS A LOS BOTONES---------//
         var pos = Math.floor((Math.random() * 4) + 1);
-        var opcionesBotones = false;
-
         for (var posBoton = 0; posBoton < 4; posBoton++) {
             if (pos == LIMITEboton) {
                 pos = 1;
@@ -287,8 +299,12 @@ $(document).ready(function () {
             botonesRespuesta[posBoton].setAttribute('name', 'op' + pos);
             pos++;
         }
+          //-----------------------------------------------------------------------------//
     }
-
+/*
+ * Asigna la imagen relacionada con la pregunta en la pantalla
+ * @returns {undefined}
+ */
     function asginarImagen() {
         imagenPregunta.attr('src', pregunta.imagen);
     }
@@ -298,22 +314,30 @@ $(document).ready(function () {
 
 
     //*----------------------FUNCIONES DE COMPROBACION---------------------------*//
+    /*
+     * Recoge la respuesta que ha elegido el usuario y comprueba si esa respuesta es correcta, en caso afirmativo introduce el tiempo que ha tardado en bdd, muestra la ventana de acierto al jugador y suma el contador de aciertos del jugador.
+     * En caso contrario mostrara al usuario la ventana para repetir el nivel y se sumara el contador de fallos.
+     * en ambos casos el contador de intentos sube.
+     * @param {type} event Recoge el boton que se ha pulsado, comprueba el campo name del boton y lo comparaa con la solucion de la pregunta.
+     * @returns {undefined}
+     */
     function comprobarRespuesta(event) {
-        //var allDisabled = false;
-        console.log(jugador.intentos);
           
 
         var respuesta = this.name;
         clearInterval(idTiempo);
+        //Deshabilito los botones//
+        botonesRespuesta.off('click');
         botonesRespuesta.addClass('disabled');
         botonesRespuesta.off('onclick');
+        //************//
         if (respuesta === pregunta.solucion) {
             /*****************/
             $(this).addClass("correcta");
             /*****************/
             audioCorrecto[0].play();
             audioCorrecto[0].currenTime = 0;
-           setTimeout (windowOK,2000);
+           setTimeout (windowOK,2500);
             jugador.aciertos++;
            
 
@@ -324,12 +348,17 @@ $(document).ready(function () {
             audioIncorrecto[0].currentTime = 0;
             audioIncorrecto[0].play();
             jugador.falladas++;
-            windowFAIL();
+           setTimeout (windowFAIL,1500);
         }
           jugador.intentos++;
       
     }
-
+ /*
+  * Dependiendo del nivel, este metodo ajusta el tiempo que dispone el jugador y la reduccion del tiempo
+  * @param {type} nivel
+  * 
+  * 
+  */
     function comprobarTiempo(nivel) {
         if (nivel < 1) {
             errores.push('Error al establecer el tiempo');
@@ -357,8 +386,13 @@ $(document).ready(function () {
 
 
     //*----FUNCION PRINCIPAL DEL JUEGO----------------*//
+    /*
+     * Funcion principal del juego
+     * @returns {undefined}
+     */
     function juego() {
-            console.log(nivelPasado);
+       
+         
        jugador.updateEstadisticas();
        
         numPregunta++;
@@ -388,8 +422,12 @@ $(document).ready(function () {
 
 
         idTiempo = setInterval(correrTiempo, 1000);
-        
+        botonesRespuesta.click(comprobarRespuesta);
          
+         //RESETEO DE VARIABLES PARA EL DIALOGO DE CORRECTO/FALLO//
+          $("#prev").removeClass("disabled");
+        $("#next").removeClass("disabled");
+        $("#reload").removeClass("disabled");
     }
     $(".respuesta").button({
         disabled: false
@@ -398,7 +436,7 @@ $(document).ready(function () {
     //---FIN FUNCION PRINCIPAL DEL JUEGO--------------//
    
     jugador = new jugador($("#id_user").val(),$("#nombre").val());
-   $('.respuesta').click(comprobarRespuesta);
+   
     juego();
     /*******************/
     $('[data-toggle="tooltip"]').tooltip();
